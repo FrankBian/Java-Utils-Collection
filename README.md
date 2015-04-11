@@ -20,12 +20,14 @@
 开始之前请仔细阅读 `CodeStyle.md` 
 
 # Comment 
-
-欢迎大家一起完善 ：    
-* Email：FrankBian@126.com
-* Twitter: [@FrankBian](https://twitter.com/BianFrank)
-* StackOverFlow:[@FrankBian](http://stackoverflow.com/users/4134671/frank)
-* Site: [Frank's Space](http://gansuer.com)
+欢迎大家一起完善:         
++ Email：FrankBian@126.com
++ LinkedIn: [@FrankBian](http://www.linkedin.com/in/frankbian)
++ Twitter: [@FrankBian](https://twitter.com/BianFrank)   
++ StackOverFlow:[@FrankBian](http://stackoverflow.com/users/4134671/frank)   
++ Site: [Frank's Space](http://gansuer.com)   
+   
+ 
 
 
 
