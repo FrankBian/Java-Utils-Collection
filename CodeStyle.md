@@ -1,7 +1,9 @@
 
 # Statement
 
-暂时不知道该写什么，随时编辑，随时整理吧
+暂时不知道该写什么，随时编辑，随时整理吧  
+先根据这个来吧： [Apache Style Guide](http://httpd.apache.org/dev/styleguide.html) 
+
 
 # Constraint
 
