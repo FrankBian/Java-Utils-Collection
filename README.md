@@ -19,6 +19,12 @@
 
 开始之前请仔细阅读  [CodeStyle.md](https://github.com/FrankBian/Java-Utils-Collection/blob/master/CodeStyle.md) 
 
+# Build
++ 使用git将repository克隆到本地
++ 使用Intellij IDEA 直接打开：File -> Open ->选中根目录下得pom.xml文件 -> 打开
++ 使用maven编译
++ 最后选中根Project,右键->Make Module "com-gansuer-utils" ：生成Intellij IDEA需要的相关文件
+
 # Comment 
 欢迎大家一起完善:         
 + Email：FrankBian@126.com
