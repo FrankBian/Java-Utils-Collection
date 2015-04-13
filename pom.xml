@@ -6,7 +6,7 @@
 	<groupId>com.gansuer.utils</groupId>
 	<artifactId>com-gansuer-utils</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>com-gansuer-utils</name>
 	<url>http://maven.apache.org</url>

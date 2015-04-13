@@ -6,7 +6,7 @@
     <groupId>com.gansuer.algorithm</groupId>
     <artifactId>com-gansuer-algorithm</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <!--<packaging>jar</packaging>-->
 
     <parent>
         <groupId>com.gansuer.utils</groupId>

@@ -6,7 +6,7 @@
     <groupId>com.gansuer.http</groupId>
     <artifactId>com-gansuer-http</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <!--<packaging>jar</packaging>-->
 
     <parent>
         <groupId>com.gansuer.utils</groupId>
