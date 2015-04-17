@@ -1,6 +1,6 @@
 package com.gansuer.debug;
 
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  * 常用的一些控制台输出的语句
@@ -57,6 +57,18 @@ public class Debug {
             System.out.print(objs[i].toString() + "   ");
         }
         System.out.println();
+    }
+
+    public void logError(Object obj){
+        logger.error(obj);
+    }
+
+    public void logWarning(Object obj){
+        logger.warn(obj);
+    }
+
+    public void logInfo(Object obj) {
+        logger.info(obj);
     }
 
 
