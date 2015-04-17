@@ -20,6 +20,7 @@
 		<module>com-gansuer-http</module>
 		<module>com-gansuer-algorithm</module>
 		<module>com-gansuer-string</module>
+		<module>com-gansuer-common</module>
 	</modules>
 
 </project>
