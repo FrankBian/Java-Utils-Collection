@@ -27,6 +27,10 @@
 + 使用maven编译
 + 最后选中根Project,右键->Make Module "com-gansuer-utils" ：生成Intellij IDEA需要的相关文件
 
+# Licence
+
+The apache licence can be found [here](https://github.com/FrankBian/Java-Utils-Collection/blob/master/LICENSE.txt)  
+
 # Comment 
 
 欢迎大家一起完善:         
