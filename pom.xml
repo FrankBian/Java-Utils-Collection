@@ -17,7 +17,7 @@
 
 	<modules>
 		<module>com-gansuer-file</module>
-		<module>com-gansuer-http</module>
+		<module>com-gansuer-network</module>
 		<module>com-gansuer-algorithm</module>
 		<module>com-gansuer-string</module>
 		<module>com-gansuer-common</module>
