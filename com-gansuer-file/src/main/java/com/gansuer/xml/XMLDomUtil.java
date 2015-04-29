@@ -322,6 +322,38 @@ public class XMLDomUtil {
     }
 
     /**
+     * 删除所有符合条件的子节点
+     * @param dom
+     * @param parentNodeName
+     * @param nodePKName
+     * @param nodePKValue
+     */
+    public static void deleteChildNodes(Document dom, String parentNodeName, String nodePKName, String nodePKValue) {
+        NodeList nl = dom.getElementsByTagName(parentNodeName);
+        if (nl != null && nl.getLength() > 0) {
+            //父节点
+            Node parentNode = nl.item(0);
+            NodeList childNodeList = parentNode.getChildNodes();
+            if (childNodeList != null && childNodeList.getLength() > 0) {
+                for (int i = 0; i < childNodeList.getLength(); i++) {
+                    Node childNode = childNodeList.item(i);
+                    //找到待删除的子节点
+                    NamedNodeMap tempNNM = childNode.getAttributes();
+                    //除去噪音
+                    if (tempNNM != null) {
+                        //得到子节点主键值
+                        String tempId = tempNNM.getNamedItem(nodePKName).getNodeValue();
+                        if (tempId.equals(nodePKValue)) {
+                            parentNode.removeChild(childNode);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    /**
      * 删除所有子节点, 父节点存在返回true，不存在返回false
      *
      * @param dom            xml文档
