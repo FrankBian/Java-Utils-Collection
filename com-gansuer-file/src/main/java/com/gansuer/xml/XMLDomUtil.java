@@ -321,13 +321,13 @@ public class XMLDomUtil {
         }
     }
 
-    /**
-     * 删除所有符合条件的子节点  TODO: 这个删除方法有问题
-     * @param dom
-     * @param parentNodeName
-     * @param nodePKName
-     * @param nodePKValue
-     */
+//    /**
+//     * 删除所有符合条件的子节点  TODO: 这个删除方法有问题,但是测试用例里面 两个方法表现都正常
+//     * @param dom
+//     * @param parentNodeName
+//     * @param nodePKName
+//     * @param nodePKValue
+//     */
 //    public static void deleteChildNodes(Document dom, String parentNodeName, String nodePKName, String nodePKValue) {
 //        NodeList nl = dom.getElementsByTagName(parentNodeName);
 //        if (nl != null && nl.getLength() > 0) {
