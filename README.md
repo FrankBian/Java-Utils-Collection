@@ -2,38 +2,46 @@
 
 # Introduction
 
-这个项目用于收集平时工作中使用的比较多，比较通用的一些工具类及算法，尽量将其精炼，以形成我自己的代码库。
+Collecting the code used mostly to perform personal repository, and it will help me work more efficiently.
 
 # Prerequisite
 
 * maven3.2.3
 * jdk1.7 or later
+* Intellij Idea (optional)
 
 # Content 
-+ [com-gansuer-algorithm](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-algorithm) : 一些常用的数据结构及算法实现  
-+ [com-gansuer-file](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-file) : 一些常用的文件操作的工具类
-+ [com-gansuer-network](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-network) : 整理出来一个处理Http请求的工具类
-+ [com-gansuer-string](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-string) : 字符串操作常用的类以及算法 
-+ [com-gansuer-common](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-common) : 一些通用的工具类
- 
++ [com-gansuer-algorithm](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-algorithm) : some general algorithms implementation 
++ [com-gansuer-file](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-file) : file operation utilitys
++ [com-gansuer-network](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-network) : some general utility class about network operation
++ [com-gansuer-string](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-string) : String operation utilitys
++ [com-gansuer-common](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-common) : other general utility class
++ [com-gansuer-webComponent](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-webComponent) : component related to J2SE
+
 # Contribution
 
-开始之前请仔细阅读  [CodeStyle.md](https://github.com/FrankBian/Java-Utils-Collection/blob/master/CodeStyle.md) 
+Follow apache contribution code standard  [CodeStyle.md](https://github.com/FrankBian/Java-Utils-Collection/blob/master/CodeStyle.md) 
 
 # Build
 
-+ 使用git将repository克隆到本地
-+ 使用Intellij IDEA 直接打开：File -> Open ->选中根目录下得pom.xml文件 -> 打开
-+ 使用maven编译
-+ 最后选中根Project,右键->Make Module "com-gansuer-utils" ：生成Intellij IDEA需要的相关文件
++ Clone the repository into your desktop
 
+
+    git@github.com:FrankBian/Java-Utils-Collection.git
+    
++ Go to the root directory ,run following command: 
+
+
+    mvn clean test
+    
 # Licence
 
 The apache licence can be found [here](https://github.com/FrankBian/Java-Utils-Collection/blob/master/LICENSE.txt)  
 
 # Comment 
 
-欢迎大家一起完善:         
+Glad you did together, my info is below :
+         
 + Email：FrankBian@126.com  
 + LinkedIn: <http://www.linkedin.com/in/frankbian>  
 + Twitter: <https://twitter.com/BianFrank>   
