@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Build-Jdk: 1.7.0_72
-Built-By: Frank
-Created-By: IntelliJ IDEA
-

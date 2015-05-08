@@ -8,13 +8,17 @@
     <version>1.0.0</version>
     <!--<packaging>jar</packaging>-->
 
+    <url>http://maven.apache.org</url>
+
     <parent>
         <groupId>com.gansuer.utils</groupId>
         <artifactId>com-gansuer-utils</artifactId>
         <version>1.0.0</version>
     </parent>
     <name>com-gansuer-common</name>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

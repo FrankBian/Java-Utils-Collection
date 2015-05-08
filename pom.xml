@@ -21,6 +21,10 @@
 		<module>com-gansuer-algorithm</module>
 		<module>com-gansuer-string</module>
 		<module>com-gansuer-common</module>
+		<module>com-gansuer-webComponent</module>
 	</modules>
+
+
+
 
 </project>
