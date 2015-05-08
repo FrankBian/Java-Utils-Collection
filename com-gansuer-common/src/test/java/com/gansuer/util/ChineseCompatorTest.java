@@ -1,5 +1,6 @@
 package com.gansuer.util;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -43,5 +44,7 @@ public class ChineseCompatorTest {
         for (String string : src){
             System.out.print(string + "   ");
         }
+
+        Assert.assertEquals(src.size(),11);
     }
 }
