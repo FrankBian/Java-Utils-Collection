@@ -3,7 +3,18 @@ package com.gansuer.webComponent.email;
 /**
  * Created by Frank on 5/8/15.
  */
-public class EmailException extends Exception {
+public class EmailException extends Exception{
+
+    private String message ;
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     /**
      * Constructs a new exception with the specified detail message and
@@ -23,4 +34,16 @@ public class EmailException extends Exception {
         super(message, cause);
     }
 
+
+    /**
+     * Constructs a new exception with the specified detail message.  The
+     * cause is not initialized, and may subsequently be initialized by
+     * a call to {@link #initCause}.
+     *
+     * @param message the detail message. The detail message is saved for
+     *                later retrieval by the {@link #getMessage()} method.
+     */
+    public EmailException(String message) {
+        this.message = message;
+    }
 }

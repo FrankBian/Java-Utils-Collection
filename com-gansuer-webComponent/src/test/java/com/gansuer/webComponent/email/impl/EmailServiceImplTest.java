@@ -1,5 +1,6 @@
 package com.gansuer.webComponent.email.impl;
 
+import com.gansuer.debug.Debug;
 import com.gansuer.webComponent.email.EmailService;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;
@@ -38,6 +39,9 @@ public class EmailServiceImplTest {
 
         greenMail.waitForIncomingEmail(2000, 1);
         Message[] msgs = greenMail.getReceivedMessages();
+
+        Debug.println("From : "+ msgs[0].getFrom()[0].toString());
+        Debug.println("To : " + msgs[0].getAllRecipients()[0].toString());
 
         Assert.assertEquals(1,msgs.length);
         Assert.assertEquals(subject,msgs[0].getSubject());

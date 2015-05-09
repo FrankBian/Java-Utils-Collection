@@ -5,7 +5,7 @@
 
        <bean id="propertyConfigurer"
              class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-              <property name="location" value="classpath:mail.properties"/>
+              <property name="location" value="classpath:email.properties"/>
        </bean>
     <bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="protocol" value="${email.protocol}"/>
