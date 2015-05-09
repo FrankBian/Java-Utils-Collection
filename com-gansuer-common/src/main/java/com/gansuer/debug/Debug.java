@@ -2,6 +2,8 @@ package com.gansuer.debug;
 
 import org.apache.log4j.Logger;
 
+import java.util.List;
+
 /**
  * 常用的一些控制台输出的语句
  *
@@ -15,24 +17,24 @@ public class Debug {
     private static final Logger logger = Logger.getLogger("Debug");
 
 
-    public void println(String string){
+    public static void println(String string){
         System.out.println(string);
     }
 
-    public void println(){
+    public static void println(){
         System.out.println();
     }
 
-    public void print(int[] nums){
-        for(int i=0;i<nums.length ; i++){
-            System.out.print(nums[i] + "   ");
+    public static void print(int[] nums){
+        for(int item : nums){
+            System.out.print(item + "   ");
         }
         System.out.println();
     }
 
-    public void print(int[] nums, int seperator ){
+    public static void print(int[] nums, int lineNumber ){
         for(int i=0;i<nums.length ; i++){
-            if ( i%seperator == 0){
+            if ( i%lineNumber == 0){
                 System.out.println();
             }
             System.out.print(nums[i] + "   ");
@@ -40,18 +42,18 @@ public class Debug {
         System.out.println();
     }
 
-    public void print(Object[] objs){
+    public static void print(Object[] objs){
 
-        for(int i=0;i<objs.length ; i++){
-            System.out.print(objs[i].toString() + "   ");
+        for(Object item : objs){
+            System.out.print(item.toString() + "   ");
         }
         System.out.println();
     }
 
-    public void print(Object[] objs , int seperator){
+    public static void print(Object[] objs , int lineNumber){
 
         for(int i=0;i<objs.length ; i++){
-            if ( i%seperator == 0){
+            if ( i != 0 && i%lineNumber == 0){
                 System.out.println();
             }
             System.out.print(objs[i].toString() + "   ");
@@ -59,15 +61,37 @@ public class Debug {
         System.out.println();
     }
 
-    public void logError(Object obj){
+    public static void print(List<String> list){
+        for (String item : list){
+            System.out.print(item + "    ");
+        }
+        System.out.println();
+    }
+
+    public static void println(List<String> list){
+        for (String item : list){
+            System.out.println(item);
+        }
+    }
+
+    public static void print(List<String> list, int lineNumber){
+        for (int i =0 ; i< list.size() ; i++){
+            if ( i!= 0&& i%lineNumber == 0){
+                System.out.println();
+            }
+            System.out.print(list.get(i) + "    ");
+        }
+        System.out.println();
+    }
+    public static void logError(Object obj){
         logger.error(obj);
     }
 
-    public void logWarning(Object obj){
+    public static void logWarning(Object obj){
         logger.warn(obj);
     }
 
-    public void logInfo(Object obj) {
+    public static void logInfo(Object obj) {
         logger.info(obj);
     }
 

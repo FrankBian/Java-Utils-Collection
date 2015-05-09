@@ -1,22 +1,22 @@
 package com.gansuer.util;
 
+import com.gansuer.debug.Debug;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Frank on 4/27/15.
+ * Created by Frank on 5/9/15.
  */
-public class ChineseCompatorTest {
-
+public class ChineseSortUtilTest {
     private List<String> src = null;
+
     @Before
     public void setUp() throws Exception {
-        src = new ArrayList<String>();
+        src = new ArrayList<>();
         src.add("暗金");
         src.add("恩来");
         src.add("日出");
@@ -31,20 +31,18 @@ public class ChineseCompatorTest {
     }
 
     @Test
-    public void testSortChinese(){
-        for (String string : src){
-            System.out.print(string + "   ");
-        }
+    public void testChineseList() throws Exception {
+        Debug.print(src);
 
-        Collections.sort(src, new ChineseCompator());
+        ChineseSortUtil.chineseList(src);
 
-        System.out.println();
-        System.out.println("sorted :  ");
+        Debug.print(src);
 
-        for (String string : src){
-            System.out.print(string + "   ");
-        }
+        Assert.assertTrue(src != null);
+    }
 
-        Assert.assertEquals(src.size(),11);
+    @Test
+    public void testChineseArray() throws Exception {
+
     }
 }
