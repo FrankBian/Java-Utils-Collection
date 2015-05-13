@@ -1,8 +1,8 @@
 package com.gansuer.algorithms.common;
 
 /**
- * 数组的二分查找
- * Arrays.java 中提供更为详细的内容
+ * Binary Search implementation
+ * more details offered in Array.java
  *
  * Created by Frank on 4/17/15.
  */
@@ -10,14 +10,14 @@ public class BinarySearch {
 
 
     /**
-     * 数组必须有序
-     * 在begin和end之间查找 ，包括end
      *
-     * @param arr
-     * @param key
+     * search the key between begin and end
+     *
+     * @param arr a sorted array
+     * @param key the key you want to search
      * @param begin
      * @param end
-     * @return
+     * @return the index of the key
      */
     public static int binarySearch(int[] arr, int key , int begin, int end){
         if (begin >= end){
@@ -34,13 +34,12 @@ public class BinarySearch {
     }
 
     /**
-     * 数组必须有序
-     * 在 from 和 to 之间查找，不包括 to
-     * @param arr
-     * @param key
-     * @param from
-     * @param to
-     * @return
+     * search the key between <code>from</code> and <code>to</code>
+     * @param arr a sorted array
+     * @param key the target you want to search
+     * @param from  >= <code>from</code>
+     * @param to < <code>to</code>
+     * @return the index of the key
      */
     public static int binarySearchByLoop(int[] arr,int key , int from , int to){
         while (from <= to){
