@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.common;
+package com.gansuer.algorithms.search;
 
 import com.gansuer.debug.Debug;
 import com.gansuer.file.FileUtils;
