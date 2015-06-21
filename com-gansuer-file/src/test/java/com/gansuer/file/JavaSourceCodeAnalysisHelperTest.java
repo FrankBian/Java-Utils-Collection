@@ -42,7 +42,7 @@ public class JavaSourceCodeAnalysisHelperTest {
 
     @Test
     public void testHandleJavaSource() throws Exception {
-        path += "/Hashtable.java" ;
+        path += "/RegularEnumSet.java" ;
 
         File file = new File(path);
         helper.handleJavaSource(file,null,null);
