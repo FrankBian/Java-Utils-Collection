@@ -1,3 +1,5 @@
+package com.gansuer.leetcode;
+
 public class Solution1 {
 
     /**
