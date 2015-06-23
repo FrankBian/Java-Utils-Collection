@@ -17,6 +17,7 @@ Collecting the code used mostly to perform personal repository, and it will help
 + [com-gansuer-string](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-string) : String operation utilitys
 + [com-gansuer-common](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-common) : other general utility class
 + [com-gansuer-webComponent](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-webComponent) : component related to J2SE
++ [com-gansuer-leetcode](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-leetcode) : [leetcode](https://leetcode.com) problems' solutions
 
 # Contribution
 
