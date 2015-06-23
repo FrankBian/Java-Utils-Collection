@@ -22,6 +22,7 @@
 		<module>com-gansuer-string</module>
 		<module>com-gansuer-common</module>
 		<module>com-gansuer-webComponent</module>
+		<module>com-gansuer-leetcode</module>
 	</modules>
 
 
