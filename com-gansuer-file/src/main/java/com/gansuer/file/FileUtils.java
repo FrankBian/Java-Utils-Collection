@@ -27,7 +27,7 @@ public class FileUtils {
             String dirTemp = dir ;
             File dirPath = new File(dirTemp);
             if ( !dirPath.exists()){
-                dirPath.mkdir();
+                dirPath.mkdirs();
             }
             return true;
         }catch (Exception e){
