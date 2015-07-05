@@ -1,3 +1,5 @@
+package com.gansuer.string;
+
 import java.io.UnsupportedEncodingException;
 
 public class StringUtils extends org.apache.commons.lang3.StringUtils {

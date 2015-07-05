@@ -1,0 +1,50 @@
+package com.gansuer.leetcode;
+
+import com.gansuer.file.FileUtils;
+import com.gansuer.string.StringUtils;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.Date;
+
+/**
+ * Created by Frank on 7/5/15.
+ */
+public class Solution3Test {
+
+    private Solution3 solution3;
+    private String cases;
+    @Before
+    public void setUp() throws Exception {
+        solution3 = new Solution3();
+        String path = getClass().getClassLoader().getResource("Solution3TestCase.txt").getFile();
+        cases = StringUtils.join(FileUtils.readFile(path),"");
+    }
+
+    @Test
+    public void testLengthOfLongestSubstring() throws Exception {
+        String target = "abcabcbb";
+        int res = solution3.lengthOfLongestSubstringV4(target);
+
+        int res1 = solution3.lengthOfLongestSubstringV4("bbbbbb");
+        Date begin = new Date();
+        int res2 = solution3.lengthOfLongestSubstringV4(cases);
+        Date end = new Date();
+
+        int res3 = solution3.lengthOfLongestSubstringV4("c");
+        int res4 = solution3.lengthOfLongestSubstringV4("pwwkew");
+        int res5 = solution3.lengthOfLongestSubstringV4("au");
+
+        System.out.println("length of the target String : " + cases.length());
+        System.out.println("length of longest Substring : " + res2);
+        System.out.println("Times : " + (end.getTime()-begin.getTime()));
+        Assert.assertEquals(3,res);
+        Assert.assertEquals(1,res1);
+        Assert.assertEquals(95,res2);
+        Assert.assertEquals(1,res3);
+        Assert.assertEquals(3,res4);
+        Assert.assertEquals(2,res5);
+    }
+
+}

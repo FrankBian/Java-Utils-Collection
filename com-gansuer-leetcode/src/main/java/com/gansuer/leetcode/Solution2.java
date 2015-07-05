@@ -12,7 +12,7 @@ public class Solution2 {
 
     /**
      * accepted
-     * 1555/1555 test cases pasted
+     * 1555/1555 test cases passed
      * Runtime : 496ms
      * @param l1
      * @param l2
