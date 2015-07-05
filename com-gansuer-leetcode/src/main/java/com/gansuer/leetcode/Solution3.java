@@ -11,7 +11,7 @@ public class Solution3 {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstringV1(String s) {
         if (s == null || s.length() == 0){
             return 0;
         }
@@ -115,6 +115,33 @@ public class Solution3 {
             }
         }
 
+        return max;
+    }
+
+    /**
+     * From discuss of leetcode
+     *
+     * max of length of substring between the same characters
+     * @param s
+     * @return
+     */
+    public int lengthOfLongestSubstringV5(String s) {
+        int[] m = new int[127];
+        char[] ch = s.toCharArray();
+        int max = 0;
+        int start = 0;
+        for (int i = 0; i < m.length; i++) {
+            m[i] = -1;
+        }
+        for (int i = 0; i < ch.length; i++) {
+            if (m[ch[i]] < 0) {
+                m[ch[i]] = i;
+            } else {
+                start = Math.max(start, m[ch[i]] + 1);
+                m[ch[i]] = i;
+            }
+            max = Math.max(max, i - start + 1);
+        }
         return max;
     }
 }
