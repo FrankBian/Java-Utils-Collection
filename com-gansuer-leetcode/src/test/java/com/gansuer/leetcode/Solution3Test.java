@@ -97,4 +97,26 @@ public class Solution3Test {
         Assert.assertEquals(2,res5);
     }
 
+    @Test
+    public void testLengthOfLongestSubstringV6() throws Exception {
+        int res = solution3.lengthOfLongestSubstringV6("abcabcbb");
+        int res1 = solution3.lengthOfLongestSubstringV6("bbbbbb");
+        Date begin = new Date();
+        int res2 = solution3.lengthOfLongestSubstringV6(cases);
+        Date end = new Date();
+        int res3 = solution3.lengthOfLongestSubstringV6("c");
+        int res4 = solution3.lengthOfLongestSubstringV6("pwwkew");
+        int res5 = solution3.lengthOfLongestSubstringV6("au");
+
+        System.out.println("length of the target String : " + cases.length());
+        System.out.println("length of longest Substring : " + res2);
+        System.out.println("Times : " + (end.getTime()-begin.getTime()));
+        Assert.assertEquals(3,res);
+        Assert.assertEquals(1,res1);
+        Assert.assertEquals(95,res2);
+        Assert.assertEquals(1,res3);
+        Assert.assertEquals(3,res4);
+        Assert.assertEquals(2,res5);
+    }
+
 }
