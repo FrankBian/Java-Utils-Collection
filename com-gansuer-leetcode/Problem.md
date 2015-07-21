@@ -31,7 +31,36 @@ this is the description :
 >For example, the longest substring without repeating letters for "abcabcbb" is "abc",   
 >which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.  
 
+## 6.ZigZag Conversion
 
+this is the description :
 
+    The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+    
+    P   A   H   N
+    A P L S I I G
+    Y   I   R
+    And then read line by line: "PAHNAPLSIIGYIR"
+    Write the code that will take a string and make this conversion given a number of rows:
+    
+    string convert(string text, int nRows);
+    convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
+## 7.Reverse Integer
+
+this is the description :
+
+    Reverse digits of an integer.
+    
+    Example1: x = 123, return 321
+    Example2: x = -123, return -321
+    
+    Have you thought about this?
+    Here are some good questions to ask before coding. Bonus points for you if you have already thought through this!
+    
+    If the integer's last digit is 0, what should the output be? ie, cases such as 10, 100.
+    
+    Did you notice that the reversed integer might overflow? Assume the input is a 32-bit integer, then the reverse of 1000000003 overflows. How should you handle such cases?
+    
+    For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
 
