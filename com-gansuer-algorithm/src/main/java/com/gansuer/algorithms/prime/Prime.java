@@ -7,7 +7,8 @@ public class Prime {
 
     /**
      * top Num primes less than N
-     * @param n
+     * @param limit
+     * @param num
      * @return
      */
     public int[] prime(int limit , int num){
