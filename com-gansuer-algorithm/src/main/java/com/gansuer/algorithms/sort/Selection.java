@@ -14,9 +14,7 @@ public class Selection extends Sort {
                     min = j;
                 }
             }
-            if (min != i){
-                exchange(arr,i,min);
-            }
+            exchange(arr,i,min);
         }
     }
 }
