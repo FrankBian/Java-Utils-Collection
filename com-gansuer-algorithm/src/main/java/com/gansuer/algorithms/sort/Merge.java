@@ -2,6 +2,7 @@ package com.gansuer.algorithms.sort;
 
 /**
  * Created by Frank on 7/26/15.
+ * Top to Down
  */
 public class Merge extends Sort {
 
@@ -16,7 +17,10 @@ public class Merge extends Sort {
         int mid = (high + low) / 2;
         sort(arr, tmp, low, mid);
         sort(arr, tmp, mid + 1, high);
-        merge(arr, tmp, low, mid, high);
+//        merge(arr, tmp, low, mid, high);
+        if (less(arr[mid+1],arr[mid])){  //Enhancing
+            merge(arr, tmp, low, mid, high);
+        }
     }
 
     private void merge(Comparable[] arr, Comparable[] tmp, int low, int mid, int high) {
