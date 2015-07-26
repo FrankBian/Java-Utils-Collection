@@ -13,4 +13,17 @@ public class Insertion extends Sort {
             }
         }
     }
+
+
+    public void sortX(Comparable[] arr){
+        int len = arr.length;
+        for (int i = 1; i< len; i++){
+            Comparable cur = arr[i];
+            int j = i;
+            for (; j >= 1 && less(cur, arr[j-1]) ; j--){
+                arr[j] = arr[j-1];
+            }
+            arr[j] = cur;
+        }
+    }
 }

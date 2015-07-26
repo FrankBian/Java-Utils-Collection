@@ -11,7 +11,10 @@ public class SortCompare {
     public static double time(String alg, Comparable[] arr){
         Stopwatch timer = new Stopwatch();
         if (alg.equals("Insertion")) new Insertion().sort(arr);
+        if (alg.equals("InsertionX")) new Insertion().sortX(arr);
         if (alg.equals("Selection")) new Selection().sort(arr);
+        if (alg.equals("Shell")) new Shell().sort(arr);
+        if (alg.equals("Merge")) new Merge().sort(arr);
         return timer.elapsedTime();
     }
 

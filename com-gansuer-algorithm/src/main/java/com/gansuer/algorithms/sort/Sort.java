@@ -43,4 +43,13 @@ public abstract class Sort {
         }
         return true;
     }
+
+    public static void show(Comparable[] arr){
+        System.out.println("______________________________");
+        for (Comparable item : arr){
+            System.out.print(item + "   ");
+        }
+        System.out.println();
+        System.out.println("______________________________");
+    }
 }
