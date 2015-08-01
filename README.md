@@ -41,7 +41,7 @@ The apache licence can be found [here](https://github.com/FrankBian/Java-Utils-C
 
 # Comment 
 
-Glad you did together, my info is below :
+Glad you do together, my info is below :
          
 + Email：FrankBian@126.com  
 + LinkedIn: <http://www.linkedin.com/in/frankbian>  
