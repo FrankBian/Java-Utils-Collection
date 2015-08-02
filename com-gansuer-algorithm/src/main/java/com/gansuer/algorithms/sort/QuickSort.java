@@ -14,7 +14,7 @@ public class QuickSort extends Sort {
     private void quickSort(Comparable[] arr, int low, int high) {
         if (high <= low) return;
 
-        int mid = partitionX(arr, low, high);
+        int mid = partition(arr, low, high);
         quickSort(arr, low, mid - 1);
         quickSort(arr, mid + 1, high);
     }

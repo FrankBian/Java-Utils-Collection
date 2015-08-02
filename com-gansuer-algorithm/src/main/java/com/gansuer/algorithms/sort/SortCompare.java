@@ -15,6 +15,7 @@ public class SortCompare {
         if (alg.equals("Selection")) new Selection().sort(arr);
         if (alg.equals("Shell")) new Shell().sort(arr);
         if (alg.equals("Merge")) new Merge().sort(arr);
+        if (alg.equals("QuickSort")) new QuickSort().sort(arr);
         return timer.elapsedTime();
     }
 

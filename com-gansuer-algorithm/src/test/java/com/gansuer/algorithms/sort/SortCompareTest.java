@@ -54,4 +54,18 @@ public class SortCompareTest {
 
         Assert.assertTrue(t2 < t1);
     }
+
+    @Test
+    public void testQuickSort() throws Exception {
+        String alg = "QuickSort";
+
+        int N = 10000;
+        int T = 1000;
+
+        double res = SortCompare.timeRandomInput(alg,N,T);
+
+        System.out.println(res);
+
+        Assert.assertTrue(res > 0);
+    }
 }
