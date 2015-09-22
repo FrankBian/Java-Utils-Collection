@@ -27,12 +27,12 @@ public class WeightQuickUnion extends UF {
         int rootp = find(p);
         int rootq = find(q);
         if (rootp == rootq) return;
-        if (sz[p] > sz[q]){
+        if (sz[rootp] >= sz[rootq]){
             id[rootq] = rootp;
-            sz[p] += sz[q];
+            sz[rootp] += sz[rootq];
         }else {
             id[rootp] = rootq;
-            sz[q] += sz[p];
+            sz[rootq] += sz[rootp];
         }
         count--;
     }

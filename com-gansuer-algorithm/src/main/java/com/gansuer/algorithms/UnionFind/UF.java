@@ -38,4 +38,10 @@ public abstract class UF {
     protected int count(){
         return count;
     }
+
+    protected void printId(){
+        for (int i= 0; i< id.length ; i++){
+            System.out.print(id[i] + " ");
+        }
+    }
 }
