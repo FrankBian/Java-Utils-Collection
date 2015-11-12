@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.sudoku.solution2;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -7,12 +8,21 @@ import java.util.Set;
  */
 public class Grid {
 
+    private int index;
     private int value;
 
     private boolean decided = false;
     private Set<Integer> candidates = null;
 
-    public Grid() {
+    public Grid(int index) {
+        this.index = index;
+    }
+
+    public Grid(Grid other){
+        this.index = other.index;
+        this.value = other.value;
+        this.decided = other.decided;
+        this.candidates = new HashSet<>(other.getCandidates());
     }
 
     public boolean decides(int cand){
@@ -43,5 +53,13 @@ public class Grid {
 
     public void setCandidates(Set<Integer> candidates) {
         this.candidates = candidates;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 }
