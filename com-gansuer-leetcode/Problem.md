@@ -84,6 +84,20 @@ this is the description :
 this is the description :
 
     Determine whether an integer is a palindrome. Do this without extra space.
+## 100. Same Tree
+
+this is the description :
+
+    Given two binary trees, write a function to check if they are equal or not.
+    Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+
+## 104 Maximum Depth of Tree
+
+this is the description :
+
+    Given a binary tree, find its maximum depth.
+    The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
 ## 226. Invert Binary Tree
 
 this is the description : 
@@ -103,6 +117,21 @@ this is the description :
       7     2
      / \   / \
     9   6 3   1
+## 235. Lowest Common Ancestor of a Binary Search Tree
+
+this is the description :
+
+    Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+    According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
+
+            _______6______
+           /              \
+        ___2__          ___8__
+       /      \        /      \
+       0      _4       7       9
+             /  \
+             3   5
+    For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
     
 ## 236. Lowest Common Ancestor of a Binary Tree 
 

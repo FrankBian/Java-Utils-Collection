@@ -26,9 +26,18 @@ public class Solution236Test {
 
     @Test
     public void testLowestCommonAncestor() throws Exception {
-        TreeNode res = solution236.lowestCommonAncestor(root, node1, node2);
+        TreeNode res = solution236.lowestCommonAncestor(root, node2, node1);
 
         Assert.assertNotNull(res);
         Assert.assertEquals(1 , res.val);
+    }
+
+    @Test
+    public void testLowestCommonAncestorRecursive() throws Exception {
+        TreeNode res = solution236.lowestCommonAncestorRecursive(root, node2, node1);
+
+        Assert.assertNotNull(res);
+        Assert.assertEquals(1 , res.val);
+
     }
 }
