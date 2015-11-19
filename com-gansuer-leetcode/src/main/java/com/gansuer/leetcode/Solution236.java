@@ -27,7 +27,7 @@ public class Solution236 {
         if (root == null || node == null) {
             return false;
         }
-        if (root.val == node.val) {
+        if (root == node) {
             return true;
         }
 
@@ -56,8 +56,7 @@ public class Solution236 {
      * @return
      */
     public TreeNode lowestCommonAncestorV1(TreeNode root, TreeNode p, TreeNode q) {
-        if(root == null)
-            return null;
+        if(root == null) return null;
         TreeNode left = lowestCommonAncestorV1(root.left, p, q),
                 right = lowestCommonAncestorV1(root.right, p, q);
         if(root == q || root == p || (left != null && right != null))

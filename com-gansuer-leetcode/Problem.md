@@ -91,12 +91,39 @@ this is the description :
     Given two binary trees, write a function to check if they are equal or not.
     Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
-## 104 Maximum Depth of Tree
+## 101. Symmetric Tree
+
+this is the description :
+
+    Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+    For example, this binary tree is symmetric:
+
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+    But the following is not:
+        1
+       / \
+      2   2
+       \   \
+       3    3
+    Note:
+    Bonus points if you could solve it both recursively and iteratively.
+## 104. Maximum Depth of Tree
 
 this is the description :
 
     Given a binary tree, find its maximum depth.
     The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+## 110. Balanced Binary Tree
+
+this is the description :
+
+    Given a binary tree, determine if it is height-balanced.
+    For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
 ## 226. Invert Binary Tree
 

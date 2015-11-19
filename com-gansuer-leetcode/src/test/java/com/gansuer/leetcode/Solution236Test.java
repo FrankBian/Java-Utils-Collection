@@ -29,7 +29,7 @@ public class Solution236Test {
         TreeNode res = solution236.lowestCommonAncestor(root, node2, node1);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(1 , res.val);
+        Assert.assertEquals(Integer.valueOf(1), res.val);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class Solution236Test {
         TreeNode res = solution236.lowestCommonAncestorRecursive(root, node2, node1);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(1 , res.val);
+        Assert.assertEquals(Integer.valueOf(1), res.val);
 
     }
 }
