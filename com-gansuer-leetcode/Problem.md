@@ -84,6 +84,39 @@ this is the description :
 this is the description :
 
     Determine whether an integer is a palindrome. Do this without extra space.
+
+## 94. Binary Tree Inorder Traversal
+
+this is the description :
+
+    Given a binary tree, return the inorder traversal of its nodes' values.
+
+    For example:
+    Given binary tree {1,#,2,3},
+       1
+        \
+         2
+        /
+       3
+    return [1,3,2].
+
+    Note: Recursive solution is trivial, could you do it iteratively?
+
+## 96. Unique Binary Search Trees
+
+this is the description :
+
+    Given n, how many structurally unique BST's (binary search trees) that store values 1...n?
+
+    For example,
+    Given n = 3, there are a total of 5 unique BST's.
+
+       1         3     3      2      1
+        \       /     /      / \      \
+         3     2     1      1   3      2
+        /     /       \                 \
+       2     1         2                 3
+
 ## 100. Same Tree
 
 this is the description :
@@ -111,6 +144,27 @@ this is the description :
        3    3
     Note:
     Bonus points if you could solve it both recursively and iteratively.
+
+## 102. Binary Tree Level Order Traversal
+
+this is the description :
+
+    Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+
+    For example:
+    Given binary tree {3,9,20,#,#,15,7},
+        3
+       / \
+      9  20
+        /  \
+       15   7
+    return its level order traversal as:
+    [
+      [3],
+      [9,20],
+      [15,7]
+    ]
+
 ## 104. Maximum Depth of Tree
 
 this is the description :
@@ -138,6 +192,12 @@ this is the description :
       [3]
     ]
 
+## 108. Convert Sorted Array to Binary Search Tree
+
+this is the description :
+
+    Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+
 ## 110. Balanced Binary Tree
 
 this is the description :
@@ -145,6 +205,30 @@ this is the description :
     Given a binary tree, determine if it is height-balanced.
     For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
 
+## 111. Minimum Depth of Binary Tree
+
+this is the description :
+
+    Given a binary tree, find its minimum depth.
+
+    The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+## 144. Binary Tree Preorder Traversal
+
+this is the description :
+
+    Given a binary tree, return the preorder traversal of its nodes' values.
+
+    For example:
+    Given binary tree {1,#,2,3},
+       1
+        \
+         2
+        /
+       3
+    return [1,2,3].
+
+    Note: Recursive solution is trivial, could you do it iteratively?
 ## 226. Invert Binary Tree
 
 this is the description : 
@@ -196,3 +280,20 @@ this is the description :
              /  \
              7   4
     For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another example is LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+
+## 257. Binary Tree Paths
+
+this is the description :
+
+    Given a binary tree, return all root-to-leaf paths.
+
+    For example, given the following binary tree:
+
+       1
+     /   \
+    2     3
+     \
+      5
+    All root-to-leaf paths are:
+
+    ["1->2->5", "1->3"]

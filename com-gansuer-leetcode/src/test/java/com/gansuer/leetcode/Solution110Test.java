@@ -12,7 +12,7 @@ public class Solution110Test {
     public void testIsBalanced() throws Exception {
         Integer[] input = {1,2,2,3,3,null,null,4,4};
 
-        TreeNode root = BinaryTreeBuilder.buildBinaryTree(input);
+        TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 
         boolean res = new Solution110().isBalanced(root);
 

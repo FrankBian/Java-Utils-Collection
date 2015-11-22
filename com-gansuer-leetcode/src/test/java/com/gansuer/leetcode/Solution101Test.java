@@ -21,17 +21,17 @@ public class Solution101Test {
         Integer[] input1 = {1,2,2,3,4,4,3};
         Integer[] input2 = {1,2,2,null,3,null,3};
 
-        TreeNode root = BinaryTreeBuilder.buildBinaryTree(input1);
+        TreeNode root = BinaryTreeHelper.buildBinaryTree(input1);
         boolean res = solution101.isSymmetric(root);
 
         Assert.assertTrue(res);
 
-        root = BinaryTreeBuilder.buildBinaryTree(input2);
+        root = BinaryTreeHelper.buildBinaryTree(input2);
         res = solution101.isSymmetric(root);
 
         Assert.assertTrue(!res);
 
-        root = BinaryTreeBuilder.buildBinaryTree(new Integer[]{});
+        root = BinaryTreeHelper.buildBinaryTree(new Integer[]{});
         res = solution101.isSymmetric(root);
 
         Assert.assertTrue(res);
