@@ -229,6 +229,32 @@ this is the description :
     return [1,2,3].
 
     Note: Recursive solution is trivial, could you do it iteratively?
+
+## 173. Binary Search Tree Iterator
+
+this is the description :
+
+    Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+
+    Calling next() will return the next smallest number in the BST.
+
+    Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+
+## 199. Binary Tree Right Side View
+
+this is the description :
+
+    Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+
+    For example:
+    Given the following binary tree,
+       1            <---
+     /   \
+    2     3         <---
+     \     \
+      5     4       <---
+    You should return [1, 3, 4].
+
 ## 226. Invert Binary Tree
 
 this is the description : 
