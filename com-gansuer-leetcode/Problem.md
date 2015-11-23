@@ -213,6 +213,32 @@ this is the description :
 
     The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 
+## 114. Flatten Binary Tree to Linked List
+
+this is the description :
+
+    Given a binary tree, flatten it to a linked list in-place.
+
+    For example,
+    Given
+
+             1
+            / \
+           2   5
+          / \   \
+         3   4   6
+    The flattened tree should look like:
+       1
+        \
+         2
+          \
+           3
+            \
+             4
+              \
+               5
+                \
+                 6
 ## 144. Binary Tree Preorder Traversal
 
 this is the description :
