@@ -165,12 +165,41 @@ this is the description :
       [15,7]
     ]
 
+## 103. Binary Tree Zigzag Level Order Traversal
+
+this is the description :
+
+    Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+
+    For example:
+    Given binary tree {3,9,20,#,#,15,7},
+        3
+       / \
+      9  20
+        /  \
+       15   7
+    return its zigzag level order traversal as:
+    [
+      [3],
+      [20,9],
+      [15,7]
+    ]
+
 ## 104. Maximum Depth of Tree
 
 this is the description :
 
     Given a binary tree, find its maximum depth.
     The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+## 105. Construct Binary Tree from Preorder and Inorder Traversal
+
+this is the description :
+
+    Given preorder and inorder traversal of a tree, construct the binary tree.
+
+    Note:
+    You may assume that duplicates do not exist in the tree.
 
 ## 107. Binary Tree Level Order Traversal II
 
@@ -280,6 +309,15 @@ this is the description :
      \     \
       5     4       <---
     You should return [1, 3, 4].
+
+## 208. Implement Trie(Prefix Tree)
+
+this is the description :
+
+    Implement a trie with insert, search, and startsWith methods.
+
+    Note:
+    You may assume that all inputs are consist of lowercase letters a-z.
 
 ## 226. Invert Binary Tree
 
