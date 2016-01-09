@@ -6,7 +6,7 @@
     <groupId>com.gansuer.algorithm</groupId>
     <artifactId>com-gansuer-algorithm</artifactId>
     <version>1.0.0</version>
-    <!--<packaging>jar</packaging>-->
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>com.gansuer.utils</groupId>
@@ -33,14 +33,46 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>stdlib</groupId>
-            <artifactId>stdlib</artifactId>
-            <scope>system</scope>
-            <version>1.0</version>
-            <systemPath>${project.basedir}/src/main/lib/stdlib.jar</systemPath>
+            <groupId>com.mylib</groupId>
+            <artifactId>com-mylib-stdlib</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>2.5.2</version>
+                <executions>
+                    <execution>
+                        <id>install-external</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <file>${basedir}/src/main/webapp/lib/stdlib.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            <groupId>com.mylib</groupId>
+                            <artifactId>com-mylib-stdlib</artifactId>
+                            <version>1.0.0</version>
+                            <packaging>jar</packaging>
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
