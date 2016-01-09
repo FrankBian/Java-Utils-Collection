@@ -63,12 +63,12 @@ public class Solution1 {
         int i = n / 9, j = n % 9;
 
         if (src[i][j] != 0) { // if this cell is DONE , the next one
-            return run(n+1);
+            return run(n + 1);
         }
 
         for (int k = 0; k < 9; k++) {
             src[i][j]++; // from 1 to 9 , try all possible solution
-            if (isValid(i, j) && run(n+1)) { // the next one if this is OK
+            if (isValid(i, j) && run(n + 1)) { // the next one if this is OK
                 return true;
             }
         }

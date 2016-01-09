@@ -10,6 +10,7 @@ import org.junit.Test;
 public class JavaSolutionTest {
 
     private JavaSolution solution;
+
     @Before
     public void setUp() throws Exception {
         solution = new JavaSolution();
@@ -17,11 +18,11 @@ public class JavaSolutionTest {
 
     @Test
     public void testTheKofArray() throws Exception {
-        int[] src = {2,4,6,-1,8,9};
+        int[] src = {2, 4, 6, -1, 8, 9};
         int k = 3;
 
-        int res = solution.theKofArray(src,k);
+        int res = solution.theKofArray(src, k);
 
-        Assert.assertEquals(6,res);
+        Assert.assertEquals(6, res);
     }
 }

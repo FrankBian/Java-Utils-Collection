@@ -25,6 +25,7 @@ public class Solution235 {
 
     /**
      * Ensure that p and q exist in the tree.
+     *
      * @param root
      * @param p
      * @param q

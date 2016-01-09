@@ -16,18 +16,18 @@ public class SortCompareTest {
         int N = 10000;
         int T = 1000;
 
-        double t1 = SortCompare.timeRandomInput(alg1,N,T);
-        double t2 = SortCompare.timeRandomInput(alg2,N,T);
-        double t3 = SortCompare.timeRandomInput(alg3,N,T);
+        double t1 = SortCompare.timeRandomInput(alg1, N, T);
+        double t2 = SortCompare.timeRandomInput(alg2, N, T);
+        double t3 = SortCompare.timeRandomInput(alg3, N, T);
 
-        System.out.println("Sort " +N + " random doubles total time(" + T +" times) :");
-        System.out.println(alg1 +" : " + t1);
-        System.out.println(alg2 +" : " + t2);
-        System.out.println(alg3 +" : " + t3);
+        System.out.println("Sort " + N + " random doubles total time(" + T + " times) :");
+        System.out.println(alg1 + " : " + t1);
+        System.out.println(alg2 + " : " + t2);
+        System.out.println(alg3 + " : " + t3);
 
-        System.out.println("rate(Insertion/Selection) : " + t1/t2);
-        System.out.println("rate(Selection/Insertion) : " + t2/t1);
-        System.out.println("rate(Insertion/Shell) : " + t1/t3);
+        System.out.println("rate(Insertion/Selection) : " + t1 / t2);
+        System.out.println("rate(Selection/Insertion) : " + t2 / t1);
+        System.out.println("rate(Insertion/Shell) : " + t1 / t3);
 
         Assert.assertTrue(t1 < t2);
         Assert.assertTrue(t2 / t1 > 1);
@@ -37,20 +37,20 @@ public class SortCompareTest {
     }
 
     @Test
-    public void testInsertion(){
+    public void testInsertion() {
         String alg1 = "Insertion";
         String alg2 = "InsertionX";
 
         int N = 10000;
         int T = 1000;
 
-        double t1 = SortCompare.timeRandomInput(alg1,N,T);
-        double t2 = SortCompare.timeRandomInput(alg2,N,T);
+        double t1 = SortCompare.timeRandomInput(alg1, N, T);
+        double t2 = SortCompare.timeRandomInput(alg2, N, T);
 
         System.out.println(alg1 + " : " + t1);
         System.out.println(alg2 + " : " + t2);
-        System.out.println(alg1 + "/" + alg2+" : " + t1/t2);
-        System.out.println(alg2 + "/" + alg1+" : " + t2/t1);
+        System.out.println(alg1 + "/" + alg2 + " : " + t1 / t2);
+        System.out.println(alg2 + "/" + alg1 + " : " + t2 / t1);
 
         Assert.assertTrue(t2 < t1);
     }
@@ -62,7 +62,7 @@ public class SortCompareTest {
         int N = 10000;
         int T = 1000;
 
-        double res = SortCompare.timeRandomInput(alg,N,T);
+        double res = SortCompare.timeRandomInput(alg, N, T);
 
         System.out.println(res);
 

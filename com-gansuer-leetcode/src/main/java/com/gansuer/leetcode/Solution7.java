@@ -27,7 +27,7 @@ public class Solution7 {
         if (reverse > Integer.MAX_VALUE || Integer.MIN_VALUE > 0 - reverse) {
             return 0;
         }
-        return isNegative ? (int) reverse*(-1) : (int) reverse;
+        return isNegative ? (int) reverse * (-1) : (int) reverse;
     }
 
     /**
@@ -35,7 +35,7 @@ public class Solution7 {
      * @return
      */
     @Deprecated
-    public int reverse1 (int x){
+    public int reverse1(int x) {
         return Integer.reverseBytes(x);
     }
 
@@ -43,20 +43,21 @@ public class Solution7 {
      * Accepted
      * 1032 / 1032 test cases passed
      * 236 ms
+     *
      * @param x
      * @return
      */
     public int reverse2(int x) {
         boolean negative = false;
         int res = 0;
-        if(x < 0)  {
-            if(x == Integer.MIN_VALUE) return 0;
+        if (x < 0) {
+            if (x == Integer.MIN_VALUE) return 0;
             x = -x;
             negative = true;
         }
-        while(x / 10 != 0) {
+        while (x / 10 != 0) {
             res = 10 * res + x % 10;
-            if(res > Integer.MAX_VALUE / 10) return 0;
+            if (res > Integer.MAX_VALUE / 10) return 0;
             x /= 10;
         }
         res = 10 * res + x;

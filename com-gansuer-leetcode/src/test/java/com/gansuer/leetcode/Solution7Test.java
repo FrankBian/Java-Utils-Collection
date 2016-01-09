@@ -10,6 +10,7 @@ import org.junit.Test;
 public class Solution7Test {
 
     private Solution7 solution7;
+
     @Before
     public void setUp() throws Exception {
         solution7 = new Solution7();
@@ -21,18 +22,18 @@ public class Solution7Test {
         int expected = 321;
         int actual = solution7.reverse(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
         input = -123;
         expected = -321;
         actual = solution7.reverse(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         input = -2147483648;
         expected = 0;
         actual = solution7.reverse(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -41,19 +42,19 @@ public class Solution7Test {
         int expected = 321;
         int actual = solution7.reverse1(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         input = -123;
         expected = -321;
         actual = solution7.reverse1(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         input = -2147483648;
         expected = 0;
         actual = solution7.reverse1(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -62,19 +63,19 @@ public class Solution7Test {
         int expected = 321;
         int actual = solution7.reverse2(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         input = -123;
         expected = -321;
         actual = solution7.reverse2(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         input = -2147483648;
         expected = 0;
         actual = solution7.reverse2(input);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
 }

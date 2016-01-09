@@ -11,56 +11,50 @@ public class RequestUtils {
 
     /**
      * 从Get参数获取整数值
+     *
      * @param request
      * @param paramName
      * @param defaultValue
      * @return
      */
-    public static int getQueryInt(HttpServletRequest request, String paramName, int defaultValue)
-    {
+    public static int getQueryInt(HttpServletRequest request, String paramName, int defaultValue) {
         int val = defaultValue;
-        if(StringUtils.isEmpty(paramName))
-        {
-            return  val;
+        if (StringUtils.isEmpty(paramName)) {
+            return val;
         }
         String paramVal = request.getParameter(paramName);
-        if(!StringUtils.isBlank(paramVal) && StringUtils.isNumeric(paramVal))
-        {
+        if (!StringUtils.isBlank(paramVal) && StringUtils.isNumeric(paramVal)) {
             val = Integer.valueOf(paramVal);
         }
-        return  val;
+        return val;
     }
 
     /**
      * 从Get参数中获取长整型值
+     *
      * @param request
      * @param paramName
      * @param defaultValue
      * @return
      */
-    public static long getQueryLong(HttpServletRequest request, String paramName, long defaultValue)
-    {
+    public static long getQueryLong(HttpServletRequest request, String paramName, long defaultValue) {
         long val = defaultValue;
-        if(StringUtils.isEmpty(paramName))
-        {
-            return  val;
+        if (StringUtils.isEmpty(paramName)) {
+            return val;
         }
         String paramVal = request.getParameter(paramName);
-        if(!StringUtils.isBlank(paramVal) && StringUtils.isNumeric(paramVal))
-        {
+        if (!StringUtils.isBlank(paramVal) && StringUtils.isNumeric(paramVal)) {
             val = Long.parseLong(paramVal);
         }
-        return  val;
+        return val;
     }
 
-    public static String getQueryString(HttpServletRequest request, String paramName, String defaultValue)
-    {
+    public static String getQueryString(HttpServletRequest request, String paramName, String defaultValue) {
         String val = defaultValue;
-        if(StringUtils.isEmpty(paramName))
-        {
-            return  val;
+        if (StringUtils.isEmpty(paramName)) {
+            return val;
         }
         val = request.getParameter(paramName);
-        return  val;
+        return val;
     }
 }

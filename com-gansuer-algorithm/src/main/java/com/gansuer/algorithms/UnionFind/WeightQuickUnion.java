@@ -10,7 +10,7 @@ public class WeightQuickUnion extends UF {
         this.count = count;
         id = new int[count];
         sz = new int[count];
-        for (int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             id[i] = i;
             sz[i] = 1;
         }
@@ -27,10 +27,10 @@ public class WeightQuickUnion extends UF {
         int rootp = find(p);
         int rootq = find(q);
         if (rootp == rootq) return;
-        if (sz[rootp] >= sz[rootq]){
+        if (sz[rootp] >= sz[rootq]) {
             id[rootq] = rootp;
             sz[rootp] += sz[rootq];
-        }else {
+        } else {
             id[rootp] = rootq;
             sz[rootq] += sz[rootp];
         }
@@ -45,7 +45,7 @@ public class WeightQuickUnion extends UF {
      */
     @Override
     public int find(int p) {
-        while (p != id[p]){
+        while (p != id[p]) {
             p = id[p];
         }
         return p;

@@ -592,7 +592,7 @@ public class DateUtils {
         return cal.getTime();
     }
 
-    public static Date getWeekEndDate(Date date) throws Exception{
+    public static Date getWeekEndDate(Date date) throws Exception {
         Date beginDateOfWeek = getWeekBeginDate(date);
         return getAddDays(beginDateOfWeek, 6);
     }

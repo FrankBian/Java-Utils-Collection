@@ -10,6 +10,7 @@ import org.junit.Test;
 public class MergeTest {
 
     private Merge merge;
+
     @Before
     public void setUp() throws Exception {
         merge = new Merge();
@@ -21,8 +22,8 @@ public class MergeTest {
         String s = "MERGESORTEXAMPLE";
         String[] arr = new String[s.length()];
         int index = 0;
-        for (char ch : s.toCharArray()){
-            arr[index] = s.charAt(index)+"";
+        for (char ch : s.toCharArray()) {
+            arr[index] = s.charAt(index) + "";
             index++;
         }
         merge.show(arr);

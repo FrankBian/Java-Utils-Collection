@@ -35,6 +35,7 @@ public class Solution94 {
      * 2ms
      * Accepted
      * better than 6.70%
+     *
      * @param root
      * @return
      */
@@ -44,10 +45,10 @@ public class Solution94 {
             Stack<TreeNode> stack = new Stack<>();
             TreeNode cur = root;
             while (cur != null || !stack.isEmpty()) {
-                if (cur != null){
+                if (cur != null) {
                     stack.push(cur);
                     cur = cur.left;
-                }else{
+                } else {
                     cur = stack.pop();
                     result.add(cur.val);
                     cur = cur.right;

@@ -9,8 +9,9 @@ import org.junit.Test;
  */
 public class Solution2Test {
 
-    private Solution2.ListNode node1 ;
-    private Solution2.ListNode node2 ;
+    private Solution2.ListNode node1;
+    private Solution2.ListNode node2;
+
     @Before
     public void setUp() throws Exception {
         node1 = new Solution2.ListNode(2);
@@ -23,12 +24,12 @@ public class Solution2Test {
 
     @Test
     public void testAddTwoNumbers() throws Exception {
-        Solution2.ListNode res = Solution2.addTwoNumbers(node1,node2);
+        Solution2.ListNode res = Solution2.addTwoNumbers(node1, node2);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(7,res.val);
-        Assert.assertEquals(0,res.next.val);
-        Assert.assertEquals(8,res.next.next.val);
+        Assert.assertEquals(7, res.val);
+        Assert.assertEquals(0, res.next.val);
+        Assert.assertEquals(8, res.next.next.val);
     }
 
     @Test
@@ -38,12 +39,12 @@ public class Solution2Test {
         node2 = new Solution2.ListNode(9);
         node2.next = new Solution2.ListNode(2);
 
-        Solution2.ListNode res = Solution2.addTwoNumbers(node1,node2);
+        Solution2.ListNode res = Solution2.addTwoNumbers(node1, node2);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(2,res.val);
-        Assert.assertEquals(0,res.next.val);
-        Assert.assertEquals(1,res.next.next.val);
+        Assert.assertEquals(2, res.val);
+        Assert.assertEquals(0, res.next.val);
+        Assert.assertEquals(1, res.next.next.val);
     }
 
     @Test

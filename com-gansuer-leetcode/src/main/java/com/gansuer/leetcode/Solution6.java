@@ -11,7 +11,7 @@ public class Solution6 {
      * 每 2N-2 个字母为一组 ：从上到下再到上（上到第二行）
      * 索引index以1开头 : [1 ... 2n-2]
      * 每个字母该在的行的索引 = index<= n ? index : n - (index -n)
-     * <p/>
+     * <p>
      * Accepted
      * 1158 / 1158 test cases passed
      * Runtime : 564 ms

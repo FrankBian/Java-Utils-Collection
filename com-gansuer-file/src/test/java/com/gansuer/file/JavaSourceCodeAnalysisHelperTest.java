@@ -15,12 +15,12 @@ import java.util.Set;
 public class JavaSourceCodeAnalysisHelperTest {
 
     private String path = "";
-    private JavaSourceCodeAnalysisHelper helper  = null;
+    private JavaSourceCodeAnalysisHelper helper = null;
 
     @Before
     public void setUp() throws Exception {
         path = "/Users/Frank/Desktop/JDK-SRC/src/java/util";
-        helper  = new JavaSourceCodeAnalysisHelper();
+        helper = new JavaSourceCodeAnalysisHelper();
 
     }
 
@@ -28,10 +28,10 @@ public class JavaSourceCodeAnalysisHelperTest {
     public void testRun() throws Exception {
         helper.run(path);
 
-        Map<String , Map<String, Set<String>>> result = helper.getResult();
-        Map<String , String> exceptions = helper.getExceptions();
-        Map<String , String> classTypeMap = helper.getClassTypeMap();
-        List<Map<File,Boolean>> files = helper.getFiles();
+        Map<String, Map<String, Set<String>>> result = helper.getResult();
+        Map<String, String> exceptions = helper.getExceptions();
+        Map<String, String> classTypeMap = helper.getClassTypeMap();
+        List<Map<File, Boolean>> files = helper.getFiles();
 
         Assert.assertNotNull(helper);
         Assert.assertNotNull(result);
@@ -42,10 +42,10 @@ public class JavaSourceCodeAnalysisHelperTest {
 
     @Test
     public void testHandleJavaSource() throws Exception {
-        path += "/RegularEnumSet.java" ;
+        path += "/RegularEnumSet.java";
 
         File file = new File(path);
-        helper.handleJavaSource(file,null,null);
+        helper.handleJavaSource(file, null, null);
     }
 
 
@@ -55,7 +55,7 @@ public class JavaSourceCodeAnalysisHelperTest {
         int extend = target.lastIndexOf("extends");
 
 
-        System.out.println(target.substring(0,extend));
+        System.out.println(target.substring(0, extend));
 
         Assert.assertTrue(extend > 0);
     }

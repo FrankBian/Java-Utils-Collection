@@ -18,16 +18,16 @@ public class Grid {
         this.index = index;
     }
 
-    public Grid(Grid other){
+    public Grid(Grid other) {
         this.index = other.index;
         this.value = other.value;
         this.decided = other.decided;
         this.candidates = new HashSet<>(other.getCandidates());
     }
 
-    public boolean decides(int cand){
+    public boolean decides(int cand) {
         if (cand < 1 || cand > 9) return false;
-        if (candidates.contains(cand)){
+        if (candidates.contains(cand)) {
             value = cand;
             candidates.clear();
             decided = true;
@@ -36,9 +36,10 @@ public class Grid {
         return false;
     }
 
-    public boolean erase(int cand){
+    public boolean erase(int cand) {
         return candidates.contains(cand) ? candidates.remove(cand) : true;
     }
+
     public int getValue() {
         return value;
     }

@@ -20,7 +20,7 @@ public class Solution108Test {
 
     @Test
     public void testSortedArrayToBST() throws Exception {
-        int[] input = {0,1,2,3,4,5,6,7,8,9};
+        int[] input = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         TreeNode root = solution108.sortedArrayToBST(input);
 
@@ -29,7 +29,7 @@ public class Solution108Test {
         Assert.assertTrue(solution110.isBalanced(root));
 
         List<List<TreeNode>> children = BinaryTreeHelper.levelOrder(root);
-        Assert.assertEquals(4,children.size());
+        Assert.assertEquals(4, children.size());
 
     }
 }

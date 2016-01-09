@@ -20,15 +20,15 @@ public class Solution257Test {
 
     @Test
     public void testBinaryTreePaths() throws Exception {
-        Integer[] input = {1,2,3,null,5};
+        Integer[] input = {1, 2, 3, null, 5};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 
         List<String> res = solution257.binaryTreePaths(root);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(2,res.size());
-        Assert.assertEquals("1->2->5",res.get(0));
-        Assert.assertEquals("1->3",res.get(1));
+        Assert.assertEquals(2, res.size());
+        Assert.assertEquals("1->2->5", res.get(0));
+        Assert.assertEquals("1->3", res.get(1));
     }
 }

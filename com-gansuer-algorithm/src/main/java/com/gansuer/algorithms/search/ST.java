@@ -4,10 +4,11 @@ package com.gansuer.algorithms.search;
  * symbol table
  * Created by Frank on 1/9/2016.
  */
-public interface ST<K,V> {
+public interface ST<K, V> {
 
     /**
      * insert one key-value pair
+     *
      * @param key
      * @param value
      */
@@ -15,6 +16,7 @@ public interface ST<K,V> {
 
     /**
      * return the specified key's value
+     *
      * @param key
      * @return
      */
@@ -22,12 +24,12 @@ public interface ST<K,V> {
 
     /**
      * remove the key-value pair from this ST
+     *
      * @param key
      */
     void delete(K key);
 
     /**
-     *
      * @param key
      * @return
      */

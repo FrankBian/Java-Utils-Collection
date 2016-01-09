@@ -23,14 +23,14 @@ public class XMLDomUtilTest {
             "\t\t<constraint id=\"1131135572754432\" tag=\"1131168025739264\" time=\"12,26,40,54,68,13,27,41,55,69\"/>\n" +
             "\t</grade>\n" +
             "\t<courseGrade></courseGrade>\n" +
-            "</tags>" ;
+            "</tags>";
 
     @Test
     public void testDeleteChildNodes() throws Exception {
 
         Document document = XMLDomUtil.convertStringToDocument(docStr);
-        if (document != null){
-            XMLDomUtil.deleteChildNodes(document,"grade","id","1131135572754432");
+        if (document != null) {
+            XMLDomUtil.deleteChildNodes(document, "grade", "id", "1131135572754432");
             String tmp = XMLDomUtil.convertDocumentToString(document);
             System.out.println(tmp);
         }

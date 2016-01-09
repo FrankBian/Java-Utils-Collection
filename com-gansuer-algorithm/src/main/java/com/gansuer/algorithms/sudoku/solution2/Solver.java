@@ -7,21 +7,21 @@ import java.util.Set;
  */
 public class Solver {
 
-    private Layout layout ;
+    private Layout layout;
     private Layout solution;
 
     private Solver(int[][] array) {
         layout = new Layout(array);
     }
 
-    public static Solver solve(int[][] array){
+    public static Solver solve(int[][] array) {
         Solver solver = new Solver(array);
         solver.run();
         return solver;
     }
 
     /**
-     *  start to run
+     * start to run
      */
     private void run() {
         solution = recursiveSpeculate(layout);
@@ -29,6 +29,7 @@ public class Solver {
 
     /**
      * the result solution
+     *
      * @return
      */
     public Layout getSolution() {
@@ -37,11 +38,11 @@ public class Solver {
 
     private Layout recursiveSpeculate(Layout input) {
         int result = input.isSolvable();
-        if (result == 1){
+        if (result == 1) {
             return input;
-        }else if (result == -1){
+        } else if (result == -1) {
             return null;
-        }else {
+        } else {
             return speculateOnGrid(input);
         }
     }
@@ -53,9 +54,9 @@ public class Solver {
         }
         Set<Integer> cands = grid.getCandidates();
         Layout temp = null;
-        for (int cand : cands){
+        for (int cand : cands) {
             Layout speculatedLayout = new Layout(input);
-            boolean decide = speculatedLayout.decide(grid.getIndex(),cand);
+            boolean decide = speculatedLayout.decide(grid.getIndex(), cand);
             if (!decide) continue;
             temp = recursiveSpeculate(speculatedLayout);
             if (temp != null) break;

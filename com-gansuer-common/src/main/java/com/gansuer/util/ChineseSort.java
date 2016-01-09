@@ -9,12 +9,12 @@ interface ChineseSort {
 
     /**
      * sort the chinese list
+     *
      * @param list unsorted list
      */
     void chineseList(List<String> list);
 
     void chineseArray(String[] arrs);
-
 
 
 }

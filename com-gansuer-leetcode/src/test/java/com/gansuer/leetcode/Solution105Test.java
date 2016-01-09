@@ -18,21 +18,21 @@ public class Solution105Test {
 
     @Test
     public void testBuildTree() throws Exception {
-        int[] preorder = {1,2,3,6,5,4};
-        int[] inorder = {3,2,6,1,5,4};
+        int[] preorder = {1, 2, 3, 6, 5, 4};
+        int[] inorder = {3, 2, 6, 1, 5, 4};
 
-        TreeNode root = solution105.buildTree(preorder,inorder);
+        TreeNode root = solution105.buildTree(preorder, inorder);
 
         Assert.assertNotNull(root);
-        Assert.assertEquals(1,root.val.intValue());
+        Assert.assertEquals(1, root.val.intValue());
     }
 
     @Test
     public void testBuildTree2() throws Exception {
-        int[] preorder = {1,2};
-        int[] inorder = {2,1};
+        int[] preorder = {1, 2};
+        int[] inorder = {2, 1};
 
-        TreeNode root = solution105.buildTree(preorder,inorder);
+        TreeNode root = solution105.buildTree(preorder, inorder);
 
         Assert.assertNotNull(root);
         Assert.assertEquals(1, root.val.intValue());
@@ -40,10 +40,10 @@ public class Solution105Test {
 
     @Test
     public void testBuildTree3() throws Exception {
-        int[] preorder = {2,1,6,3,5,4};
-        int[] inorder = {1,2,3,4,5,6};
+        int[] preorder = {2, 1, 6, 3, 5, 4};
+        int[] inorder = {1, 2, 3, 4, 5, 6};
 
-        TreeNode root = solution105.buildTree(preorder,inorder);
+        TreeNode root = solution105.buildTree(preorder, inorder);
 
         Assert.assertNotNull(root);
         Assert.assertEquals(1, root.val.intValue());

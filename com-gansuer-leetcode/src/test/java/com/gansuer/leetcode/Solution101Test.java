@@ -18,8 +18,8 @@ public class Solution101Test {
 
     @Test
     public void testIsSymmetric() throws Exception {
-        Integer[] input1 = {1,2,2,3,4,4,3};
-        Integer[] input2 = {1,2,2,null,3,null,3};
+        Integer[] input1 = {1, 2, 2, 3, 4, 4, 3};
+        Integer[] input2 = {1, 2, 2, null, 3, null, 3};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input1);
         boolean res = solution101.isSymmetric(root);

@@ -16,16 +16,17 @@ public class Solution101 {
         if (root == null) return true;
         TreeNode root1 = clone(root);
         TreeNode invertedTree = invertTree(root1);
-        return isEquals(root,invertedTree);
+        return isEquals(root, invertedTree);
     }
 
-    private TreeNode clone(TreeNode root){
+    private TreeNode clone(TreeNode root) {
         if (root == null) return null;
         TreeNode res = new TreeNode(root.val);
         res.left = clone(root.left);
         res.right = clone(root.right);
         return res;
     }
+
     private TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         TreeNode left = invertTree(root.left),
@@ -37,13 +38,14 @@ public class Solution101 {
 
     /**
      * compare based on the value of node
+     *
      * @param tree1
      * @param tree2
      * @return
      */
     private boolean isEquals(TreeNode tree1, TreeNode tree2) {
         if (tree1 == null || tree2 == null) {
-            return tree1 == tree2 ;
+            return tree1 == tree2;
         }
         return tree1.val == tree2.val && isEquals(tree1.left, tree2.left) && isEquals(tree1.right, tree2.right);
     }
@@ -52,12 +54,13 @@ public class Solution101 {
      * the best solution
      */
     public boolean isSymmetricV1(TreeNode root) {
-        if(root==null) return true;
-        return isSame(root.left,root.right);
+        if (root == null) return true;
+        return isSame(root.left, root.right);
     }
+
     public boolean isSame(TreeNode p, TreeNode q) {
-        if(p==null && q==null) return true;
-        if(p==null || q==null) return false;
-        return (p.val==q.val) && isSame(p.left,q.right) && isSame(p.right,q.left);
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
+        return (p.val == q.val) && isSame(p.left, q.right) && isSame(p.right, q.left);
     }
 }

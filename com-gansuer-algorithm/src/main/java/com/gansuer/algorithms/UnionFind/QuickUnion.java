@@ -34,7 +34,7 @@ public class QuickUnion extends UF {
      * @return
      */
     public int find(int p) {
-        while (p != id[p]){
+        while (p != id[p]) {
             p = id[p];
         }
         return p;

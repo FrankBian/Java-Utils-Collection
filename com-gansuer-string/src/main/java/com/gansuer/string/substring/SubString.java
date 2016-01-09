@@ -10,13 +10,10 @@ public class SubString {
     /**
      * 按字节截取字符串
      *
-     * @param orignal
-     *            原始字符串
-     * @param count
-     *            截取位数
+     * @param orignal 原始字符串
+     * @param count   截取位数
      * @return 截取后的字符串
-     * @throws UnsupportedEncodingException
-     *             使用了JAVA不支持的编码格式
+     * @throws UnsupportedEncodingException 使用了JAVA不支持的编码格式
      */
     public static String substring(String orignal, int count)
             throws UnsupportedEncodingException {
@@ -35,7 +32,7 @@ public class SubString {
                         --count;
                     }
                 }
-                return new String(buff.toString().getBytes(),"UTF-8");
+                return new String(buff.toString().getBytes(), "UTF-8");
             }
         }
         return orignal;

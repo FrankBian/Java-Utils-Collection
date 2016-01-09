@@ -2,9 +2,9 @@ package com.gansuer.algorithms.sort;
 
 /**
  * Created by Frank on 5/13/15.
- * <p/>
+ * <p>
  * to use the TemplatePattern
- * <p/>
+ * <p>
  * this can be applied to all objects that implement  Comparable interface
  */
 public abstract class Sort {
@@ -44,9 +44,9 @@ public abstract class Sort {
         return true;
     }
 
-    public static void show(Comparable[] arr){
+    public static void show(Comparable[] arr) {
         System.out.println("______________________________");
-        for (Comparable item : arr){
+        for (Comparable item : arr) {
             System.out.print(item + "   ");
         }
         System.out.println();

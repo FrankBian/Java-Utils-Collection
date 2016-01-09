@@ -18,7 +18,7 @@ public class Solution111Test {
 
     @Test
     public void testMinDepth() throws Exception {
-        Integer[] input = {1,2};
+        Integer[] input = {1, 2};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 

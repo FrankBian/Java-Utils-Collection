@@ -20,7 +20,7 @@ public class Solution107Test {
 
     @Test
     public void testLevelOrderBottom() throws Exception {
-        Integer[] input = {3,9,20,null,null,15,7};
+        Integer[] input = {3, 9, 20, null, null, 15, 7};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 

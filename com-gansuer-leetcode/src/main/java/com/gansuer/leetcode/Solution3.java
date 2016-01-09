@@ -67,7 +67,7 @@ public class Solution3 {
      * accepted
      * 981/981 test cases passed
      * 444ms
-     * <p/>
+     * <p>
      * this solution from discuss
      *
      * @param s
@@ -125,7 +125,7 @@ public class Solution3 {
 
     /**
      * From discuss of leetcode
-     * <p/>
+     * <p>
      * max of length of substring between the same characters
      *
      * @param s
@@ -154,6 +154,7 @@ public class Solution3 {
 
     /**
      * Time Limit Exceeded
+     *
      * @param s
      * @return
      */
@@ -163,12 +164,12 @@ public class Solution3 {
         Map<Character, Integer> hash = new HashMap();
         int length = s.length();
         int max = 0, end = 0, start = 0;
-        for (;end < length; end++ ){
-            if (hash.containsKey(s.charAt(end)) && hash.get(s.charAt(end)) >= start){
+        for (; end < length; end++) {
+            if (hash.containsKey(s.charAt(end)) && hash.get(s.charAt(end)) >= start) {
                 start = hash.get(s.charAt(end)) + 1;
             }
-            hash.put(s.charAt(end),end);
-            max = Math.max(max , end-start+1);
+            hash.put(s.charAt(end), end);
+            max = Math.max(max, end - start + 1);
         }
         return max;
     }
@@ -181,21 +182,21 @@ public class Solution3 {
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstringV7(String s){
-        if(s.length()<2) return s.length();
-        Map <Character, Integer> hash = new HashMap();
-        int length=s.length();
-        int max=1,end = 1,start = 0;
+    public int lengthOfLongestSubstringV7(String s) {
+        if (s.length() < 2) return s.length();
+        Map<Character, Integer> hash = new HashMap();
+        int length = s.length();
+        int max = 1, end = 1, start = 0;
 
-        hash.put(s.charAt(0),0);
-        while(end<length){
-            if(hash.containsKey(s.charAt(end))&&hash.get(s.charAt(end))>=start){
+        hash.put(s.charAt(0), 0);
+        while (end < length) {
+            if (hash.containsKey(s.charAt(end)) && hash.get(s.charAt(end)) >= start) {
                 //s.charAt(end))>=start keep start not backforward
                 //or abba＝3
-                start = hash.get(s.charAt(end))+1;
+                start = hash.get(s.charAt(end)) + 1;
             }
-            max = Math.max(max,end-start+1);
-            hash.put(s.charAt(end),end);
+            max = Math.max(max, end - start + 1);
+            hash.put(s.charAt(end), end);
             end++;
         }
         return max;

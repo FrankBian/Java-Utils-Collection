@@ -24,27 +24,27 @@ public class EmailServiceImplTest {
     @Before
     public void setUp() throws Exception {
         greenMail = new GreenMail(ServerSetup.SMTP);
-        greenMail.setUser("test@ganuser.com","123456");
+        greenMail.setUser("test@ganuser.com", "123456");
         greenMail.start();
     }
 
     @Test
     public void testSendEmail() throws Exception {
-        ApplicationContext ctx  = new ClassPathXmlApplicationContext("test-email.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("test-email.xml");
 
         EmailService emailService = (EmailService) ctx.getBean("emailService");
         String subject = "test";
         String htmlContent = "<h1>TEST</h1>";
-        emailService.sendEmail("test@gansuer.com",subject,htmlContent);
+        emailService.sendEmail("test@gansuer.com", subject, htmlContent);
 
         greenMail.waitForIncomingEmail(2000, 1);
         Message[] msgs = greenMail.getReceivedMessages();
 
-        Debug.println("From : "+ msgs[0].getFrom()[0].toString());
+        Debug.println("From : " + msgs[0].getFrom()[0].toString());
         Debug.println("To : " + msgs[0].getAllRecipients()[0].toString());
 
-        Assert.assertEquals(1,msgs.length);
-        Assert.assertEquals(subject,msgs[0].getSubject());
+        Assert.assertEquals(1, msgs.length);
+        Assert.assertEquals(subject, msgs[0].getSubject());
         Assert.assertEquals(htmlContent, GreenMailUtil.getBody(msgs[0]).trim());
 
 

@@ -44,6 +44,7 @@ public class Solution114 {
      * Accepted
      * 3ms
      * >= 8.18%
+     *
      * @param root
      */
     public void flattenV1(TreeNode root) {
@@ -77,6 +78,7 @@ public class Solution114 {
      * 1ms
      * Accepted
      * >= 33.57%
+     *
      * @param root
      */
     public void flattenV2(TreeNode root) {

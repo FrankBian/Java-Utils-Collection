@@ -19,10 +19,10 @@ public class PrimeTest {
     public void testPrime() throws Exception {
         int limit = 100;
         int num = 10;
-        int[] res = prime.prime(limit,num);
+        int[] res = prime.prime(limit, num);
 
-        for (int i =0 ; i < num; i++){
-            System.out.print(res[i] +"   ");
+        for (int i = 0; i < num; i++) {
+            System.out.print(res[i] + "   ");
         }
 
         Assert.assertNotNull(res);

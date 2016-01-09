@@ -47,7 +47,7 @@ public class EmailServiceImpl implements EmailService {
     @Override
     public boolean sendEmail(String to, String subject, String htmlContent) throws EmailException {
 
-        try{
+        try {
             MimeMessage mimeMessage = javaMailSender.createMimeMessage();
             MimeMessageHelper msgHelper = new MimeMessageHelper(mimeMessage);
 
@@ -58,8 +58,8 @@ public class EmailServiceImpl implements EmailService {
 
             javaMailSender.send(mimeMessage);
 
-        }catch (MessagingException e) {
-            throw new EmailException("Fail to send email",e);
+        } catch (MessagingException e) {
+            throw new EmailException("Fail to send email", e);
         }
 
         return true;

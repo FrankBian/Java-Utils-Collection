@@ -21,7 +21,7 @@ public class Solution103Test {
 
     @Test
     public void testZigzagLevelOrder() throws Exception {
-        Integer[] input = {3,9,20,null,null,15,7};
+        Integer[] input = {3, 9, 20, null, null, 15, 7};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 
@@ -29,14 +29,14 @@ public class Solution103Test {
         List<List<Integer>> result = solution103.zigzagLevelOrderV1(root);
 
         Assert.assertNotNull(result);
-        Assert.assertEquals(3,result.size());
-        Assert.assertEquals(1,result.get(0).size());
-        Assert.assertEquals(3,result.get(0).get(0).intValue());
-        Assert.assertEquals(2,result.get(1).size());
-        Assert.assertEquals(20,result.get(1).get(0).intValue());
-        Assert.assertEquals(9,result.get(1).get(1).intValue());
-        Assert.assertEquals(2,result.get(2).size());
-        Assert.assertEquals(15,result.get(2).get(0).intValue());
-        Assert.assertEquals(7,result.get(2).get(1).intValue());
+        Assert.assertEquals(3, result.size());
+        Assert.assertEquals(1, result.get(0).size());
+        Assert.assertEquals(3, result.get(0).get(0).intValue());
+        Assert.assertEquals(2, result.get(1).size());
+        Assert.assertEquals(20, result.get(1).get(0).intValue());
+        Assert.assertEquals(9, result.get(1).get(1).intValue());
+        Assert.assertEquals(2, result.get(2).size());
+        Assert.assertEquals(15, result.get(2).get(0).intValue());
+        Assert.assertEquals(7, result.get(2).get(1).intValue());
     }
 }

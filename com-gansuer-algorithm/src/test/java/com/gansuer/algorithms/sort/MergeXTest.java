@@ -10,6 +10,7 @@ import org.junit.Test;
 public class MergeXTest {
 
     private MergeX mergeX;
+
     @Before
     public void setUp() throws Exception {
         mergeX = new MergeX();
@@ -20,8 +21,8 @@ public class MergeXTest {
         String s = "MERGESORTEXAMPLE";
         String[] arr = new String[s.length()];
         int index = 0;
-        for (char ch : s.toCharArray()){
-            arr[index] = s.charAt(index)+"";
+        for (char ch : s.toCharArray()) {
+            arr[index] = s.charAt(index) + "";
             index++;
         }
         mergeX.show(arr);

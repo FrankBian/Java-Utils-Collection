@@ -1,9 +1,8 @@
 package com.gansuer.stdlib; /*************************************************************************
- *  Compilation:  javac StdIn.java
- *  Execution:    java StdIn   (interactive test of basic functionality)
- *
- *  Reads in data of various types from standard input.
- *
+ * Compilation:  javac StdIn.java
+ * Execution:    java StdIn   (interactive test of basic functionality)
+ * <p>
+ * Reads in data of various types from standard input.
  *************************************************************************/
 
 import java.util.ArrayList;
@@ -49,12 +48,13 @@ import java.util.regex.Pattern;
 public final class StdIn {
 
     // it doesn't make sense to instantiate this class
-    private StdIn() { }
+    private StdIn() {
+    }
 
     private static Scanner scanner;
- 
+
     /*** begin: section (1 of 2) of code duplicated from In to StdIn */
-    
+
     // assume Unicode UTF-8 encoding
     private static final String CHARSET_NAME = "UTF-8";
 
@@ -74,9 +74,9 @@ public final class StdIn {
     /*** end: section (1 of 2) of code duplicated from In to StdIn */
 
     /*** begin: section (2 of 2) of code duplicated from In to StdIn,
-      *  with all methods changed from "public" to "public static" ***/
+     *  with all methods changed from "public" to "public static" ***/
 
-   /**
+    /**
      * Is the input empty (except possibly for whitespace)? Use this
      * to know whether the next call to {@link #readString()}, 
      * {@link #readDouble()}, etc will succeed.
@@ -87,7 +87,7 @@ public final class StdIn {
         return !scanner.hasNext();
     }
 
-   /**
+    /**
      * Does the input have a next line? Use this to know whether the
      * next call to {@link #readLine()} will succeed. <p> Functionally
      * equivalent to {@link #hasNextChar()}.
@@ -111,14 +111,17 @@ public final class StdIn {
     }
 
 
-   /**
+    /**
      * Reads and returns the next line, excluding the line separator if present.
      * @return the next line, excluding the line separator if present
      */
     public static String readLine() {
         String line;
-        try                 { line = scanner.nextLine(); }
-        catch (Exception e) { line = null;               }
+        try {
+            line = scanner.nextLine();
+        } catch (Exception e) {
+            line = null;
+        }
         return line;
     }
 
@@ -130,13 +133,13 @@ public final class StdIn {
         scanner.useDelimiter(EMPTY_PATTERN);
         String ch = scanner.next();
         assert (ch.length() == 1) : "Internal (Std)In.readChar() error!"
-            + " Please contact the authors.";
+                + " Please contact the authors.";
         scanner.useDelimiter(WHITESPACE_PATTERN);
         return ch.charAt(0);
-    }  
+    }
 
 
-   /**
+    /**
      * Reads and returns the remainder of the input, as a string.
      * @return the remainder of the input, as a string
      */
@@ -151,7 +154,7 @@ public final class StdIn {
     }
 
 
-   /**
+    /**
      * Reads the next token  and returns the <tt>String</tt>.
      * @return the next <tt>String</tt>
      */
@@ -159,7 +162,7 @@ public final class StdIn {
         return scanner.next();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as an integer, and returns the integer.
      * @return the next integer on standard input
      * @throws InputMismatchException if the next token cannot be parsed as an <tt>int</tt>
@@ -168,7 +171,7 @@ public final class StdIn {
         return scanner.nextInt();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as a double, and returns the double.
      * @return the next double on standard input
      * @throws InputMismatchException if the next token cannot be parsed as a <tt>double</tt>
@@ -177,7 +180,7 @@ public final class StdIn {
         return scanner.nextDouble();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as a float, and returns the float.
      * @return the next float on standard input
      * @throws InputMismatchException if the next token cannot be parsed as a <tt>float</tt>
@@ -186,7 +189,7 @@ public final class StdIn {
         return scanner.nextFloat();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as a long integer, and returns the long integer.
      * @return the next long integer on standard input
      * @throws InputMismatchException if the next token cannot be parsed as a <tt>long</tt>
@@ -195,7 +198,7 @@ public final class StdIn {
         return scanner.nextLong();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as a short integer, and returns the short integer.
      * @return the next short integer on standard input
      * @throws InputMismatchException if the next token cannot be parsed as a <tt>short</tt>
@@ -204,7 +207,7 @@ public final class StdIn {
         return scanner.nextShort();
     }
 
-   /**
+    /**
      * Reads the next token from standard input, parses it as a byte, and returns the byte.
      * @return the next byte on standard input
      * @throws InputMismatchException if the next token cannot be parsed as a <tt>byte</tt>
@@ -223,10 +226,10 @@ public final class StdIn {
      */
     public static boolean readBoolean() {
         String s = readString();
-        if (s.equalsIgnoreCase("true"))  return true;
+        if (s.equalsIgnoreCase("true")) return true;
         if (s.equalsIgnoreCase("false")) return false;
-        if (s.equals("1"))               return true;
-        if (s.equals("0"))               return false;
+        if (s.equals("1")) return true;
+        if (s.equals("0")) return false;
         throw new InputMismatchException();
     }
 
@@ -242,9 +245,9 @@ public final class StdIn {
             return tokens;
 
         // don't include first token if it is leading whitespace
-        String[] decapitokens = new String[tokens.length-1];
+        String[] decapitokens = new String[tokens.length - 1];
         for (int i = 0; i < tokens.length - 1; i++)
-            decapitokens[i] = tokens[i+1];
+            decapitokens[i] = tokens[i + 1];
         return decapitokens;
     }
 
@@ -287,10 +290,10 @@ public final class StdIn {
             vals[i] = Double.parseDouble(fields[i]);
         return vals;
     }
-    
+
     /*** end: section (2 of 2) of code duplicated from In to StdIn */
-    
-    
+
+
     // do this once when StdIn is initialized
     static {
         resync();
@@ -302,13 +305,13 @@ public final class StdIn {
     private static void resync() {
         setScanner(new Scanner(new java.io.BufferedInputStream(System.in), CHARSET_NAME));
     }
-    
+
     private static void setScanner(Scanner scanner) {
         StdIn.scanner = scanner;
         StdIn.scanner.useLocale(LOCALE);
     }
 
-   /**
+    /**
      * Reads all remaining tokens, parses them as integers, and returns
      * them as an array of integers.
      * @return all remaining integers, as an array
@@ -319,7 +322,7 @@ public final class StdIn {
         return readAllInts();
     }
 
-   /**
+    /**
      * Reads all remaining tokens, parses them as doubles, and returns
      * them as an array of doubles.
      * @return all remaining doubles, as an array
@@ -330,7 +333,7 @@ public final class StdIn {
         return readAllDoubles();
     }
 
-   /**
+    /**
      * Reads all remaining tokens and returns them as an array of strings.
      * @return all remaining tokens, as an array of strings
      * @deprecated For more consistency, use {@link #readAllStrings()}

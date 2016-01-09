@@ -17,18 +17,18 @@ public class BinaryTreeHelper {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         int index = 1;
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode cur = queue.poll();
-            if (index < input.length){
-                if (input[index] != null){
+            if (index < input.length) {
+                if (input[index] != null) {
                     TreeNode left = new TreeNode(input[index]);
                     cur.left = left;
                     queue.offer(left);
                 }
                 index++;
             }
-            if (index < input.length){
-                if (input[index] != null){
+            if (index < input.length) {
+                if (input[index] != null) {
                     TreeNode right = new TreeNode(input[index]);
                     cur.right = right;
                     queue.offer(right);
@@ -57,11 +57,11 @@ public class BinaryTreeHelper {
         queue.clear();
     }
 
-    public static List<TreeNode> getChildren(List<TreeNode> parents){
+    public static List<TreeNode> getChildren(List<TreeNode> parents) {
         List<TreeNode> res = null;
-        if (parents != null && parents.size() > 0){
+        if (parents != null && parents.size() > 0) {
             res = new ArrayList<>();
-            for (TreeNode item : parents){
+            for (TreeNode item : parents) {
                 if (item.left != null) res.add(item.left);
                 if (item.right != null) res.add(item.right);
             }
@@ -69,16 +69,16 @@ public class BinaryTreeHelper {
         return res;
     }
 
-    public static List<List<TreeNode>> levelOrder(TreeNode root){
+    public static List<List<TreeNode>> levelOrder(TreeNode root) {
         List<List<TreeNode>> result = null;
-        if (root != null){
+        if (root != null) {
             result = new ArrayList<>();
             Queue<TreeNode> queue = new LinkedList<>();
             queue.offer(root);
-            while (!queue.isEmpty()){
+            while (!queue.isEmpty()) {
                 int size = queue.size();
                 List<TreeNode> temp = new ArrayList<>();
-                for (int i = 0; i< size ; i++){
+                for (int i = 0; i < size; i++) {
                     TreeNode cur = queue.poll();
                     temp.add(cur);
                     if (cur.left != null) queue.offer(cur.left);

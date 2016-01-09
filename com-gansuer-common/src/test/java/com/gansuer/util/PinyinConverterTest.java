@@ -11,7 +11,7 @@ public class PinyinConverterTest {
     @Test
     public void testChinese2Pinyin() throws Exception {
         String src = "曹孟德";
-        String[] res = PinyinConverter.chinese2Pinyin(src,0);
+        String[] res = PinyinConverter.chinese2Pinyin(src, 0);
 
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
@@ -19,20 +19,20 @@ public class PinyinConverterTest {
 
         src = "曹孟z德";
 
-        res = PinyinConverter.chinese2Pinyin(src,0);
+        res = PinyinConverter.chinese2Pinyin(src, 0);
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
         Assert.assertEquals("caomengzde", res[0]);
 
         src = "FrankBian";
 
-        res = PinyinConverter.chinese2Pinyin(src,0);
+        res = PinyinConverter.chinese2Pinyin(src, 0);
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
         Assert.assertEquals("FrankBian", res[0]);
 
         src = "单春秋";
-        res = PinyinConverter.chinese2Pinyin(src,0);
+        res = PinyinConverter.chinese2Pinyin(src, 0);
         Assert.assertNotNull(res);
         Assert.assertEquals(3, res.length);
         Assert.assertEquals("danchunqiu", res[0]);
@@ -41,7 +41,7 @@ public class PinyinConverterTest {
 
 
         src = "曹孟德";
-        res = PinyinConverter.chinese2Pinyin(src,1);
+        res = PinyinConverter.chinese2Pinyin(src, 1);
 
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
@@ -49,20 +49,20 @@ public class PinyinConverterTest {
 
         src = "曹孟z德";
 
-        res = PinyinConverter.chinese2Pinyin(src,1);
+        res = PinyinConverter.chinese2Pinyin(src, 1);
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
         Assert.assertEquals("cmzd", res[0]);
 
         src = "Frank Bian";
 
-        res = PinyinConverter.chinese2Pinyin(src,1);
+        res = PinyinConverter.chinese2Pinyin(src, 1);
         Assert.assertNotNull(res);
         Assert.assertEquals(1, res.length);
         Assert.assertEquals("FrankBian", res[0]);
 
         src = "单春秋";
-        res = PinyinConverter.chinese2Pinyin(src,1);
+        res = PinyinConverter.chinese2Pinyin(src, 1);
         Assert.assertNotNull(res);
         Assert.assertEquals(3, res.length);
         Assert.assertEquals("dcq", res[0]);

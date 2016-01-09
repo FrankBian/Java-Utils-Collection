@@ -7,6 +7,7 @@ public class Solution236 {
 
     /**
      * TODO: Wrong
+     *
      * @param root
      * @param p
      * @param q
@@ -50,20 +51,21 @@ public class Solution236 {
 
     /**
      * Accepted
+     *
      * @param root
      * @param p
      * @param q
      * @return
      */
     public TreeNode lowestCommonAncestorV1(TreeNode root, TreeNode p, TreeNode q) {
-        if(root == null) return null;
+        if (root == null) return null;
         TreeNode left = lowestCommonAncestorV1(root.left, p, q),
                 right = lowestCommonAncestorV1(root.right, p, q);
-        if(root == q || root == p || (left != null && right != null))
+        if (root == q || root == p || (left != null && right != null))
             return root;
-        else if(left != null)
+        else if (left != null)
             return left;
-        else if(right != null)
+        else if (right != null)
             return right;
         return null;
     }

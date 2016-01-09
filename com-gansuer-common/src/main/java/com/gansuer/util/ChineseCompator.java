@@ -14,12 +14,12 @@ public class ChineseCompator implements Comparator<String> {
 
     public int compare(String o1, String o2) {
 
-        if (cmp.compare(o1,o2) > 0){
+        if (cmp.compare(o1, o2) > 0) {
             return 1;
-        }else if (cmp.compare(o1,o2) < 0){
+        } else if (cmp.compare(o1, o2) < 0) {
             return -1;
-        }else {
-            return 0 ;
+        } else {
+            return 0;
         }
     }
 }

@@ -20,22 +20,22 @@ public class Solution94Test {
 
     @Test
     public void testInorderTraversal() throws Exception {
-        Integer[] input = {1,null,2,3};
+        Integer[] input = {1, null, 2, 3};
 
         TreeNode root = BinaryTreeHelper.buildBinaryTree(input);
 
         List<Integer> res = solution94.inorderTraversal(root);
 
         Assert.assertNotNull(res);
-        Assert.assertEquals(1,res.get(0).intValue());
-        Assert.assertEquals(3,res.get(1).intValue());
-        Assert.assertEquals(2,res.get(2).intValue());
+        Assert.assertEquals(1, res.get(0).intValue());
+        Assert.assertEquals(3, res.get(1).intValue());
+        Assert.assertEquals(2, res.get(2).intValue());
 
         res = solution94.inorderTraversalWithIterate(root);
         Assert.assertNotNull(res);
-        Assert.assertEquals(3,res.size());
-        Assert.assertEquals(1,res.get(0).intValue());
-        Assert.assertEquals(3,res.get(1).intValue());
-        Assert.assertEquals(2,res.get(2).intValue());
+        Assert.assertEquals(3, res.size());
+        Assert.assertEquals(1, res.get(0).intValue());
+        Assert.assertEquals(3, res.get(1).intValue());
+        Assert.assertEquals(2, res.get(2).intValue());
     }
 }

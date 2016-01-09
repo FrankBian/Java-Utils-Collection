@@ -15,11 +15,12 @@ public class Solution3Test {
 
     private Solution3 solution3;
     private String cases;
+
     @Before
     public void setUp() throws Exception {
         solution3 = new Solution3();
         String path = getClass().getClassLoader().getResource("Solution3TestCase.txt").getFile();
-        cases = StringUtils.join(FileUtils.readFile(path),"");
+        cases = StringUtils.join(FileUtils.readFile(path), "");
     }
 
     @Test
@@ -38,13 +39,13 @@ public class Solution3Test {
 
         System.out.println("length of the target String : " + cases.length());
         System.out.println("length of longest Substring : " + res2);
-        System.out.println("Times : " + (end.getTime()-begin.getTime()));
-        Assert.assertEquals(3,res);
-        Assert.assertEquals(1,res1);
-        Assert.assertEquals(95,res2);
-        Assert.assertEquals(1,res3);
-        Assert.assertEquals(3,res4);
-        Assert.assertEquals(2,res5);
+        System.out.println("Times : " + (end.getTime() - begin.getTime()));
+        Assert.assertEquals(3, res);
+        Assert.assertEquals(1, res1);
+        Assert.assertEquals(95, res2);
+        Assert.assertEquals(1, res3);
+        Assert.assertEquals(3, res4);
+        Assert.assertEquals(2, res5);
     }
 
     @Test
@@ -63,13 +64,13 @@ public class Solution3Test {
 
         System.out.println("length of the target String : " + cases.length());
         System.out.println("length of longest Substring : " + res2);
-        System.out.println("Times : " + (end.getTime()-begin.getTime()));
-        Assert.assertEquals(3,res);
-        Assert.assertEquals(1,res1);
-        Assert.assertEquals(95,res2);
-        Assert.assertEquals(1,res3);
-        Assert.assertEquals(3,res4);
-        Assert.assertEquals(2,res5);
+        System.out.println("Times : " + (end.getTime() - begin.getTime()));
+        Assert.assertEquals(3, res);
+        Assert.assertEquals(1, res1);
+        Assert.assertEquals(95, res2);
+        Assert.assertEquals(1, res3);
+        Assert.assertEquals(3, res4);
+        Assert.assertEquals(2, res5);
     }
 
     @Test
@@ -88,13 +89,13 @@ public class Solution3Test {
 
         System.out.println("length of the target String : " + cases.length());
         System.out.println("length of longest Substring : " + res2);
-        System.out.println("Times : " + (end.getTime()-begin.getTime()));
-        Assert.assertEquals(3,res);
-        Assert.assertEquals(1,res1);
-        Assert.assertEquals(95,res2);
-        Assert.assertEquals(1,res3);
-        Assert.assertEquals(3,res4);
-        Assert.assertEquals(2,res5);
+        System.out.println("Times : " + (end.getTime() - begin.getTime()));
+        Assert.assertEquals(3, res);
+        Assert.assertEquals(1, res1);
+        Assert.assertEquals(95, res2);
+        Assert.assertEquals(1, res3);
+        Assert.assertEquals(3, res4);
+        Assert.assertEquals(2, res5);
     }
 
     @Test
@@ -110,13 +111,13 @@ public class Solution3Test {
 
         System.out.println("length of the target String : " + cases.length());
         System.out.println("length of longest Substring : " + res2);
-        System.out.println("Times : " + (end.getTime()-begin.getTime()));
-        Assert.assertEquals(3,res);
-        Assert.assertEquals(1,res1);
-        Assert.assertEquals(95,res2);
-        Assert.assertEquals(1,res3);
-        Assert.assertEquals(3,res4);
-        Assert.assertEquals(2,res5);
+        System.out.println("Times : " + (end.getTime() - begin.getTime()));
+        Assert.assertEquals(3, res);
+        Assert.assertEquals(1, res1);
+        Assert.assertEquals(95, res2);
+        Assert.assertEquals(1, res3);
+        Assert.assertEquals(3, res4);
+        Assert.assertEquals(2, res5);
     }
 
 }

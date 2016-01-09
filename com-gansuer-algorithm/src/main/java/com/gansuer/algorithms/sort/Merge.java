@@ -18,7 +18,7 @@ public class Merge extends Sort {
         sort(arr, tmp, low, mid);
         sort(arr, tmp, mid + 1, high);
 //        merge(arr, tmp, low, mid, high);
-        if (less(arr[mid+1],arr[mid])){  //Enhancing
+        if (less(arr[mid + 1], arr[mid])) {  //Enhancing
             merge(arr, tmp, low, mid, high);
         }
     }

@@ -3,9 +3,9 @@ package com.gansuer.webComponent.email;
 /**
  * Created by Frank on 5/8/15.
  */
-public class EmailException extends Exception{
+public class EmailException extends Exception {
 
-    private String message ;
+    private String message;
 
     @Override
     public String getMessage() {

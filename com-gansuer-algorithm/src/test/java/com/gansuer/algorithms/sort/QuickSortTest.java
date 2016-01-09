@@ -9,6 +9,7 @@ import org.junit.Test;
 public class QuickSortTest {
 
     private QuickSort sort;
+
     @Before
     public void setUp() throws Exception {
         sort = new QuickSort();
@@ -19,8 +20,8 @@ public class QuickSortTest {
         String s = "MERGESORTEXAMPLE";
         String[] arr = new String[s.length()];
         int index = 0;
-        for (char ch : s.toCharArray()){
-            arr[index] = s.charAt(index)+"";
+        for (char ch : s.toCharArray()) {
+            arr[index] = s.charAt(index) + "";
             index++;
         }
 

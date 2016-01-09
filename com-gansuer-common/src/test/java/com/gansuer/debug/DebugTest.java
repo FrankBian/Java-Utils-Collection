@@ -10,9 +10,9 @@ public class DebugTest {
     @Test
     public void testPrint() throws Exception {
         Debug deg = new Debug();
-        String[] src = {"a","tyu","bnn"};
+        String[] src = {"a", "tyu", "bnn"};
         deg.print(src);
-        int[] src1 = {1,2,3};
+        int[] src1 = {1, 2, 3};
         deg.print(src1);
 
 

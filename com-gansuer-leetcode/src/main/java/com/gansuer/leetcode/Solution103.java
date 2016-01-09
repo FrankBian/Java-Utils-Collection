@@ -53,10 +53,10 @@ public class Solution103 {
                 item = new ArrayList<>();
                 for (int i = 0; i < size; i++) {
                     TreeNode cur = queue.poll();
-                    if (order){
+                    if (order) {
                         item.add(cur.val);
-                    }else{
-                        item.add(0,cur.val);
+                    } else {
+                        item.add(0, cur.val);
                     }
                     if (cur.left != null) queue.offer(cur.left);
                     if (cur.right != null) queue.offer(cur.right);

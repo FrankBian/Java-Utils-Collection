@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.gansuer.utils</groupId>
-	<artifactId>com-gansuer-utils</artifactId>
-	<version>1.0.0</version>
-	<packaging>pom</packaging>
+    <groupId>com.gansuer.utils</groupId>
+    <artifactId>com-gansuer-utils</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
 
-	<name>com-gansuer-utils</name>
-	<url>http://maven.apache.org</url>
+    <name>com-gansuer-utils</name>
+    <url>http://maven.apache.org</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<modules>
-		<module>com-gansuer-file</module>
-		<module>com-gansuer-network</module>
-		<module>com-gansuer-algorithm</module>
-		<module>com-gansuer-string</module>
-		<module>com-gansuer-common</module>
-		<module>com-gansuer-webComponent</module>
-		<module>com-gansuer-leetcode</module>
-	</modules>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
+    <modules>
+        <module>com-gansuer-file</module>
+        <module>com-gansuer-network</module>
+        <module>com-gansuer-algorithm</module>
+        <module>com-gansuer-string</module>
+        <module>com-gansuer-common</module>
+        <module>com-gansuer-webComponent</module>
+        <module>com-gansuer-leetcode</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

@@ -16,21 +16,21 @@ public class Solution1Test {
 
     @org.junit.Test
     public void testTwoSum() throws Exception {
-        int[] ints = new int[]{2,9,10,18,30};
-        int[] res = solution1.twoSum(ints,20);
+        int[] ints = new int[]{2, 9, 10, 18, 30};
+        int[] res = solution1.twoSum(ints, 20);
 
-        Assert.assertEquals(res.length,2);
-        Assert.assertEquals(res[0],1);
-        Assert.assertEquals(res[1],4);
+        Assert.assertEquals(res.length, 2);
+        Assert.assertEquals(res[0], 1);
+        Assert.assertEquals(res[1], 4);
     }
 
     @org.junit.Test
     public void testTwoSum1() throws Exception {
-        int[] ints = new int[]{2,9,10,18,30};
-        int[] res = solution1.twoSum(ints,20);
+        int[] ints = new int[]{2, 9, 10, 18, 30};
+        int[] res = solution1.twoSum(ints, 20);
 
-        Assert.assertEquals(res.length,2);
-        Assert.assertEquals(res[0],1);
-        Assert.assertEquals(res[1],4);
+        Assert.assertEquals(res.length, 2);
+        Assert.assertEquals(res[0], 1);
+        Assert.assertEquals(res[1], 4);
     }
 }

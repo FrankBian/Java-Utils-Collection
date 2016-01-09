@@ -1,7 +1,5 @@
 package com.gansuer.stdlib; /*************************************************************************
- *  Compilation:  javac Stopwatch.java
- *
- *
+ * Compilation:  javac Stopwatch.java
  *************************************************************************/
 
 /**
@@ -15,20 +13,19 @@ package com.gansuer.stdlib; /***************************************************
  */
 
 
-
-public class Stopwatch { 
+public class Stopwatch {
 
     private final long start;
 
-   /**
+    /**
      * Create a stopwatch object.
      */
     public Stopwatch() {
         start = System.currentTimeMillis();
-    } 
+    }
 
 
-   /**
+    /**
      * Return elapsed time (in seconds) since this object was created.
      */
     public double elapsedTime() {

@@ -10,6 +10,7 @@ import org.junit.Test;
 public class InsertionTest {
 
     private Insertion insertion;
+
     @Before
     public void setUp() throws Exception {
         insertion = new Insertion();
@@ -17,7 +18,7 @@ public class InsertionTest {
 
     @Test
     public void testSortX() throws Exception {
-        Integer[] arr = {3,8,2,3,5,0,-1};
+        Integer[] arr = {3, 8, 2, 3, 5, 0, -1};
         insertion.sortX(arr);
         Assert.assertTrue(insertion.isSorted(arr));
         insertion.show(arr);

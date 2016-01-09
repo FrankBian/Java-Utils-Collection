@@ -26,9 +26,9 @@ public class Solution114Test {
 
         TreeNode cur = root;
         int num = 1;
-        while (cur != null){
+        while (cur != null) {
             Assert.assertEquals(num++, cur.val.intValue());
-            Assert.assertEquals(null,cur.left);
+            Assert.assertEquals(null, cur.left);
             cur = cur.right;
         }
     }
@@ -43,9 +43,9 @@ public class Solution114Test {
 
         TreeNode cur = root;
         int num = 1;
-        while (cur != null){
+        while (cur != null) {
             Assert.assertEquals(num++, cur.val.intValue());
-            Assert.assertEquals(null,cur.left);
+            Assert.assertEquals(null, cur.left);
             cur = cur.right;
         }
     }
@@ -60,9 +60,9 @@ public class Solution114Test {
 
         TreeNode cur = root;
         int num = 1;
-        while (cur != null){
+        while (cur != null) {
             Assert.assertEquals(num++, cur.val.intValue());
-            Assert.assertEquals(null,cur.left);
+            Assert.assertEquals(null, cur.left);
             cur = cur.right;
         }
     }

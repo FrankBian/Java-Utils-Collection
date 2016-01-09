@@ -7,18 +7,21 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
 
     /**
      * the MIN Key
+     *
      * @return
      */
     K min();
 
     /**
      * the MAX key
+     *
      * @return
      */
     K max();
 
     /**
      * the MAX key in key set which are less than this specified key
+     *
      * @param key
      * @return
      */
@@ -26,6 +29,7 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
 
     /**
      * the MIN key in key set which are greater than this specified key
+     *
      * @param key
      * @return
      */
@@ -33,6 +37,7 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
 
     /**
      * the key number that which are less than this specified key
+     *
      * @param key
      * @return
      */
@@ -40,6 +45,7 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
 
     /**
      * return the k-rd key by sequences
+     *
      * @param k
      * @return
      */
@@ -47,6 +53,7 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
 
     /**
      * Key in the set : low <= key < high
+     *
      * @param low
      * @param high
      * @return

@@ -19,7 +19,7 @@ import java.util.Map;
 
 /**
  * XML 文件的增删改查操作
- *
+ * <p>
  * Created by Frank on 2014/11/8.
  */
 public class XMLDomUtil {
@@ -351,8 +351,10 @@ public class XMLDomUtil {
 //            }
 //        }
 //    }
+
     /**
      * 删除所有符合条件的子节点
+     *
      * @param dom
      * @param parentNodeName
      * @param nodePKName
@@ -380,7 +382,7 @@ public class XMLDomUtil {
                         }
                     }
                 }
-                for (Node item : tmp){
+                for (Node item : tmp) {
                     parentNode.removeChild(item);
                 }
             }
