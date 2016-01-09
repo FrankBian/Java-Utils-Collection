@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by Frank on 7/22/15.
- * <p/>
+ * <p>
  * Backtracking
  */
 public class Solution1 {
@@ -55,25 +55,25 @@ public class Solution1 {
         System.out.println("---------------------------------------------------");
     }
 
-    private void run(int n) {
+    private boolean run(int n) {
         if (n == 81) { // is finished?
-            return;
+            return true;
         }
 
         int i = n / 9, j = n % 9;
 
         if (src[i][j] != 0) { // if this cell is DONE , the next one
-            run(n + 1);
-            return;
+            return run(n+1);
         }
 
         for (int k = 0; k < 9; k++) {
             src[i][j]++; // from 1 to 9 , try all possible solution
-            if (isValid(i, j)) {
-                run(n + 1); // the next one if this is OK
+            if (isValid(i, j) && run(n+1)) { // the next one if this is OK
+                return true;
             }
         }
         src[i][j] = 0;
+        return false;
     }
 
     public void sudoku(int array[][]) {
@@ -115,7 +115,8 @@ public class Solution1 {
                         {2, 8, 0, 5, 0, 0, 0, 3, 0},
                         {0, 1, 0, 3, 0, 0, 2, 0, 0},
                         {0, 0, 7, 0, 4, 6, 0, 0, 5},
-                        {0, 0, 6, 1, 0, 0, 0, 4, 9}};
+                        {0, 0, 6, 1, 0, 0, 0, 4, 9}
+                };
         solution1.setSrc(soduku);
         solution1.run(0);
         solution1.show();
