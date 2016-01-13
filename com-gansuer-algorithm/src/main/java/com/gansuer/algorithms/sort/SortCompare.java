@@ -1,8 +1,7 @@
 package com.gansuer.algorithms.sort;
 
-
-import com.gansuer.stdlib.StdRandom;
-import com.gansuer.stdlib.Stopwatch;
+import com.gansuer.algorithms.stdlib.StdRandom;
+import com.gansuer.algorithms.stdlib.Stopwatch;
 
 /**
  * Created by Frank on 7/26/15.
