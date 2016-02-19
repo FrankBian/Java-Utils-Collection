@@ -21,21 +21,13 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.gansuer.common</groupId>
-            <artifactId>com-gansuer-common</artifactId>
-            <version>1.0.0</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.gansuer.file</groupId>
             <artifactId>com-gansuer-file</artifactId>
             <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.mylib</groupId>
-            <artifactId>com-mylib-stdlib</artifactId>
-            <version>1.0.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -47,29 +39,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
-                <executions>
-                    <execution>
-                        <id>install-external</id>
-                        <phase>clean</phase>
-                        <configuration>
-                            <file>${basedir}/src/main/webapp/lib/stdlib.jar</file>
-                            <repositoryLayout>default</repositoryLayout>
-                            <groupId>com.mylib</groupId>
-                            <artifactId>com-mylib-stdlib</artifactId>
-                            <version>1.0.0</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

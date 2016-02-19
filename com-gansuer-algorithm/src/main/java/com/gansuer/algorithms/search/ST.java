@@ -5,7 +5,6 @@ package com.gansuer.algorithms.search;
  * Created by Frank on 1/9/2016.
  */
 public interface ST<K, V> {
-
     /**
      * insert one key-value pair
      *
