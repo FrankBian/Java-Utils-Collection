@@ -1,5 +1,7 @@
 package com.gansuer.algorithms.sort.queue;
 
+import com.gansuer.algorithms.sort.Helper;
+
 /**
  * TODO：need to test
  * Created by Frank on 1/18/2016.

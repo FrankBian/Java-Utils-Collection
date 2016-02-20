@@ -10,7 +10,7 @@ public class UnorderArrayMaxPQ<K extends Comparable<K>> implements MaxPQ<K> {
     protected static final int DEFAULT_CAPACITY = 16;
 
     public UnorderArrayMaxPQ() {
-        values = (K[]) new Comparable[DEFAULT_CAPACITY];
+        this(DEFAULT_CAPACITY);
     }
 
     public UnorderArrayMaxPQ(int capacity) {

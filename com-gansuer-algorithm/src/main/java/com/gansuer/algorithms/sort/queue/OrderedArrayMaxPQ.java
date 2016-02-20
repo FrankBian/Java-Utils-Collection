@@ -22,7 +22,7 @@ public class OrderedArrayMaxPQ<K extends Comparable<K>> extends UnorderArrayMaxP
     }
 
     /**
-     * the array is AES ordered
+     * the array is ASC ordered
      *
      * @param key
      */
