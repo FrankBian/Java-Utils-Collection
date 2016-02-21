@@ -47,49 +47,49 @@ public class IndexMinPQTest {
     public void testMin() throws Exception {
         String res = pq.min();
 
-        Assert.assertEquals("best",res);
+        Assert.assertEquals("best", res);
     }
 
     @Test
     public void testMinIndex() throws Exception {
         int min = pq.minIndex();
 
-        Assert.assertEquals(3,min);
+        Assert.assertEquals(3, min);
     }
 
     @Test
     public void testMinKey() throws Exception {
         String min = pq.minKey();
-        Assert.assertEquals("best",min);
+        Assert.assertEquals("best", min);
     }
 
     @Test
     public void testDelMin() throws Exception {
         int min = pq.delMin();
-        Assert.assertEquals(3,min);
+        Assert.assertEquals(3, min);
 
         boolean res = pq.contains(min);
-        Assert.assertEquals(false,res);
+        Assert.assertEquals(false, res);
     }
 
     @Test
     public void testInsert() throws Exception {
         boolean isEmpty = pq.isEmpty();
-        Assert.assertEquals(false,isEmpty);
+        Assert.assertEquals(false, isEmpty);
 
         int size = pq.size();
-        Assert.assertEquals(strings.length,size);
+        Assert.assertEquals(strings.length, size);
     }
 
     @Test
     public void testChange() throws Exception {
         int k = 0;
         String item = "begin";
-        pq.change(k,item);
+        pq.change(k, item);
 
-        Assert.assertEquals(true,pq.contains(k));
-        Assert.assertEquals(item,pq.keyOf(k));
-        Assert.assertEquals(item,pq.min());
+        Assert.assertEquals(true, pq.contains(k));
+        Assert.assertEquals(item, pq.keyOf(k));
+        Assert.assertEquals(item, pq.min());
     }
 
     @Test
@@ -102,16 +102,16 @@ public class IndexMinPQTest {
         int k = 3;
         String key = "abc";
 
-        pq.decreaseKey(k,key);
-        Assert.assertEquals(key,pq.keyOf(k));
+        pq.decreaseKey(k, key);
+        Assert.assertEquals(key, pq.keyOf(k));
 
         key = "cba";
         try {
-            pq.decreaseKey(k,key);
-        }catch (RuntimeException e){
+            pq.decreaseKey(k, key);
+        } catch (RuntimeException e) {
             System.out.println("illegalArgumentException");
         }
-        Assert.assertEquals("abc",pq.keyOf(k));
+        Assert.assertEquals("abc", pq.keyOf(k));
     }
 
     @Test
@@ -119,54 +119,54 @@ public class IndexMinPQTest {
         int k = 3;
         String key = "better";
 
-        pq.increaseKey(k,key);
-        Assert.assertEquals(key,pq.keyOf(k));
+        pq.increaseKey(k, key);
+        Assert.assertEquals(key, pq.keyOf(k));
 
         key = "begin";
         try {
-            pq.increaseKey(k,key);
-        }catch (RuntimeException e){
+            pq.increaseKey(k, key);
+        } catch (RuntimeException e) {
             System.out.println("illegalArgumentException");
         }
-        Assert.assertEquals("better",pq.keyOf(k));
+        Assert.assertEquals("better", pq.keyOf(k));
     }
 
     @Test
     public void testKeyOf() throws Exception {
-        for (int i = 0; i < strings.length; i++){
-            Assert.assertEquals(strings[i],pq.keyOf(i));
+        for (int i = 0; i < strings.length; i++) {
+            Assert.assertEquals(strings[i], pq.keyOf(i));
         }
     }
 
     @Test
     public void testContains() throws Exception {
-        for (int i = 0; i < strings.length; i++){
-            Assert.assertEquals(true,pq.contains(i));
+        for (int i = 0; i < strings.length; i++) {
+            Assert.assertEquals(true, pq.contains(i));
         }
     }
 
     @Test
     public void testDelete() throws Exception {
         int k = 9;
-        Assert.assertEquals(true,pq.contains(k));
+        Assert.assertEquals(true, pq.contains(k));
         pq.delete(k);
 
-        Assert.assertEquals(strings.length - 1 , pq.size());
-        Assert.assertEquals(false,pq.contains(k));
+        Assert.assertEquals(strings.length - 1, pq.size());
+        Assert.assertEquals(false, pq.contains(k));
     }
 
     @Test
     public void testIsEmpty() throws Exception {
-        Assert.assertEquals(false,pq.isEmpty());
-        while (!pq.isEmpty()){
+        Assert.assertEquals(false, pq.isEmpty());
+        while (!pq.isEmpty()) {
             pq.delMin();
         }
-        Assert.assertEquals(true,pq.isEmpty());
+        Assert.assertEquals(true, pq.isEmpty());
     }
 
     @Test
     public void testSize() throws Exception {
-        Assert.assertEquals(strings.length,pq.size());
+        Assert.assertEquals(strings.length, pq.size());
     }
 
     @Test
