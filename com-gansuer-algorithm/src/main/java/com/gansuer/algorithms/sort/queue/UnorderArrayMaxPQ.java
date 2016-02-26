@@ -1,5 +1,7 @@
 package com.gansuer.algorithms.sort.queue;
 
+import com.gansuer.algorithms.sort.Helper;
+
 /**
  * Created by Frank on 1/13/2016.
  */
@@ -39,10 +41,14 @@ public class UnorderArrayMaxPQ<K extends Comparable<K>> implements MaxPQ<K> {
             }
         }
         K res = values[index];
-        values[index] = null;
-        for (int i = index; i < size - 1; i++) {
-            values[index] = values[index + 1];
+//        values[index] = null;
+//        for (int i = index; i < size - 1; i++) {
+//            values[index] = values[index + 1];
+//        }
+        if (index < size  -1){
+            Helper.swap(values,index,size-1);
         }
+        values[size-1] = null;
         size--;
         return res;
     }
@@ -61,7 +67,6 @@ public class UnorderArrayMaxPQ<K extends Comparable<K>> implements MaxPQ<K> {
             }
             values[index] = key;
         }
-        size++;
     }
 
     @Override
