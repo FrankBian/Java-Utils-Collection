@@ -11,6 +11,19 @@ public class QuickSort extends Sort {
         quickSort(arr, 0, arr.length - 1);
     }
 
+    public void sortX(Comparable[] arr) {
+        if (arr == null || arr.length < 2) return;
+        quickSortX(arr,0,arr.length -1 );
+    }
+
+    private void quickSortX(Comparable[] arr, int low, int high) {
+        if (high <= low) return;
+
+        int mid = partitionX(arr, low, high);
+        quickSortX(arr, low, mid - 1);
+        quickSortX(arr, mid + 1, high);
+    }
+
     private void quickSort(Comparable[] arr, int low, int high) {
         if (high <= low) return;
 

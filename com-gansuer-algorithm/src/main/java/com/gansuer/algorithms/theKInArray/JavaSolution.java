@@ -12,7 +12,7 @@ public class JavaSolution {
         if (arr == null || k < 1 || arr.length < k) {
             throw new IllegalArgumentException("invalid arguments");
         }
-        Queue<Integer> priority = new PriorityQueue<Integer>(k);
+        Queue<Integer> priority = new PriorityQueue<>(k);
         for (int i = 0; i < arr.length; i++) {
             if (priority.size() == k) {
                 int tmp = priority.poll();
@@ -21,7 +21,41 @@ public class JavaSolution {
                 priority.add(arr[i]);
             }
         }
-//        System.out.println(priority.poll());
         return priority.poll();
     }
+
+    public Comparable kTurnInArray(Comparable[] arr, int k){
+        if (arr == null || k < 1 || k > arr.length){
+            throw  new IllegalArgumentException("invalid arguments");
+        }
+        int low = 0, high = arr.length -1, index = 0;
+        while (low < high){
+            index = partition(arr,low,high);
+            if (index == k) return arr[k];
+            else if (index < k) low = index+1;
+            else high = index -1;
+        }
+        return arr[k];
+    }
+
+    private int partition(Comparable[] arr, int low, int high){
+        Comparable key = arr[low];
+        while (low < high){
+            while (arr[high].compareTo(key) > 0 && low < high){
+                high--;
+            }
+            if (low < high) {
+                arr[low++] = arr[high];
+            }
+            while (arr[low].compareTo(key) < 0 && low < high){
+                low++;
+            }
+            if (low < high){
+                arr[high--] = arr[low];
+            }
+        }
+        arr[low] = key;
+        return low;
+    }
+
 }

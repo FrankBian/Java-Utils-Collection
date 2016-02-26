@@ -25,4 +25,15 @@ public class JavaSolutionTest {
 
         Assert.assertEquals(6, res);
     }
+
+    @Test
+    public void testKTurnInArray() throws Exception {
+        Integer[] src = {2, 4, 6, -1, 8, 9};
+        int k = 3;
+
+        Integer res = (Integer) solution.kTurnInArray(src, k);
+
+        Assert.assertEquals(6, res.intValue());
+
+    }
 }
