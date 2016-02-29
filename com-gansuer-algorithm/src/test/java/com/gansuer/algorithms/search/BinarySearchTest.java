@@ -23,13 +23,12 @@ public class BinarySearchTest {
         Arrays.sort(target);
 
         int ret = BinarySearch.binarySearch(target, 89, 0, target.length);
-//        int ret = BinarySearch.binarySearch(target,89,0,target.length-1);
-
         print(target);
 
         System.out.println(ret);
 
         Assert.assertTrue(ret > 0);
+        Assert.assertEquals(89,target[ret]);
 
     }
 

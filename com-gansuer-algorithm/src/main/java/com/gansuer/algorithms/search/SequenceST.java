@@ -59,4 +59,14 @@ public interface SequenceST<K extends Comparable<K>, V> extends ST<K, V> {
      * @return
      */
     Iterable<K> keys(K low, K high);
+
+    /**
+     * delete smallest key
+     */
+    void deleteMin();
+
+    /**
+     * delete largest key
+     */
+    void deleteMax();
 }

@@ -1,6 +1,7 @@
 package com.gansuer.algorithms.search;
 
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 import java.util.Queue;
 
 /**
@@ -36,12 +37,18 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
 
     @Override
     public K floor(K key) {
-        return null;
+        if (key == null) throw new NullPointerException("argument to floor() is null");
+        int index = rank(key);
+        if (index < size && key.compareTo(keys[index]) == 0) return keys[index];
+        if (index == 0) return null;
+        return keys[index - 1];
     }
 
     @Override
     public K ceiling(K key) {
+        if (key == null) throw new NullPointerException("argument to ceiling() is null");
         int index = rank(key);
+        if (index == size) return null;
         return keys[index];
     }
 
@@ -97,9 +104,20 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
         return null;
     }
 
-    //TODO
     @Override
     public void delete(K key) {
+        if (key == null) throw new NullPointerException("argument to delete() is null");
+        if (isEmpty()) return;
+        int index = rank(key);
+        //kye not in table
+        if (index == size || keys[index].compareTo(key) != 0) return;
+        for (int i = index; i < size - 1; i++) {
+            keys[i] = keys[i + 1];
+            values[i] = values[i + 1];
+        }
+        size--;
+        keys[size] = null;
+        values[size] = null;
 
     }
 
@@ -110,7 +128,7 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
 
     @Override
     public boolean isEmpty() {
-        return size() > 0;
+        return size() == 0;
     }
 
     @Override
@@ -132,5 +150,52 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
         }
         if (contains(high)) queue.add(keys[highIndex]);
         return queue;
+    }
+
+    /**
+     * delete smallest key
+     */
+    @Override
+    public void deleteMin() {
+        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+        delete(min());
+    }
+
+    /**
+     * delete largest key
+     */
+    @Override
+    public void deleteMax() {
+        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+        delete(max());
+    }
+
+    /**
+     * Check internal invariants.
+     * @return
+     */
+
+    public boolean check() {
+        return isSorted() && rankCheck();
+    }
+
+    /**
+     * check that rank(select(i))==i
+     */
+    private boolean rankCheck() {
+        for (int i = 0; i < size(); i++) {
+            if (i != rank(select(i))) return false;
+        }
+        for (int i = 0; i < size(); i++) {
+            if (keys[i].compareTo(select(rank(keys[i]))) != 0) return false;
+        }
+        return true;
+    }
+
+    private boolean isSorted() {
+        for (int i = 1; i < size(); i++) {
+            if (keys[i].compareTo(keys[i - 1]) < 0) return false;
+        }
+        return true;
     }
 }
