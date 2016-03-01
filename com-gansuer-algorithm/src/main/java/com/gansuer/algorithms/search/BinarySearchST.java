@@ -87,6 +87,8 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
             values[i] = value;
             return;
         }
+        //haven't implemented the resize() method
+        if (size == capacity) throw new OutOfMemoryError("Array is too full to insert");
         for (int j = size; j > i; j--) {
             keys[j] = keys[j - 1];
             values[j] = values[j - 1];
