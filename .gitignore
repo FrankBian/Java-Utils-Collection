@@ -3,10 +3,9 @@
 .settings/
 *.class
 .idea/*
-/target
-*/target
-/com-gansuer-utils.iml
+*.iml
 */*.iml
+*/target
 
 
 
