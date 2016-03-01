@@ -4,7 +4,7 @@
 
 Collecting the code used mostly to perform personal repository, and it will help me work more efficiently.
 
-# Prerequisite
+# Prerequirement
 
 * maven3.2.3
 * jdk1.7 or later
