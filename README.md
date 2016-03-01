@@ -24,14 +24,8 @@ Follow apache contribution code standard  [CodeStyle.md](https://github.com/Fran
 # Build
 
 + Clone the repository into your desktop
-
-
-    git@github.com:FrankBian/Java-Utils-Collection.git
     
-+ Go to the root directory ,run following command: 
-
-
-    mvn clean test
++ Go to the root directory ,run following command: ```mvn clean test```
     
 # Licence
 
