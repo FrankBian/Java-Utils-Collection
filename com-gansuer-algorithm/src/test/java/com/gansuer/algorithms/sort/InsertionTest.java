@@ -22,8 +22,8 @@ public class InsertionTest {
     public void testSortX() throws Exception {
         Integer[] arr = {3, 8, 2, 3, 5, 0, -1};
         insertion.sortX(arr);
-        Assert.assertTrue(insertion.isSorted(arr));
-        insertion.show(arr);
+        Assert.assertTrue(Sort.isSorted(arr));
+        Sort.show(arr);
     }
 
     private long function(long target){

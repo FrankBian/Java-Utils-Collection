@@ -116,8 +116,7 @@ public class Layout {
 
         if (!eraseHelper(valueIndex, rowIndexMap.get(row), value)) return false;
         if (!eraseHelper(valueIndex, colIndexMap.get(col), value)) return false;
-        if (!eraseHelper(valueIndex, areaIndexMap.get(getAreaIndex(row, col)), value)) return false;
-        return true;
+        return eraseHelper(valueIndex, areaIndexMap.get(getAreaIndex(row, col)), value);
 
     }
 

@@ -1,6 +1,6 @@
 package com.gansuer.algorithms.search;
 
-import com.gansuer.debug.Debug;
+import com.gansuer.common.debug.Debug;
 import com.gansuer.file.FileUtils;
 import org.junit.Assert;
 import org.junit.Test;

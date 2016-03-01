@@ -17,6 +17,6 @@ public class HeapTest {
         heap.sort(res);
         Heap.show(res);
 
-        Assert.assertEquals(true,heap.isSorted(res));
+        Assert.assertEquals(true, Sort.isSorted(res));
     }
 }

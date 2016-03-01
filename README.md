@@ -12,11 +12,9 @@ Collecting the code used mostly to perform personal repository, and it will help
 
 # Content 
 + [com-gansuer-algorithm](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-algorithm) : some general algorithms implementation 
-+ [com-gansuer-file](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-file) : file operation utilitys
-+ [com-gansuer-network](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-network) : some general utility class about network operation
-+ [com-gansuer-string](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-string) : String operation utilitys
++ [com-gansuer-others](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-others) : some practices etc.
 + [com-gansuer-common](https://github.com/FrankBian/Java-Utils-Collection/blob/master/com-gansuer-common) : other general utility class
-+ [com-gansuer-webComponent](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-webComponent) : component related to J2SE
++ [com-gansuer-web](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-web) : J2EE component
 + [com-gansuer-leetcode](https://github.com/FrankBian/Java-Utils-Collection/tree/master/com-gansuer-leetcode) : [leetcode](https://leetcode.com) problems' solutions
 
 # Contribution

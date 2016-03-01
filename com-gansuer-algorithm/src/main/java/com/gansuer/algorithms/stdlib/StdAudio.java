@@ -127,7 +127,7 @@ public final class StdAudio {
         int N = data.length;
         double[] d = new double[N/2];
         for (int i = 0; i < N/2; i++) {
-            d[i] = ((short) (((data[2*i+1] & 0xFF) << 8) + (data[2*i] & 0xFF))) / ((double) MAX_16_BIT);
+            d[i] = ((short) (((data[2*i+1] & 0xFF) << 8) + (data[2*i] & 0xFF))) / MAX_16_BIT;
         }
         return d;
     }

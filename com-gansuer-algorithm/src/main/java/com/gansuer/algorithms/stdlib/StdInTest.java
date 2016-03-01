@@ -19,7 +19,7 @@ public class StdInTest {
     // make a printable/readable version of an object
     public static Object escape(Object original) {
         if (original instanceof Character) {
-            char u = (char) ((Character)original);
+            char u = (Character)original;
             int idx = "\b\t\n\f\r\"\'\\".indexOf(u);
             if (idx >= 0)
                 return "\\"+"btnfr\"\'\\".charAt(idx);

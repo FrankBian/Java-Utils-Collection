@@ -26,12 +26,12 @@ public class MergeTest {
             arr[index] = s.charAt(index) + "";
             index++;
         }
-        merge.show(arr);
+        Sort.show(arr);
 
         merge.sort(arr);
 
-        Assert.assertTrue(merge.isSorted(arr));
+        Assert.assertTrue(Sort.isSorted(arr));
 
-        merge.show(arr);
+        Sort.show(arr);
     }
 }
