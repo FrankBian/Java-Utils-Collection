@@ -21,16 +21,6 @@ Collecting the code used mostly to perform personal repository, and it will help
 
 Follow apache contribution code standard  [CodeStyle.md](https://github.com/FrankBian/Java-Utils-Collection/blob/master/CodeStyle.md) 
 
-# Build
-
-+ Clone the repository into your desktop
-    
-+ Go to the root directory ,run following command: ```mvn clean test```
-    
-# Licence
-
-The apache licence can be found [here](https://github.com/FrankBian/Java-Utils-Collection/blob/master/LICENSE.txt)  
-
 # Comment 
 
 Glad you do together, my info is below :
