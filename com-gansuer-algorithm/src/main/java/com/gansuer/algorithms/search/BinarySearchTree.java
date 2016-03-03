@@ -176,7 +176,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             root = node;
             return;
         }
-
         BinaryTreeNode cur = root;
         while (true) {
             cur.insertChild();
@@ -213,10 +212,39 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void deleteMin() {
-        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+//        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+//        if (root.getLeft() == null) {
+//            root = root.getRight();
+//            return;
+//        }
+//        BinaryTreeNode parent = root, min = parent.getLeft();
+//        while (min.getLeft() != null) {
+//            parent.deleteChild();
+//            parent = min;
+//            min = parent.getLeft();
+//        }
+//        if (min.getRight() == null) {
+//            parent.setLeft(null);
+//            parent.deleteChild();
+//            return;
+//        }
+//        parent.setLeft(min.getRight());
+//        parent.setN(size(parent));
+        removeMin(root);
+    }
+
+    /**
+     * remove the min key's node, and return it
+     *
+     * @return
+     */
+    private BinaryTreeNode removeMin(BinaryTreeNode root) {
+        if (root == null) return null;
+        BinaryTreeNode res = null;
         if (root.getLeft() == null) {
+            res = root;
             root = root.getRight();
-            return;
+            return res;
         }
         BinaryTreeNode parent = root, min = parent.getLeft();
         while (min.getLeft() != null) {
@@ -224,13 +252,15 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             parent = min;
             min = parent.getLeft();
         }
+        res = min;
         if (min.getRight() == null) {
             parent.setLeft(null);
             parent.deleteChild();
-            return;
+        } else {
+            parent.setLeft(min.getRight());
+            parent.setN(size(parent));
         }
-        parent.setLeft(min.getRight());
-        parent.setN(size(parent));
+        return res;
     }
 
     /**
@@ -238,10 +268,39 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void deleteMax() {
-        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+//        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+//        if (root.getRight() == null) {
+//            root = root.getLeft();
+//            return;
+//        }
+//        BinaryTreeNode parent = root, max = parent.getRight();
+//        while (max.getRight() != null) {
+//            parent.deleteChild();
+//            parent = max;
+//            max = parent.getRight();
+//        }
+//        if (max.getLeft() == null) {
+//            parent.setRight(null);
+//            parent.deleteChild();
+//            return;
+//        }
+//        parent.setRight(max.getLeft());
+//        parent.setN(size(parent));
+        removeMax(root);
+    }
+
+    /**
+     * remove the max key's node, and return it
+     *
+     * @return
+     */
+    private BinaryTreeNode removeMax(BinaryTreeNode root) {
+        if (root == null) return null;
+        BinaryTreeNode res = null;
         if (root.getRight() == null) {
+            res = root;
             root = root.getLeft();
-            return;
+            return res;
         }
         BinaryTreeNode parent = root, max = parent.getRight();
         while (max.getRight() != null) {
@@ -249,13 +308,15 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             parent = max;
             max = parent.getRight();
         }
+        res = max;
         if (max.getLeft() == null) {
             parent.setRight(null);
             parent.deleteChild();
-            return;
+        } else {
+            parent.setRight(max.getLeft());
+            parent.setN(size(parent));
         }
-        parent.setRight(max.getLeft());
-        parent.setN(size(parent));
+        return res;
     }
 
     /**
@@ -265,7 +326,39 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void delete(K key) {
+        if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+        root = remove(key, root);
+    }
 
+    /**
+     * @param key  NotNull
+     * @param root
+     * @return
+     */
+    public BinaryTreeNode remove(K key, BinaryTreeNode root) {
+        if (root == null) return null;
+        BinaryTreeNode temp = null;
+        int res = root.getKey().compareTo(key);
+        if (res == 0) {
+            if (root.getLeft() == null && root.getRight() == null) { //left node
+                return null;
+            } else if (root.getLeft() != null) {
+                temp = removeMax(root.getLeft());
+            } else {
+                temp = removeMin(root.getRight());
+            }
+            temp.setLeft(root.getLeft());
+            temp.setRight(root.getRight());
+            temp.setN(size(temp));
+            return temp;
+        } else if (res > 0) {
+            root.setLeft(remove(key, root.getLeft()));
+            return root;
+        } else {
+            root.setRight(remove(key, root.getRight()));
+            return root;
+        }
     }
 
     /**
