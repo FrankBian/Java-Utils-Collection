@@ -220,14 +220,17 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
         }
         BinaryTreeNode parent = root, min = parent.getLeft();
         while (min.getLeft() != null) {
+            parent.deleteChild();
             parent = min;
             min = parent.getLeft();
         }
         if (min.getRight() == null) {
             parent.setLeft(null);
+            parent.deleteChild();
             return;
         }
         parent.setLeft(min.getRight());
+        parent.setN(size(parent));
     }
 
     /**
@@ -242,14 +245,17 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
         }
         BinaryTreeNode parent = root, max = parent.getRight();
         while (max.getRight() != null) {
+            parent.deleteChild();
             parent = max;
             max = parent.getRight();
         }
         if (max.getLeft() == null) {
             parent.setRight(null);
+            parent.deleteChild();
             return;
         }
         parent.setRight(max.getLeft());
+        parent.setN(size(parent));
     }
 
     /**
@@ -259,7 +265,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void delete(K key) {
-        
+
     }
 
     /**
@@ -300,6 +306,14 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
     @Override
     public int size() {
         return isEmpty() ? 0 : root.getN();
+    }
+
+    private int size(BinaryTreeNode root) {
+        if (root == null) return 0;
+        int size = 1;
+        if (root.getLeft() != null) size += root.getLeft().getN();
+        if (root.getRight() != null) size += root.getRight().getN();
+        return size;
     }
 
     /**
