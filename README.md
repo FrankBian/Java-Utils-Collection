@@ -7,7 +7,7 @@ Collecting the code used mostly to perform personal repository, and it will help
 # Prerequirement
 
 * maven3.2.3
-* jdk1.7 or later
+* jdk1.8
 * Intellij Idea (optional)
 
 # Content 
