@@ -304,29 +304,22 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     private BinaryTreeNode remove(K key, BinaryTreeNode root) {
         if (root == null) return null;
-        BinaryTreeNode temp = null;
         int res = root.getKey().compareTo(key);
+        BinaryTreeNode temp = null;
         if (res == 0) {
-            if (root.getLeft() == null && root.getRight() == null) { //left node
-                return null;
-            } else if (root.getLeft() != null) {
-                temp = max(root.getLeft());
-                root.setLeft(removeMax(root.getLeft()));
-            } else {
-                temp = min(root.getRight());
-                root.setRight(removeMin(root.getRight()));
-            }
+            if (root.getLeft() == null) return root.getRight();
+            if (root.getRight() == null) return root.getLeft();
+            temp = max(root.getLeft());
+            root.setLeft(removeMax(root.getLeft()));
             temp.setLeft(root.getLeft());
             temp.setRight(root.getRight());
-            temp.setN(size(temp));
-            return temp;
         } else if (res > 0) {
-            root.setLeft(remove(key, root.getLeft()));
-            return root;
+            temp = root.setLeft(remove(key, root.getLeft()));
         } else {
-            root.setRight(remove(key, root.getRight()));
-            return root;
+            temp = root.setRight(remove(key, root.getRight()));
         }
+        temp.setN(size(temp));
+        return temp;
     }
 
     /**
