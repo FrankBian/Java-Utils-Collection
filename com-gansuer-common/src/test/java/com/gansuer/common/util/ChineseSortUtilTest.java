@@ -1,6 +1,6 @@
-package com.gansuer.util;
+package com.gansuer.common.util;
 
-import com.gansuer.debug.Debug;
+import com.gansuer.common.debug.Debug;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

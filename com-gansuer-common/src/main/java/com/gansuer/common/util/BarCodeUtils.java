@@ -1,4 +1,4 @@
-package com.gansuer.util;
+package com.gansuer.common.util;
 
 import com.google.zxing.*;
 import com.google.zxing.common.BitMatrix;

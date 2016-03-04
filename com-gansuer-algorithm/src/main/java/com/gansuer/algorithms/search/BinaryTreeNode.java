@@ -13,8 +13,8 @@ public class BinaryTreeNode<K extends Comparable<K>, V> {
     private int n; // the node count in the subtree rooted at this node
 
     public BinaryTreeNode(K key, V val) {
-        if (key == null) throw new IllegalArgumentException("key is null");
-        if (val == null) throw new IllegalArgumentException("val is null");
+        //if (key == null) throw new IllegalArgumentException("key is null");
+        //if (val == null) throw new IllegalArgumentException("val is null");
         this.val = val;
         this.key = key;
         this.n = 1;

@@ -1,4 +1,4 @@
-package com.gansuer.util;
+package com.gansuer.common.util;
 
 import java.text.Collator;
 import java.util.Comparator;

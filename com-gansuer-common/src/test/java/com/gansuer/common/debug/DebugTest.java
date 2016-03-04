@@ -1,4 +1,4 @@
-package com.gansuer.debug;
+package com.gansuer.common.debug;
 
 import org.junit.Test;
 

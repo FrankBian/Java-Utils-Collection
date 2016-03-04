@@ -1,6 +1,5 @@
-package com.gansuer.util;
+package com.gansuer.common.util;
 
-import com.gansuer.common.util.XMLDomUtil;
 import org.junit.Test;
 import org.w3c.dom.Document;
 

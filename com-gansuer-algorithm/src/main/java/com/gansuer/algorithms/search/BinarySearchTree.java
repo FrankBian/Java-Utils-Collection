@@ -1,6 +1,8 @@
 package com.gansuer.algorithms.search;
 
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.Queue;
 
 /**
  * Created by Frank on 3/1/16.
@@ -101,7 +103,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
     }
 
     /**
-     * the key number that which are less than this specified key
+     * Return the number of keys in the symbol table strictly less than <tt>key</tt>.
      *
      * @param key
      * @return
@@ -114,11 +116,11 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
         return rank(key, root);
     }
 
-    public int rank(K key, BinaryTreeNode root) {
+    private int rank(K key, BinaryTreeNode root) {
         if (root == null) return 0;
         int sizeLeft = root.getLeft() == null ? 0 : root.getLeft().getN();
         int temp = root.getKey().compareTo(key);
-        if (temp == 0) return sizeLeft + 1;
+        if (temp == 0) return sizeLeft;
         if (temp > 0) return rank(key, root.getLeft());
         return sizeLeft + 1 + rank(key, root.getRight());
     }
@@ -126,39 +128,30 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
     /**
      * return the k-rd key by sequences
      *
-     * @param k
+     * @param k [0,size())
      * @return
      */
     @Override
     public K select(int k) {
-        if (isEmpty() || k > root.getN() || k < 1) {
+        if (isEmpty() || k >= root.getN() || k < 0) {
             throw new IndexOutOfBoundsException("k =" + k + ", size = " + size());
         }
         return (K) select(k, root).getKey();
     }
 
     /**
-     * @param k    [1,root.size]
+     * @param k    [0,size())
      * @param root NotNull
      * @return
      */
     private BinaryTreeNode select(int k, BinaryTreeNode root) {
-        if (k > root.getN() || k < 1) {
+        if (k >= root.getN() || k < 0) {
             throw new IndexOutOfBoundsException("k =" + k + ", node'size = " + root.getN());
         }
-        if (k == root.getN()) return max(root);
-        int sizeLeft = root.getLeft() == null ? 0 : root.getLeft().getN();
-        if (k < sizeLeft) {
-            return select(k, root.getLeft());
-        }
-        if (k == sizeLeft) {
-            return max(root.getLeft());
-        }
-        if (k == sizeLeft + 1) {
-            return root;
-        }
-        k = k - sizeLeft - 1;
-        return select(k, root.getRight());
+        int sizeLeft = size(root.getLeft());
+        if (k < sizeLeft) return select(k, root.getLeft());
+        if (k == sizeLeft) return root;
+        return select(k - sizeLeft - 1, root.getRight());
 
     }
 
@@ -171,28 +164,33 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void put(K key, V value) {
-        BinaryTreeNode node = new BinaryTreeNode(key, value);
-        if (isEmpty()) { // Empty tree
-            root = node;
+        if (key == null) throw new NullPointerException("first argument to put is null");
+        if (value == null) {
+            delete(key);
             return;
         }
-        BinaryTreeNode cur = root;
-        while (true) {
-            cur.insertChild();
-            if (cur.getKey().compareTo(key) > 0) { //left
-                if (cur.getLeft() == null) {
-                    cur.setLeft(node);
-                    break;
-                }
-                cur = cur.getLeft();
-            } else { //right
-                if (cur.getRight() == null) {
-                    cur.setRight(node);
-                    break;
-                }
-                cur = cur.getRight();
-            }
-        }
+
+        root = put(root, key, value);
+        assert check();
+    }
+
+    /**
+     * recursive put method
+     *
+     * @param node
+     * @param key
+     * @param val
+     * @return
+     */
+    private BinaryTreeNode put(BinaryTreeNode node, K key, V val) {
+        if (node == null) return new BinaryTreeNode(key, val);
+        int cmp = node.getKey().compareTo(key);
+        if (cmp == 0) node.setVal(val);
+        else if (cmp > 0) node.setLeft(put(node.getLeft(), key, val));
+        else node.setRight(put(node.getRight(), key, val));
+
+        node.setN(1 + size(node.getLeft()) + size(node.getRight()));
+        return node;
     }
 
     /**
@@ -212,38 +210,22 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void deleteMin() {
-//        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
-//        if (root.getLeft() == null) {
-//            root = root.getRight();
-//            return;
-//        }
-//        BinaryTreeNode parent = root, min = parent.getLeft();
-//        while (min.getLeft() != null) {
-//            parent.deleteChild();
-//            parent = min;
-//            min = parent.getLeft();
-//        }
-//        if (min.getRight() == null) {
-//            parent.setLeft(null);
-//            parent.deleteChild();
-//            return;
-//        }
-//        parent.setLeft(min.getRight());
-//        parent.setN(size(parent));
-        removeMin(root);
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+        root = removeMin(root);
+
+        assert check();
     }
 
     /**
-     * remove the min key's node, and return it
+     * remove the min key's node, and return root Node
      *
      * @return
      */
     private BinaryTreeNode removeMin(BinaryTreeNode root) {
         if (root == null) return null;
-        BinaryTreeNode res = null;
+        BinaryTreeNode res = root;
         if (root.getLeft() == null) {
-            res = root;
-            root = root.getRight();
+            res = root.getRight();
             return res;
         }
         BinaryTreeNode parent = root, min = parent.getLeft();
@@ -252,7 +234,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             parent = min;
             min = parent.getLeft();
         }
-        res = min;
         if (min.getRight() == null) {
             parent.setLeft(null);
             parent.deleteChild();
@@ -268,25 +249,10 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public void deleteMax() {
-//        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
-//        if (root.getRight() == null) {
-//            root = root.getLeft();
-//            return;
-//        }
-//        BinaryTreeNode parent = root, max = parent.getRight();
-//        while (max.getRight() != null) {
-//            parent.deleteChild();
-//            parent = max;
-//            max = parent.getRight();
-//        }
-//        if (max.getLeft() == null) {
-//            parent.setRight(null);
-//            parent.deleteChild();
-//            return;
-//        }
-//        parent.setRight(max.getLeft());
-//        parent.setN(size(parent));
-        removeMax(root);
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
+        root = removeMax(root);
+
+        assert check();
     }
 
     /**
@@ -296,10 +262,9 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     private BinaryTreeNode removeMax(BinaryTreeNode root) {
         if (root == null) return null;
-        BinaryTreeNode res = null;
+        BinaryTreeNode res = root;
         if (root.getRight() == null) {
-            res = root;
-            root = root.getLeft();
+            res = root.getLeft();
             return res;
         }
         BinaryTreeNode parent = root, max = parent.getRight();
@@ -308,7 +273,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             parent = max;
             max = parent.getRight();
         }
-        res = max;
         if (max.getLeft() == null) {
             parent.setRight(null);
             parent.deleteChild();
@@ -329,6 +293,8 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
         if (key == null) throw new IllegalArgumentException("argument to delete() is null");
         if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
         root = remove(key, root);
+
+        assert check();
     }
 
     /**
@@ -336,7 +302,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      * @param root
      * @return
      */
-    public BinaryTreeNode remove(K key, BinaryTreeNode root) {
+    private BinaryTreeNode remove(K key, BinaryTreeNode root) {
         if (root == null) return null;
         BinaryTreeNode temp = null;
         int res = root.getKey().compareTo(key);
@@ -344,9 +310,11 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
             if (root.getLeft() == null && root.getRight() == null) { //left node
                 return null;
             } else if (root.getLeft() != null) {
-                temp = removeMax(root.getLeft());
+                temp = max(root.getLeft());
+                root.setLeft(removeMax(root.getLeft()));
             } else {
-                temp = removeMin(root.getRight());
+                temp = min(root.getRight());
+                root.setRight(removeMin(root.getRight()));
             }
             temp.setLeft(root.getLeft());
             temp.setRight(root.getRight());
@@ -378,7 +346,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     private BinaryTreeNode find(K key) {
         if (key == null) throw new NullPointerException("argument to get() is null");
-        //if (isEmpty()) throw new NoSuchElementException("BinaryTree is Empty");
         if (isEmpty()) return null;
         BinaryTreeNode cur = root;
         int res = 0;
@@ -418,11 +385,91 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements SequenceST<
      */
     @Override
     public Iterable<K> keys(K low, K high) {
-        return null;
+        if (low == null) throw new NullPointerException("first argument to keys() is null");
+        if (high == null) throw new NullPointerException("second argument to keys() is null");
+
+        Queue<K> queue = new LinkedList<>();
+        keys(root, queue, low, high);
+        return queue;
+    }
+
+    private void keys(BinaryTreeNode root, Queue<K> queue, K low, K high) {
+        if (root == null) return;
+        int lowCom = root.getKey().compareTo(low), highCom = root.getKey().compareTo(high);
+        if (lowCom > 0) keys(root.getLeft(), queue, low, high);
+        if (lowCom >= 0 && highCom <= 0) queue.add((K) root.getKey());
+        if (highCom < 0) keys(root.getRight(), queue, low, high);
     }
 
     @Override
     public Iterable<K> keys() {
-        return null;
+        return keys(min(), max());
+    }
+
+    /*************************************************************************
+     * Check integrity of BST data structure.
+     ***************************************************************************/
+    private boolean check() {
+        if (!isBST()) {
+            System.out.println("NOT BST");
+            return false;
+        }
+        if (!isSizeCorrect()) {
+            System.out.println("Subtree size NOT CORRECT");
+            return false;
+        }
+        if (!isRankCorrect()) {
+            System.out.println("Rank NOT CORRECT");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * does this binary tree satisfy symmetric order ?
+     * this method also ensure that this BST is a binary tree since order is strict
+     *
+     * @return
+     */
+    private boolean isBST() {
+        return isBST(root, null, null);
+    }
+
+    /**
+     * is the tree rooted at x a BST with all keys strictly between min and max
+     * (if min or max is null, treat as empty constraint)
+     *
+     * @param node
+     * @param min
+     * @param max
+     * @return
+     */
+    private boolean isBST(BinaryTreeNode node, K min, K max) {
+        if (node == null) return true;
+        if (min != null && node.getKey().compareTo(min) <= 0) return false;
+        if (max != null && node.getKey().compareTo(max) >= 0) return false;
+        return isBST(node.getLeft(), min, (K) node.getKey())
+                && isBST(node.getRight(), (K) node.getKey(), max);
+    }
+
+    private boolean isSizeCorrect() {
+        return isSizeCorrect(root);
+    }
+
+    private boolean isSizeCorrect(BinaryTreeNode node) {
+        if (node == null) return true;
+        if (node.getN() != size(node.getLeft()) + size(node.getRight()) + 1) return false;
+        return isSizeCorrect(node.getRight()) && isSizeCorrect(node.getLeft());
+    }
+
+    private boolean isRankCorrect() {
+        if (isEmpty()) return true;
+        for (int i = 0; i < size(); i++) {
+            if (i != rank(select(i))) return false;
+        }
+        for (K key : keys()) {
+            if (key.compareTo(select(rank(key))) != 0) return false;
+        }
+        return true;
     }
 }
