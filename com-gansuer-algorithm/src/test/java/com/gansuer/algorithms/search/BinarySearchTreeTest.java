@@ -98,7 +98,6 @@ public class BinarySearchTreeTest {
             String res = bst.select(index++);
             Assert.assertEquals(str, res);
         }
-
         try {
             Assert.assertEquals("XXX", bst.select(index + 10));
         } catch (Exception e) {
@@ -135,7 +134,7 @@ public class BinarySearchTreeTest {
         TreeSet<String> set = new TreeSet<String>(Arrays.asList(strings));
         ArrayList<String> list = new ArrayList<>(set);
 
-        for (int i= list.size() - 1; i >=0 ;i--) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             String res = bst.max();
             Assert.assertEquals(list.get(i), res);
             bst.deleteMax();
@@ -144,7 +143,7 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testPut() throws Exception {
-        for (String str : strings){
+        for (String str : strings) {
             Assert.assertTrue(bst.contains(str));
         }
     }
@@ -152,13 +151,13 @@ public class BinarySearchTreeTest {
     @Test
     public void testGet() throws Exception {
         int index = 0;
-        Map<String,Integer> map = new HashMap<>();
-        for (String str: strings){
-            map.put(str,index++);
+        Map<String, Integer> map = new HashMap<>();
+        for (String str : strings) {
+            map.put(str, index++);
         }
 
-        for (String key:map.keySet()){
-            Assert.assertEquals(map.get(key),bst.get(key));
+        for (String key : map.keySet()) {
+            Assert.assertEquals(map.get(key), bst.get(key));
         }
     }
 
@@ -172,14 +171,14 @@ public class BinarySearchTreeTest {
 
     @Test
     public void testContains() throws Exception {
-        for (String str : strings){
+        for (String str : strings) {
             Assert.assertTrue(bst.contains(str));
         }
     }
 
     @Test
     public void testIsEmpty() throws Exception {
-        BinarySearchTree<String,String> temp = new BinarySearchTree<>();
+        BinarySearchTree<String, String> temp = new BinarySearchTree<>();
         Assert.assertTrue(temp.isEmpty());
         Assert.assertTrue(!bst.isEmpty());
 
@@ -191,18 +190,18 @@ public class BinarySearchTreeTest {
         ArrayList<String> list = new ArrayList<>(set);
         int size = list.size();
 
-        for (int i= list.size() - 1; i >=0 ;i--) {
+        for (int i = list.size() - 1; i >= 0; i--) {
             String res = bst.max();
             Assert.assertEquals(list.get(i), res);
-            Assert.assertEquals(size--,bst.size());
+            Assert.assertEquals(size--, bst.size());
             bst.deleteMax();
         }
     }
 
     @Test
     public void testKeys1() throws Exception {
-        String low = "B",high="S";
-        for (String str : bst.keys(low,high)){
+        String low = "B", high = "S";
+        for (String str : bst.keys(low, high)) {
             Assert.assertTrue(str.compareTo(low) >= 0);
             Assert.assertTrue(str.compareTo(high) <= 0);
         }
