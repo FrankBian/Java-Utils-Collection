@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.Locale;
 
 /**
- * 用作中文排序的Comparator
+ * 用作中文首字母排序的Comparator
  * Created by Frank on 4/27/15.
  */
-public class ChineseCompator implements Comparator<String> {
+public class ChineseComparator implements Comparator<String> {
 
     private static Collator cmp = Collator.getInstance(Locale.CHINA);
 

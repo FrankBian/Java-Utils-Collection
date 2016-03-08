@@ -1,4 +1,4 @@
-package com.gansuer.util;
+package com.gansuer.common.util;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

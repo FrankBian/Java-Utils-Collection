@@ -14,11 +14,11 @@ public class ChineseSortUtil {
      * @param list unsorted list
      */
     public static void chineseList(List<String> list) {
-        Collections.sort(list, new ChineseCompator());
+        Collections.sort(list, new ChineseComparator());
     }
 
 
     public static void chineseArray(String[] arrs) {
-        Arrays.sort(arrs, new ChineseCompator());
+        Arrays.sort(arrs, new ChineseComparator());
     }
 }
