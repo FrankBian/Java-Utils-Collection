@@ -1,5 +1,9 @@
 package com.gansuer.algorithms.search;
 
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.Queue;
+
 /**
  * Created by Frank on 3/7/16.
  */
@@ -9,18 +13,19 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     private static final boolean BLACK = false;
 
     private Node root;
-    private int size;
 
     private class Node {
         private K key;
         private V val;
         private boolean color;
+        private int n;
         private Node left, right;
 
         public Node(K key, V val, boolean color) {
             this.key = key;
             this.val = val;
             this.color = color;
+            this.n = 1;
         }
     }
 
@@ -130,7 +135,21 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public int rank(K key) {
-        return 0;
+        if (key == null) throw new IllegalArgumentException("argument to rank() is null");
+        return rank(key, root);
+    }
+
+    private int rank(K key, Node x) {
+        if (x == null) return 0;
+        int cmp = key.compareTo(x.key);
+        int left = size(x.left);
+        if (cmp == 0) {
+            return left;
+        } else if (cmp < 0) {
+            return rank(key, x.left);
+        } else {
+            return left + 1 + rank(key, x.right);
+        }
     }
 
     /**
@@ -141,7 +160,15 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public K select(int k) {
-        return null;
+        if (k >= size() || k < 0) throw new IllegalArgumentException("k=" + k + ",size=" + size());
+        return select(k, root).key;
+    }
+
+    private Node select(int k, Node x) {
+        int left = size(x.left);
+        if (left > k) return select(k, x.left);
+        else if (left == k) return x;
+        else return select(k - left - 1, x.right);
     }
 
     /**
@@ -153,7 +180,25 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public Iterable<K> keys(K low, K high) {
-        return null;
+        if (low == null) throw new IllegalArgumentException("the first argument to keys() is null");
+        if (high == null) throw new IllegalArgumentException("the second argument to keys() is null");
+        if (low.compareTo(high) > 0) throw new IllegalStateException("1st arg should be less than 2nd arg");
+        Queue<K> queue = new LinkedList<>();
+        keys(root, queue, low, high);
+        return queue;
+    }
+
+    private void keys(Node x, Queue queue, K low, K high) {
+        if (x == null) return;
+        int cmpLow = low.compareTo(x.key), cmpHigh = high.compareTo(x.key);
+        if (cmpLow < 0) keys(x.left, queue, low, high);
+        if (cmpLow <= 0 && cmpHigh >= 0) queue.add(x.key);
+        if (cmpHigh > 0) keys(x.right, queue, low, high);
+    }
+
+    @Override
+    public Iterable<K> keys() {
+        return keys(min(), max());
     }
 
     /**
@@ -161,8 +206,30 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void deleteMin() {
-
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree is empty");
+        root = deleteMin(root);
+        if (root != null) {
+            root.color = BLACK;
+        }
         assert check();
+    }
+
+    private Node deleteMin(Node x) {
+        if (x.left == null) return x.right;
+        x.left = deleteMin(x.left);
+        x.n = size(x);
+
+        //ensure the red-black tree properties
+        if (!isRed(x.left) && isRed(x.right)) {
+            x = rotateLeft(x);
+        }
+        if (isRed(x.left) && isRed(x.left.left)) {
+            x = rotateRight(x);
+        }
+        if (isRed(x.left) && isRed(x.right)) {
+            flipColors(x);
+        }
+        return x;
     }
 
     /**
@@ -170,8 +237,30 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void deleteMax() {
-
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree is empty");
+        root = deleteMax(root);
+        if (root != null) {
+            root.color = BLACK;
+        }
         assert check();
+    }
+
+    private Node deleteMax(Node x) {
+        if (x.right == null) return x.left;
+        x.right = deleteMax(x.right);
+        x.n = size(x);
+
+        //ensure the red-black tree properties
+        if (!isRed(x.left) && isRed(x.right)) {
+            x = rotateLeft(x);
+        }
+        if (isRed(x.left) && isRed(x.left.left)) {
+            x = rotateRight(x);
+        }
+        if (isRed(x.left) && isRed(x.right)) {
+            flipColors(x);
+        }
+        return x;
     }
 
     /**
@@ -195,7 +284,6 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
 
     private Node put(K key, V value, Node x) {
         if (x == null) {
-            size++;
             return new Node(key, value, RED);
         }
         int cmp = x.key.compareTo(key);
@@ -206,6 +294,7 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         } else {
             x.right = put(key, value, x.right);
         }
+        x.n = size(x);
         //ensure that satisfy the red-black tree
         if (isRed(x.right) && !isRed(x.left)) {
             x = rotateLeft(x);
@@ -249,8 +338,39 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void delete(K key) {
-
+        if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+        root = delete(key, root);
+        root.color = BLACK;
         assert check();
+    }
+
+    //delete the node indicated by the key from this specified Node
+    private Node delete(K key, Node x) {
+        if (x == null) return null;
+        int cmp = x.key.compareTo(key);
+        if (cmp > 0) {
+            x.left = delete(key, x.left);
+        } else if (cmp < 0) {
+            x.right = delete(key, x.right);
+        } else {
+            Node cur = min(x.right);
+            cur.right = deleteMin(x.right);
+            cur.left = x.left;
+            x = cur;
+        }
+        x.n = size(x);
+
+        //ensure that satisfy the red-black tree
+        if (isRed(x.right) && !isRed(x.left)) {
+            x = rotateLeft(x);
+        }
+        if (isRed(x.left) && isRed(x.left.left)) {
+            x = rotateRight(x);
+        }
+        if (isRed(x.left) && isRed(x.right)) {
+            flipColors(x);
+        }
+        return x;
     }
 
     /**
@@ -264,12 +384,12 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
 
     @Override
     public boolean isEmpty() {
-        return size == 0;
+        return size() == 0;
     }
 
     @Override
     public int size() {
-        return size;
+        return root == null ? 0 : root.n;
     }
 
     private int size(Node x) {
@@ -277,10 +397,6 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         return 1 + size(x.left) + size(x.right);
     }
 
-    @Override
-    public Iterable<K> keys() {
-        return null;
-    }
 
     /**
      * Red-Black helper function
