@@ -19,12 +19,11 @@ import java.util.Map;
 
 public class HttpWebRequest {
 
+    public static final String JsonContentType = "application/json";
     // 毫秒
     private static final int CONNECTION_TIMEOUT = 10 * 1000;
     // 毫秒
     private static final int SO_TIMEOUT = 10 * 1000;
-
-    public static final String JsonContentType = "application/json";
 
     private HttpWebRequest() {
     }

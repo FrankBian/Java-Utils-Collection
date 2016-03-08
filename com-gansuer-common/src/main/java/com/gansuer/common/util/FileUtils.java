@@ -14,9 +14,8 @@ import java.util.List;
  */
 public class FileUtils {
 
-    private static Debug debug = new Debug();
-
     private static final int BUFFER_LENGTH = 4096;
+    private static Debug debug = new Debug();
 
     /**
      * 创建目录

@@ -13,9 +13,8 @@ import org.apache.log4j.Logger;
  */
 public class PinyinConverter {
 
-    protected final Logger logger = Logger.getLogger(this.getClass());
-
     private static PinyinConverter pinyinConverter = new PinyinConverter();
+    protected final Logger logger = Logger.getLogger(this.getClass());
 
     /**
      * @param chinese

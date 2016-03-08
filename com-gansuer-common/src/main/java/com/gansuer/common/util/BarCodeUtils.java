@@ -28,34 +28,6 @@ public class BarCodeUtils {
     public static BarCodeConfig config = new BarCodeConfig();
 
     /**
-     * make the parameters be configurable
-     */
-    static class BarCodeConfig {
-        protected String CHARSET = "utf-8";
-        protected String FORMAT_NAME = "JPG";
-
-        protected int QRCODE_SIZE = 300;
-        // logo width
-        protected int WIDTH = 60;
-        // logo height
-        protected int HEIGHT = 60;
-
-        public BarCodeConfig() {
-        }
-
-        public BarCodeConfig(String CHARSET, String FORMAT_NAME, int QRCODE_SIZE, int WIDTH, int HEIGHT) {
-            this.CHARSET = CHARSET;
-            this.FORMAT_NAME = FORMAT_NAME;
-            this.QRCODE_SIZE = QRCODE_SIZE;
-            if (WIDTH > QRCODE_SIZE || HEIGHT > QRCODE_SIZE) {
-                throw new IllegalArgumentException("Logo width or height should be less than QRCodeSize !");
-            }
-            this.WIDTH = WIDTH;
-            this.HEIGHT = HEIGHT;
-        }
-    }
-
-    /**
      * @param content      content indicated by the generated QRCode
      * @param imgPath      Logo image path
      * @param needCompress If true , need to compress the logo file
@@ -226,7 +198,6 @@ public class BarCodeUtils {
         ImageIO.write(image, config.FORMAT_NAME, output);
     }
 
-
     /**
      * Generate QRCode
      *
@@ -274,6 +245,34 @@ public class BarCodeUtils {
         result = new MultiFormatReader().decode(bitmap, hints);
         String resultStr = result.getText();
         return resultStr;
+    }
+
+    /**
+     * make the parameters be configurable
+     */
+    static class BarCodeConfig {
+        protected String CHARSET = "utf-8";
+        protected String FORMAT_NAME = "JPG";
+
+        protected int QRCODE_SIZE = 300;
+        // logo width
+        protected int WIDTH = 60;
+        // logo height
+        protected int HEIGHT = 60;
+
+        public BarCodeConfig() {
+        }
+
+        public BarCodeConfig(String CHARSET, String FORMAT_NAME, int QRCODE_SIZE, int WIDTH, int HEIGHT) {
+            this.CHARSET = CHARSET;
+            this.FORMAT_NAME = FORMAT_NAME;
+            this.QRCODE_SIZE = QRCODE_SIZE;
+            if (WIDTH > QRCODE_SIZE || HEIGHT > QRCODE_SIZE) {
+                throw new IllegalArgumentException("Logo width or height should be less than QRCodeSize !");
+            }
+            this.WIDTH = WIDTH;
+            this.HEIGHT = HEIGHT;
+        }
     }
 
     private static class BufferedImageSource extends LuminanceSource {
