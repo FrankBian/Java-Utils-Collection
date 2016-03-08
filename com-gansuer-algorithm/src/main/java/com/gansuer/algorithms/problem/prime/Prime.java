@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.prime;
+package com.gansuer.algorithms.problem.prime;
 
 /**
  * Created by Frank on 7/23/15.

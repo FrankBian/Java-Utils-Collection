@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.theKInArray;
+package com.gansuer.algorithms.problem.theKInArray;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

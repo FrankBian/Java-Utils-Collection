@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.theKInArray;
 
+import com.gansuer.algorithms.problem.theKInArray.JavaSolution;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

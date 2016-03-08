@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.sudoku;
+package com.gansuer.algorithms.problem.sudoku;
 
 import java.util.Arrays;
 

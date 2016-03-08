@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.UnionFind;
+package com.gansuer.algorithms.problem.UnionFind;
 
 /**
  * Created by Frank on 9/16/15.

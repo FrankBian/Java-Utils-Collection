@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.sudoku.solution2;
+package com.gansuer.algorithms.problem.sudoku.solution2;
 
 import java.util.Set;
 
