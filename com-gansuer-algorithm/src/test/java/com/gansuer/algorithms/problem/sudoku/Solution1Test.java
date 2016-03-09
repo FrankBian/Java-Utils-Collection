@@ -1,6 +1,5 @@
-package com.gansuer.algorithms.sudoku;
+package com.gansuer.algorithms.problem.sudoku;
 
-import com.gansuer.algorithms.problem.sudoku.Solution1;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

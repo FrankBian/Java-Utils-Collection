@@ -1,6 +1,5 @@
-package com.gansuer.algorithms.prime;
+package com.gansuer.algorithms.problem.prime;
 
-import com.gansuer.algorithms.problem.prime.Prime;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

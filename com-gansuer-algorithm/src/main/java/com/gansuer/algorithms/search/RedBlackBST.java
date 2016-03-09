@@ -181,8 +181,10 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     @Override
     public Iterable<K> keys(K low, K high) {
         if (low == null) throw new IllegalArgumentException("the first argument to keys() is null");
-        if (high == null) throw new IllegalArgumentException("the second argument to keys() is null");
-        if (low.compareTo(high) > 0) throw new IllegalStateException("1st arg should be less than 2nd arg");
+        if (high == null)
+            throw new IllegalArgumentException("the second argument to keys() is null");
+        if (low.compareTo(high) > 0)
+            throw new IllegalStateException("1st arg should be less than 2nd arg");
         Queue<K> queue = new LinkedList<>();
         keys(root, queue, low, high);
         return queue;

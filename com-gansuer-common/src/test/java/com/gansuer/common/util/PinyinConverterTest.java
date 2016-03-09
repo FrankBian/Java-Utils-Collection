@@ -1,6 +1,5 @@
 package com.gansuer.common.util;
 
-import com.gansuer.util.PinyinConverter;
 import org.junit.Assert;
 import org.junit.Test;
 

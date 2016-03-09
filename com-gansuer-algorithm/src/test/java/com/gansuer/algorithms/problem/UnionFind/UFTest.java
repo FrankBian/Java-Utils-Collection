@@ -1,8 +1,5 @@
-package com.gansuer.algorithms.UnionFind;
+package com.gansuer.algorithms.problem.UnionFind;
 
-import com.gansuer.algorithms.problem.UnionFind.QuickFind;
-import com.gansuer.algorithms.problem.UnionFind.UF;
-import com.gansuer.algorithms.problem.UnionFind.WeightQuickUnion;
 import org.junit.Before;
 import org.junit.Test;
 
