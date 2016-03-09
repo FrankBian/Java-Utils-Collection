@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Created by Frank on 3/9/16.
@@ -113,7 +110,7 @@ public class RedBlackBSTTest {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
         List<String> list = new ArrayList<>(set);
         String low = "A",high = "S";
-        int iLow = list.indexOf(low),iHigh = list.indexOf(high);
+        int iLow = list.indexOf(low);
         for (String s : rbt.keys(low,high)){
             Assert.assertEquals(list.get(iLow++),s);
         }
@@ -141,11 +138,20 @@ public class RedBlackBSTTest {
 
     @Test
     public void testPut() throws Exception {
-
+        Assert.assertTrue(rbt != null);
     }
 
     @Test
     public void testGet() throws Exception {
+        Map<String,Integer> map = new HashMap<>();
+        int i = 0;
+        for (String s:strs){
+            map.put(s,i++);
+        }
+
+        for (String s : map.keySet()){
+            Assert.assertEquals(map.get(s),rbt.get(s));
+        }
 
     }
 
@@ -156,16 +162,22 @@ public class RedBlackBSTTest {
 
     @Test
     public void testContains() throws Exception {
-
+        for (String s : strs){
+            Assert.assertTrue(rbt.contains(s));
+        }
+        Assert.assertTrue(!rbt.contains("B"));
     }
 
     @Test
     public void testIsEmpty() throws Exception {
-
+        RedBlackBST<String,Integer> tmp = new RedBlackBST<>();
+        Assert.assertTrue(tmp.isEmpty());
+        Assert.assertTrue(!rbt.isEmpty());
     }
 
     @Test
     public void testSize() throws Exception {
-
+        TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
+        Assert.assertEquals(set.size(),rbt.size());
     }
 }

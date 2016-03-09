@@ -216,10 +216,26 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         assert check();
     }
 
+    /**
+     * change left 2- node  to 3- node from top to bottom, and remove the min,then adjust the tree to satisfy 2-3 tree
+     *
+     * @param x
+     * @return
+     */
     private Node deleteMin(Node x) {
-        if (x.left == null) return x.right;
-        x.left = deleteMin(x.left);
-        x.n = size(x);
+//        if (x == null) return null;
+//        if (x.left == null) return x.right;
+//        if (!isRed(x.left) && !isRed(x.right)) {
+//            x.left.color = RED;
+//            x.right.color = RED;
+//            x.left = deleteMin(x.left);
+//        } else if (!isRed(x.left.left)) {        //continue if the left child of current is not 2- node
+//            x.left = deleteMin(x.left);
+//        }
+//        //
+//        if (!isRed(x.left.left))
+//            x.left = deleteMin(x.left);
+//        x.n = size(x);
 
         //ensure the red-black tree properties
         if (!isRed(x.left) && isRed(x.right)) {
@@ -232,6 +248,18 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
             flipColors(x);
         }
         return x;
+    }
+
+    //precondition : x.left is 2-node and x.right is 3 or 4 node
+    private Node adjustLeftTo3(Node x) {
+        Node res = x.right.left, tmp = x.right;
+        x.left.color = RED;
+        tmp.left = res.right;
+        x.right = res.left;
+        res.right = tmp;
+        res.left = x;
+        res.color = x.color;
+        return res;
     }
 
     /**
