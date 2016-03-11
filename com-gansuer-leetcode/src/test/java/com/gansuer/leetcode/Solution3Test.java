@@ -1,7 +1,7 @@
 package com.gansuer.leetcode;
 
-import com.gansuer.file.FileUtils;
-import com.gansuer.string.StringUtils;
+import com.gansuer.common.util.FileUtils;
+import com.gansuer.common.util.StringUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
