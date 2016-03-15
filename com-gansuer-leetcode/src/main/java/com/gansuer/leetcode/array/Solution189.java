@@ -6,35 +6,98 @@ package com.gansuer.leetcode.array;
 public class Solution189 {
 
     public void rotate(int[] nums, int k) {
-        //if (nums == null) return;
-        //// validate k
-        //k = k % nums.length;
-        //if (k == 0) return;
-        //int i = 0, change = 0, cache = nums[i];
-        //while (change <= nums.length) {
-        //    int next = (i + k) % nums.length;
-        //    int tmp = nums[next];
-        //    nums[next] = cache;
-        //    cache = tmp;
-        //    i = next;
-        //    change++;
-        //}
         if (nums == null) return;
         k = k % nums.length;
         if (k == 0) return;
-        rotate(nums, 0, nums.length, k);
+//        rotate(nums, 0, nums.length, k, 1);
+        rotateRight(nums, 0, nums.length, k);
     }
 
-    private void rotate(int[] nums, int from, int to, int k) {
-        int len = to - from, left = len - k, rest = left - k;
-        if (rest <= 0) return;
-        int j = len - k;
-        for (int i = 0; i < k; i++) {
-            int tmp = nums[j];
-            nums[j] = nums[from + i];
-            nums[from + i] = tmp;
-            j++;
+    /**
+     * Time Limit Exceeded
+     *
+     * @param nums
+     * @param from
+     * @param to
+     * @param k
+     * @param flag rotate to right if flag == 1, and to left if flag = -1
+     */
+    private void rotate(int[] nums, int from, int to, int k, int flag) {
+        int len = to - from;
+        if (k > len / 2) {
+            rotate(nums, from, to, len - k, flag * (-1));
+        } else {
+            int j = to - k;
+            for (int i = from; i < from + k; i++) {
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+                j++;
+            }
+            int rest = len - 2 * k;
+            if (rest > 0) {
+                if (flag == 1) { //right
+                    from += k;
+                } else { //left
+                    to -= k;
+                }
+                rotate(nums, from, to, k, flag);
+            }
+            return;
         }
-        rotate(nums, from + k, to, k);
+    }
+
+
+    private void rotateLeft(int[] nums, int from, int to, int k) {
+        int len = to - from;
+        if (k > len / 2) {
+            rotateRight(nums, from, to, len - k);
+        } else {
+            //do sth
+            int j = to - k;
+            for (int i = from; i < from + k; i++) {
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+                j++;
+            }
+            int rest = len - 2 * k;
+            if (rest == 0) {
+                return;
+            } else {
+                rotateLeft(nums, from, to - k, k);
+            }
+        }
+    }
+
+    /**
+     * Accepted
+     * 11.70%
+     *
+     * @param nums
+     * @param from
+     * @param to
+     * @param k
+     */
+    private void rotateRight(int[] nums, int from, int to, int k) {
+        int len = to - from;
+        if (k > len / 2) {
+            rotateLeft(nums, from, to, len - k);
+        } else {
+            //do sth
+            int j = to - k;
+            for (int i = from; i < from + k; i++) {
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+                j++;
+            }
+            int rest = len - 2 * k;
+            if (rest == 0) {
+                return;
+            } else {
+                rotateRight(nums, from + k, to, k);
+            }
+        }
     }
 }
