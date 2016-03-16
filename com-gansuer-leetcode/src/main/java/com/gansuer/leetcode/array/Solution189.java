@@ -9,13 +9,13 @@ public class Solution189 {
         if (nums == null) return;
         k = k % nums.length;
         if (k == 0) return;
-//        rotate(nums, 0, nums.length, k, 1);
-        rotateRight(nums, 0, nums.length, k);
+        rotate(nums, 0, nums.length, k, 1);
+//        rotateRight(nums, 0, nums.length, k);
     }
 
     /**
-     * Time Limit Exceeded
-     *
+     * AC
+     * 11.70%
      * @param nums
      * @param from
      * @param to
