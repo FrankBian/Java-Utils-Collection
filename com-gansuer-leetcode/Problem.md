@@ -96,6 +96,13 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
 
+## 53. Maximum Subarray
+
+    Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+
+    For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
+    the contiguous subarray [4,−1,2,1] has the largest sum = 6.
+
 ## 88 Merge Sorted Array
 
     Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
@@ -400,6 +407,18 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
              /  \
              7   4
     For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another example is LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+
+## 238. Product of Array Except Self
+
+    Given an array of n integers where n > 1, nums, return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+
+    Solve it without division and in O(n).
+
+    For example, given [1,2,3,4], return [24,12,8,6].
+
+    Follow up:
+
+    Could you solve it with constant space complexity? (Note: The output array does not count as extra space for the purpose of space complexity analysis.)
 
 ## 257. Binary Tree Paths
 
