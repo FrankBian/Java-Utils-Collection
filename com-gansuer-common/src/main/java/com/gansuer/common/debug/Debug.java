@@ -9,7 +9,7 @@ import java.util.List;
  * <p>
  * Created by Frank on 4/17/15.
  */
-public class Debug {
+public abstract class Debug {
 
     /**
      * logger
