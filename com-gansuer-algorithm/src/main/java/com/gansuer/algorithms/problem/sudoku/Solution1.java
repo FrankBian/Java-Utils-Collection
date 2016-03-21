@@ -102,24 +102,4 @@ public class Solution1 {
     public int[][] result() {
         return getSrc();
     }
-
-    public static void main(String[] args) {
-        Solution1 solution1 = new Solution1();
-        int[][] soduku = new int[][]
-                {
-                        {0, 0, 0, 7, 2, 8, 0, 0, 0},
-                        {0, 9, 0, 0, 5, 1, 6, 0, 0},
-                        {0, 0, 0, 0, 6, 0, 0, 8, 2},
-                        {3, 0, 0, 8, 0, 2, 7, 0, 4},
-                        {1, 7, 4, 0, 3, 0, 0, 2, 0},
-                        {2, 8, 0, 5, 0, 0, 0, 3, 0},
-                        {0, 1, 0, 3, 0, 0, 2, 0, 0},
-                        {0, 0, 7, 0, 4, 6, 0, 0, 5},
-                        {0, 0, 6, 1, 0, 0, 0, 4, 9}
-                };
-        solution1.setSrc(soduku);
-        solution1.run(0);
-        solution1.show();
-
-    }
 }

@@ -180,9 +180,9 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public Iterable<K> keys(K low, K high) {
-        if (low == null) throw new IllegalArgumentException("the first argument to keys() is null");
+        if (low == null) throw new IllegalArgumentException("1st argument to keys() is null");
         if (high == null)
-            throw new IllegalArgumentException("the second argument to keys() is null");
+            throw new IllegalArgumentException("2nd argument to keys() is null");
         if (low.compareTo(high) > 0)
             throw new IllegalStateException("1st arg should be less than 2nd arg");
         Queue<K> queue = new LinkedList<>();
@@ -208,11 +208,12 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void deleteMin() {
-        if (isEmpty()) throw new NoSuchElementException("BinaryTree is empty");
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree Underflow");
+        //if both children of root are black, set root to red
+        if (!isRed(root.left) && !isRed(root.right)) root.color = RED;
         root = deleteMin(root);
-        if (root != null) {
-            root.color = BLACK;
-        }
+        if (!isEmpty()) root.color = BLACK;
+
         assert check();
     }
 
@@ -223,43 +224,10 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      * @return
      */
     private Node deleteMin(Node x) {
-//        if (x == null) return null;
-//        if (x.left == null) return x.right;
-//        if (!isRed(x.left) && !isRed(x.right)) {
-//            x.left.color = RED;
-//            x.right.color = RED;
-//            x.left = deleteMin(x.left);
-//        } else if (!isRed(x.left.left)) {        //continue if the left child of current is not 2- node
-//            x.left = deleteMin(x.left);
-//        }
-//        //
-//        if (!isRed(x.left.left))
-//            x.left = deleteMin(x.left);
-//        x.n = size(x);
-
-        //ensure the red-black tree properties
-        if (!isRed(x.left) && isRed(x.right)) {
-            x = rotateLeft(x);
-        }
-        if (isRed(x.left) && isRed(x.left.left)) {
-            x = rotateRight(x);
-        }
-        if (isRed(x.left) && isRed(x.right)) {
-            flipColors(x);
-        }
-        return x;
-    }
-
-    //precondition : x.left is 2-node and x.right is 3 or 4 node
-    private Node adjustLeftTo3(Node x) {
-        Node res = x.right.left, tmp = x.right;
-        x.left.color = RED;
-        tmp.left = res.right;
-        x.right = res.left;
-        res.right = tmp;
-        res.left = x;
-        res.color = x.color;
-        return res;
+        if (x.left == null) return null;
+        if (!isRed(x.left) && isRed(x.left.left)) x = moveRedLeft(x);
+        x.left = deleteMin(x.left);
+        return balance(x);
     }
 
     /**
@@ -267,30 +235,24 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void deleteMax() {
-        if (isEmpty()) throw new NoSuchElementException("BinaryTree is empty");
-        root = deleteMax(root);
-        if (root != null) {
-            root.color = BLACK;
+        if (isEmpty()) throw new NoSuchElementException("BinaryTree Underflow");
+
+        //if both children of root are black, set root to red
+        if (!isRed(root.left) && !isRed(root.right)) {
+            root.color = RED;
         }
+        root = deleteMax(root);
+        if (!isEmpty()) root.color = BLACK;
+
         assert check();
     }
 
     private Node deleteMax(Node x) {
-        if (x.right == null) return x.left;
+        if (isRed(x.left)) x = rotateRight(x);
+        if (x.right == null) return null;
+        if (!isRed(x.right) && !isRed(x.right.left)) x = moveRedLeft(x);
         x.right = deleteMax(x.right);
-        x.n = size(x);
-
-        //ensure the red-black tree properties
-        if (!isRed(x.left) && isRed(x.right)) {
-            x = rotateLeft(x);
-        }
-        if (isRed(x.left) && isRed(x.left.left)) {
-            x = rotateRight(x);
-        }
-        if (isRed(x.left) && isRed(x.right)) {
-            flipColors(x);
-        }
-        return x;
+        return balance(x);
     }
 
     /**
@@ -362,46 +324,48 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     }
 
     /**
-     * remove the key-value pair from this ST
+     * Removes the specified key and its associated value from this symbol table
+     * (if the key is in this symbol table).
      *
-     * @param key
+     * @param key the key
+     * @throws NullPointerException if key is null
      */
     @Override
     public void delete(K key) {
         if (key == null) throw new IllegalArgumentException("argument to delete() is null");
-        root = delete(key, root);
-        root.color = BLACK;
+        if (!contains(key)) return;
+        // if both children of root are black, set root to red
+        if (!isRed(root.left) && !isRed(root.right)) root.color = RED;
+        root = delete(root, key);
+        if (!isEmpty()) root.color = BLACK;
+
         assert check();
     }
 
-    //delete the node indicated by the key from this specified Node
-    private Node delete(K key, Node x) {
-        if (x == null) return null;
-        int cmp = x.key.compareTo(key);
-        if (cmp > 0) {
-            x.left = delete(key, x.left);
-        } else if (cmp < 0) {
-            x.right = delete(key, x.right);
-        } else {
-            Node cur = min(x.right);
-            cur.right = deleteMin(x.right);
-            cur.left = x.left;
-            x = cur;
-        }
-        x.n = size(x);
+    //delete the key-value pair with the given key rooted at x
+    private Node delete(Node x, K key) {
+        assert get(key, x) != null;
 
-        //ensure that satisfy the red-black tree
-        if (isRed(x.right) && !isRed(x.left)) {
-            x = rotateLeft(x);
+        int cmp = key.compareTo(x.key);
+        if (cmp < 0) {
+            if (!isRed(x.left) && !isRed(x.left.left)) x = moveRedLeft(x);
+            x.left = delete(x.left, key);
+        } else {
+            if (isRed(x.left)) x = rotateRight(x);
+            if (cmp == 0 && x.right == null) return null;
+            if (!isRed(x.right) && isRed(x.right.left)) x = moveRedRight(x);
+            if (cmp == 0) {
+                Node tmp = min(x.right);
+                x.key = tmp.key;
+                x.val = tmp.val;
+                x.right = deleteMin(x.right);
+            } else {
+                x.right = delete(x.right, key);
+            }
         }
-        if (isRed(x.left) && isRed(x.left.left)) {
-            x = rotateRight(x);
-        }
-        if (isRed(x.left) && isRed(x.right)) {
-            flipColors(x);
-        }
-        return x;
+        return balance(x);
     }
+
 
     /**
      * @param key
@@ -465,6 +429,46 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         h.color = RED;
         h.left.color = BLACK;
         h.right.color = BLACK;
+    }
+
+    // restore red-black tree invariant
+    private Node balance(Node h) {
+        assert h != null;
+
+        if (isRed(h.right)) h = rotateLeft(h);
+        if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
+        if (isRed(h.left) && isRed(h.right)) flipColors(h);
+
+        h.n = size(h.left) + size(h.right) + 1;
+        return h;
+    }
+
+    // Assuming that h is red and both h.right and h.right.left
+    // are black, make h.right or one of its children red.
+    private Node moveRedRight(Node h) {
+        assert h != null;
+        //assert isRed(h) && !isRed(h.right) && isRed(h.right.left);
+
+        flipColors(h);
+        if (isRed(h.left.left)) {
+            h = rotateRight(h);
+            flipColors(h);
+        }
+        return h;
+    }
+
+    // Assuming that h is red and both h.left and h.left.left
+    // are black, make h.left or one of its children red.
+    private Node moveRedLeft(Node h) {
+        assert h != null;
+
+        flipColors(h);
+        if (isRed(h.right.left)) {
+            h.right = rotateRight(h.right);
+            h = rotateLeft(h);
+            flipColors(h);
+        }
+        return h;
     }
 
     /**

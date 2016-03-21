@@ -100,8 +100,8 @@ public class RedBlackBSTTest {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
         List<String> list = new ArrayList<>(set);
         int i = 0;
-        for (String s : rbt.keys()){
-            Assert.assertEquals(list.get(i++),s);
+        for (String s : rbt.keys()) {
+            Assert.assertEquals(list.get(i++), s);
         }
     }
 
@@ -109,28 +109,29 @@ public class RedBlackBSTTest {
     public void testKeys1() throws Exception {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
         List<String> list = new ArrayList<>(set);
-        String low = "A",high = "S";
+        String low = "A", high = "S";
         int iLow = list.indexOf(low);
-        for (String s : rbt.keys(low,high)){
-            Assert.assertEquals(list.get(iLow++),s);
+        for (String s : rbt.keys(low, high)) {
+            Assert.assertEquals(list.get(iLow++), s);
         }
         try {
-            rbt.keys(high,low);
-        }catch (Exception e){
+            rbt.keys(high, low);
+        } catch (Exception e) {
             Assert.assertNotNull(e);
         }
     }
-
+    //TODO:correct
     @Test
     public void testDeleteMin() throws Exception {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
-        for (String s : set){
-            Assert.assertEquals(s,rbt.min());
+        for (String s : set) {
+            Assert.assertEquals(s, rbt.min());
             rbt.deleteMin();
             Assert.assertTrue(!rbt.contains(s));
         }
     }
 
+    //TODO:correct
     @Test
     public void testDeleteMax() throws Exception {
 
@@ -143,26 +144,30 @@ public class RedBlackBSTTest {
 
     @Test
     public void testGet() throws Exception {
-        Map<String,Integer> map = new HashMap<>();
+        Map<String, Integer> map = new HashMap<>();
         int i = 0;
-        for (String s:strs){
-            map.put(s,i++);
+        for (String s : strs) {
+            map.put(s, i++);
         }
 
-        for (String s : map.keySet()){
-            Assert.assertEquals(map.get(s),rbt.get(s));
+        for (String s : map.keySet()) {
+            Assert.assertEquals(map.get(s), rbt.get(s));
         }
 
     }
 
+    //TODO : correct
     @Test
     public void testDelete() throws Exception {
-
+        for (String item : strs) {
+            rbt.delete(item);
+            Assert.assertTrue(!rbt.contains(item));
+        }
     }
 
     @Test
     public void testContains() throws Exception {
-        for (String s : strs){
+        for (String s : strs) {
             Assert.assertTrue(rbt.contains(s));
         }
         Assert.assertTrue(!rbt.contains("B"));
@@ -170,7 +175,7 @@ public class RedBlackBSTTest {
 
     @Test
     public void testIsEmpty() throws Exception {
-        RedBlackBST<String,Integer> tmp = new RedBlackBST<>();
+        RedBlackBST<String, Integer> tmp = new RedBlackBST<>();
         Assert.assertTrue(tmp.isEmpty());
         Assert.assertTrue(!rbt.isEmpty());
     }
@@ -178,6 +183,6 @@ public class RedBlackBSTTest {
     @Test
     public void testSize() throws Exception {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
-        Assert.assertEquals(set.size(),rbt.size());
+        Assert.assertEquals(set.size(), rbt.size());
     }
 }
