@@ -213,7 +213,6 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         if (!isRed(root.left) && !isRed(root.right)) root.color = RED;
         root = deleteMin(root);
         if (!isEmpty()) root.color = BLACK;
-
         assert check();
     }
 
@@ -225,7 +224,7 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     private Node deleteMin(Node x) {
         if (x.left == null) return null;
-        if (!isRed(x.left) && isRed(x.left.left)) x = moveRedLeft(x);
+        if (!isRed(x.left) && !isRed(x.left.left)) x = moveRedLeft(x);
         x.left = deleteMin(x.left);
         return balance(x);
     }
@@ -243,14 +242,13 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
         }
         root = deleteMax(root);
         if (!isEmpty()) root.color = BLACK;
-
         assert check();
     }
 
     private Node deleteMax(Node x) {
         if (isRed(x.left)) x = rotateRight(x);
         if (x.right == null) return null;
-        if (!isRed(x.right) && !isRed(x.right.left)) x = moveRedLeft(x);
+        if (!isRed(x.right) && !isRed(x.right.left)) x = moveRedRight(x);
         x.right = deleteMax(x.right);
         return balance(x);
     }
@@ -332,38 +330,35 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
      */
     @Override
     public void delete(K key) {
-        if (key == null) throw new IllegalArgumentException("argument to delete() is null");
+        if (key == null) throw new NullPointerException("argument to delete() is null");
         if (!contains(key)) return;
         // if both children of root are black, set root to red
         if (!isRed(root.left) && !isRed(root.right)) root.color = RED;
         root = delete(root, key);
         if (!isEmpty()) root.color = BLACK;
-
         assert check();
     }
 
     //delete the key-value pair with the given key rooted at x
-    private Node delete(Node x, K key) {
-        assert get(key, x) != null;
-
-        int cmp = key.compareTo(x.key);
-        if (cmp < 0) {
-            if (!isRed(x.left) && !isRed(x.left.left)) x = moveRedLeft(x);
-            x.left = delete(x.left, key);
+    private Node delete(Node h, K key) {
+        // assert get(h, key) != null;
+        if (key.compareTo(h.key) < 0) {
+            if (!isRed(h.left) && !isRed(h.left.left)) h = moveRedLeft(h);
+            h.left = delete(h.left, key);
         } else {
-            if (isRed(x.left)) x = rotateRight(x);
-            if (cmp == 0 && x.right == null) return null;
-            if (!isRed(x.right) && isRed(x.right.left)) x = moveRedRight(x);
-            if (cmp == 0) {
-                Node tmp = min(x.right);
-                x.key = tmp.key;
-                x.val = tmp.val;
-                x.right = deleteMin(x.right);
+            if (isRed(h.left)) h = rotateRight(h);
+            if (key.compareTo(h.key) == 0 && (h.right == null)) return null;
+            if (!isRed(h.right) && !isRed(h.right.left)) h = moveRedRight(h);
+            if (key.compareTo(h.key) == 0) {
+                Node x = min(h.right);
+                h.key = x.key;
+                h.val = x.val;
+                h.right = deleteMin(h.right);
             } else {
-                x.right = delete(x.right, key);
+                h.right = delete(h.right, key);
             }
         }
-        return balance(x);
+        return balance(h);
     }
 
 
@@ -425,20 +420,19 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     // precondition: two children are red, node is black
     // postcondition: two children are black, node is red
     private void flipColors(Node h) {
-        assert !isRed(h) && isRed(h.left) && isRed(h.right);
-        h.color = RED;
-        h.left.color = BLACK;
-        h.right.color = BLACK;
+//        assert (!isRed(h) && isRed(h.left) && isRed(h.right)) ||
+//                (isRed(h) && !isRed(h.right) && !isRed(h.left));
+        h.color = !h.color;
+        h.left.color = !h.left.color;
+        h.right.color = !h.right.color;
     }
 
     // restore red-black tree invariant
     private Node balance(Node h) {
         assert h != null;
-
         if (isRed(h.right)) h = rotateLeft(h);
         if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
         if (isRed(h.left) && isRed(h.right)) flipColors(h);
-
         h.n = size(h.left) + size(h.right) + 1;
         return h;
     }
@@ -462,6 +456,13 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     private Node moveRedLeft(Node h) {
         assert h != null;
 
+//        flipColors(h);
+//        if (isRed(h.right.left)) {
+//            h.right = rotateRight(h.right);
+//            h = rotateLeft(h);
+//            flipColors(h);
+//        }
+//        return h;
         flipColors(h);
         if (isRed(h.right.left)) {
             h.right = rotateRight(h.right);
