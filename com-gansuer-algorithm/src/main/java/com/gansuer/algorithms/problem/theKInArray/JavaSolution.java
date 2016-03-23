@@ -24,33 +24,33 @@ public class JavaSolution {
         return priority.poll();
     }
 
-    public Comparable kTurnInArray(Comparable[] arr, int k){
-        if (arr == null || k < 1 || k > arr.length){
-            throw  new IllegalArgumentException("invalid arguments");
+    public Comparable kTurnInArray(Comparable[] arr, int k) {
+        if (arr == null || k < 1 || k > arr.length) {
+            throw new IllegalArgumentException("invalid arguments");
         }
-        int low = 0, high = arr.length -1, index = 0;
-        while (low < high){
-            index = partition(arr,low,high);
-            if (index == k) return arr[k];
-            else if (index < k) low = index+1;
-            else high = index -1;
+        int low = 0, high = arr.length - 1, index = 0;
+        while (low < high) {
+            index = partition(arr, low, high);
+            if (index == k - 1) break;
+            else if (index < k) low = index + 1;
+            else high = index - 1;
         }
-        return arr[k];
+        return arr[k - 1];
     }
 
-    private int partition(Comparable[] arr, int low, int high){
+    private int partition(Comparable[] arr, int low, int high) {
         Comparable key = arr[low];
-        while (low < high){
-            while (arr[high].compareTo(key) > 0 && low < high){
+        while (low < high) {
+            while (low < high && arr[high].compareTo(key) < 0) {
                 high--;
             }
             if (low < high) {
                 arr[low++] = arr[high];
             }
-            while (arr[low].compareTo(key) < 0 && low < high){
+            while (low < high && arr[low].compareTo(key) > 0) {
                 low++;
             }
-            if (low < high){
+            if (low < high) {
                 arr[high--] = arr[low];
             }
         }

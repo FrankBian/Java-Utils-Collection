@@ -29,11 +29,14 @@ public class JavaSolutionTest {
     @Test
     public void testKTurnInArray() throws Exception {
         Integer[] src = {2, 4, 6, -1, 8, 9};
-        int k = 3;
+        Assert.assertEquals(4,solution.kTurnInArray(src,4));
+        Assert.assertEquals(9,solution.kTurnInArray(src,1));
+        Assert.assertEquals(8,solution.kTurnInArray(src,2));
+        Assert.assertEquals(6,solution.kTurnInArray(src,3));
+        Assert.assertEquals(2,solution.kTurnInArray(src,5));
+        Assert.assertEquals(-1,solution.kTurnInArray(src,6));
 
-        Integer res = (Integer) solution.kTurnInArray(src, k);
-
-        Assert.assertEquals(6, res.intValue());
-
+        Integer[] case1 = {2, 1};
+        Assert.assertEquals(2, solution.kTurnInArray(case1, 1));
     }
 }

@@ -310,6 +310,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note: Recursive solution is trivial, could you do it iteratively?
 
+## 153. Find Minimum in Rotated Sorted Array
+
+    Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+    (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+    Find the minimum element.
+
+    You may assume no duplicate exists in the array.
+
 ## 173. Binary Search Tree Iterator
 
 
@@ -355,6 +365,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note:
     You may assume that all inputs are consist of lowercase letters a-z.
+
+## 215. Kth Largest Element in an Array
+
+    Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+    For example,
+    Given [3,2,1,5,6,4] and k = 2, return 5.
+
+    Note:
+    You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 ## 226. Invert Binary Tree
 
