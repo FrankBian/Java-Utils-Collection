@@ -425,7 +425,7 @@ public class RedBlackBST<K extends Comparable<K>, V> implements SequenceST<K, V>
     // precondition: two children are red, node is black
     // postcondition: two children are black, node is red
     private void flipColors(Node h) {
-        assert !isRed(h) && isRed(h.left) && isRed(h.right);
+        //assert !isRed(h) && isRed(h.left) && isRed(h.right);
         h.color = RED;
         h.left.color = BLACK;
         h.right.color = BLACK;
