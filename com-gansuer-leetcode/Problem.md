@@ -103,7 +103,17 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
     the contiguous subarray [4,−1,2,1] has the largest sum = 6.
 
-## 88 Merge Sorted Array
+## 80. Remove Duplicates from Sorted Array II
+
+    Follow up for "Remove Duplicates":
+    What if duplicates are allowed at most twice?
+
+    For example,
+    Given sorted array nums = [1,1,1,2,2,3],
+
+    Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
+
+## 88. Merge Sorted Array
 
     Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
@@ -310,6 +320,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note: Recursive solution is trivial, could you do it iteratively?
 
+## 153. Find Minimum in Rotated Sorted Array
+
+    Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+    (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+    Find the minimum element.
+
+    You may assume no duplicate exists in the array.
+
 ## 173. Binary Search Tree Iterator
 
 
@@ -355,6 +375,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note:
     You may assume that all inputs are consist of lowercase letters a-z.
+
+## 215. Kth Largest Element in an Array
+
+    Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+    For example,
+    Given [3,2,1,5,6,4] and k = 2, return 5.
+
+    Note:
+    You may assume k is always valid, 1 ≤ k ≤ array's length.
 
 ## 226. Invert Binary Tree
 
