@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * Created by Frank on 7/24/15.
  */
-public class JavaSolution {
+public class Solution1 {
 
     public int theKofArray(int[] arr, int k) {
         if (arr == null || k < 1 || arr.length < k) {

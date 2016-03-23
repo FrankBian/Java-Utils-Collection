@@ -9,11 +9,11 @@ import org.junit.Test;
  */
 public class JavaSolutionTest {
 
-    private JavaSolution solution;
+    private Solution1 solution;
 
     @Before
     public void setUp() throws Exception {
-        solution = new JavaSolution();
+        solution = new Solution1();
     }
 
     @Test

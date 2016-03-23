@@ -103,7 +103,17 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
     the contiguous subarray [4,−1,2,1] has the largest sum = 6.
 
-## 88 Merge Sorted Array
+## 80. Remove Duplicates from Sorted Array II
+
+    Follow up for "Remove Duplicates":
+    What if duplicates are allowed at most twice?
+
+    For example,
+    Given sorted array nums = [1,1,1,2,2,3],
+
+    Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3. It doesn't matter what you leave beyond the new length.
+
+## 88. Merge Sorted Array
 
     Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
