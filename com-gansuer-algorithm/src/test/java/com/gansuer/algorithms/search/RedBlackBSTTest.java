@@ -121,7 +121,6 @@ public class RedBlackBSTTest {
         }
     }
 
-    //TODO:correct
     @Test
     public void testDeleteMin() throws Exception {
         TreeSet<String> set = new TreeSet<>(Arrays.asList(strs));
@@ -132,7 +131,6 @@ public class RedBlackBSTTest {
         }
     }
 
-    //TODO:correct
     @Test
     public void testDeleteMax() throws Exception {
         List<String> list = Arrays.asList(strs);
@@ -167,7 +165,6 @@ public class RedBlackBSTTest {
 
     }
 
-    //TODO : correct
     @Test
     public void testDelete() throws Exception {
         for (String item : strs) {
