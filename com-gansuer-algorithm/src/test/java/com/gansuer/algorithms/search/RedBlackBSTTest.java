@@ -135,7 +135,17 @@ public class RedBlackBSTTest {
     //TODO:correct
     @Test
     public void testDeleteMax() throws Exception {
-
+        List<String> list = Arrays.asList(strs);
+        Collections.sort(list, (s1, s2) -> s2.compareTo(s1));
+        String post = "", cur = "";
+        for (String s : list) {
+            cur = s;
+            if (cur.equals(post)) continue;
+            Assert.assertEquals(s, rbt.max());
+            rbt.deleteMax();
+            Assert.assertTrue(!rbt.contains(s));
+            post = s;
+        }
     }
 
     @Test
