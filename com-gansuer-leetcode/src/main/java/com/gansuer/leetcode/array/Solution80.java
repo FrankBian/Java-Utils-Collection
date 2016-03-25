@@ -6,6 +6,12 @@ package com.gansuer.leetcode.array;
 public class Solution80 {
 
     public int removeDuplicates(int[] nums) {
-        return 0;
+        assert nums != null;
+        if (nums.length < 3) return nums.length;
+        int cur = 0, post = 0, pre = 1, count = 1;
+        for (; pre < nums.length; ) {
+        }
+
+        return cur + 1;
     }
 }
