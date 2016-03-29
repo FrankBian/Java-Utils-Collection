@@ -33,7 +33,19 @@ public class RandomUtils {
             char s = c[a];
             sb.append(s);
         }
-
         return sb.toString();
+    }
+
+    /**
+     * 获取指定长度的由数字组成的随机字符串
+     * @param length
+     * @return
+     */
+    public static String getRandomNumberString(int length) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            stringBuilder.append(random.nextInt(10));
+        }
+        return stringBuilder.toString();
     }
 }
