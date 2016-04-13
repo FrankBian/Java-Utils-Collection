@@ -1,0 +1,63 @@
+.customServiceDiv {
+    position: fixed;
+    right: 2px;
+    top: 100px;
+    width: auto;
+}
+.customServiceIcon {
+    background: #03aeda url("/static/img/customServiceQQ.png") no-repeat;
+    border: 1px solid #03aeda;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-family: "微软雅黑";
+    font-size: 14px;
+    line-height: 16px;
+    padding: 41px 10px 10px;
+    text-align: center;
+    vertical-align: text-bottom;
+    width: 40px;
+}
+.customServiceIcon.active {
+    background: #ffffff url("/static/img/customServiceQQOn.png") no-repeat;
+    color: #03aeda;
+}
+.customServiceGroup {
+    background-color: #ffffff;
+    border: 1px solid #03aeda;
+    font-family: "微软雅黑";
+    margin-right: 50px;
+    width: 115px;
+}
+.customServiceGroup::before {
+    background-image: url("/static/img/customServiceArrow.png");
+    content: "";
+    display: inline-block;
+    float: right;
+    height: 14px;
+    margin-right: -9px;
+    margin-top: 10px;
+    width: 9px;
+}
+.customServiceTitle {
+    background-color: #03aeda;
+    color: #ffffff;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.customServiceBody {
+    color: #696969;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 8px;
+}
+.imgclass {
+    background: #ffffff url("/static/img/qq-tall.png") no-repeat;
+    color: #03aeda;
+    height: 22px;
+    width: 90px;
+}

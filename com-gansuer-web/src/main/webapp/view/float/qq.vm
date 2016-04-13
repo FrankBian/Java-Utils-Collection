@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/css/float/qq.css?v=20160414">
+<div class="customServiceDiv">
+    <div class="customServiceIcon">在线客服</div>
+    <div class="customServiceGroup hide">
+        <div class="customServiceTitle">在线客服</div>
+        <div class="customServiceBody">
+            <div>在线咨询：</div>
+            <div style="margin-top:5px;">
+                <div>
+                    <ul style="list-style: none;padding: 0px;">
+##                        此处超链接使用 QQ 生成的超链接即可
+                        <li><a target="_blank"
+                               href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes">
+                            <img border="0" src="http://wpa.qq.com/pa?p=2:123456789:41" alt="咨询1"
+                                title="咨询1"/></a></li>
+                        <li><a target="_blank"
+                               href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"><img
+                                border="0" src="http://wpa.qq.com/pa?p=2:123456789:51" alt="咨询2"
+                                title="咨询2"/></a></li>
+                    </ul>
+                </div>
+                <div class="pic"
+                     style="display:inline-block; width:97px; height:1px;
+                     background-image:url(/static/img/customServiceLine.png);
+                     background-repeat:no-repeat;"></div>
+                <div>电话咨询：</div>
+                <span style="color:#f29c12; font-size:14px; font-weight:bold;">4000123456</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //客服QQ显隐
+    $(".customServiceIcon").click(function () {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active").next().addClass("hide");
+        } else {
+            $(this).addClass("active").next().removeClass("hide");
+        }
+    });
+</script>
