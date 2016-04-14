@@ -64,7 +64,7 @@ public class Solution103 {
                     if (cur.right != null) queue.offer(cur.right);
                 }
                 result.add(item);
-                order = order ? false : true;
+                order = !order;
             }
         }
         return result;

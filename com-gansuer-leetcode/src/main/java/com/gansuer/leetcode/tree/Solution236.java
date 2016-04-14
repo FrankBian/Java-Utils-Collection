@@ -39,7 +39,7 @@ public class Solution236 {
 //            found = findNode(root.right, node);
 //        }
 //        return found;
-        return findNode(root.left, node) ? true : findNode(root.right, node);
+        return findNode(root.left, node) || findNode(root.right, node);
     }
 
     public TreeNode lowestCommonAncestorRecursive(TreeNode root, TreeNode p, TreeNode q) {
