@@ -23,7 +23,7 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)   
     Output: 7 -> 0 -> 8  
  
-## 3.Longest  Substring Without Repeating characters
+## 3. Longest  Substring Without Repeating characters
 
 
 
@@ -31,14 +31,19 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     For example, the longest substring without repeating letters for "abcabcbb" is "abc",   
     which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.  
 
-## 5.Longest Palindromic Substring
+## 4. Median of Two Sorted Arrays
+
+    There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+
+
+## 5. Longest Palindromic Substring
 
 
 
     Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000,    
     and there exists one unique longest palindromic substring.
     
-## 6.ZigZag Conversion
+## 6. ZigZag Conversion
 
 
 
@@ -53,7 +58,7 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     string convert(string text, int nRows);
     convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 
-## 7.Reverse Integer
+## 7. Reverse Integer
 
 
 
@@ -95,6 +100,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     Given input array nums = [1,1,2],
 
     Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
+
+## 33. Search in Rotated Sorted Array
+
+    Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+    (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+    You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+    You may assume no duplicate exists in the array.
 
 ## 53. Maximum Subarray
 
@@ -340,7 +355,7 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
 
-## 189 Rotate Array
+## 189. Rotate Array
 
     Rotate an array of n elements to the right by k steps.
 
@@ -484,4 +499,26 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
         4   5
     as "[1,2,3,null,null,4,5]", just the same as how LeetCode OJ serializes a binary tree. You do not necessarily need to follow this format, so please be creative and come up with different approaches yourself.
     Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
+
+## 330. Patching Array
+
+    Given a sorted positive integer array nums and an integer n, add/patch elements to the array such that any number in range [1, n] inclusive can be formed by the sum of some elements in the array. Return the minimum number of patches required.
+
+    Example 1:
+    nums = [1, 3], n = 6
+    Return 1.
+
+    Combinations of nums are [1], [3], [1,3], which form possible sums of: 1, 3, 4.
+    Now if we add/patch 2 to nums, the combinations are: [1], [2], [3], [1,3], [2,3], [1,2,3].
+    Possible sums are 1, 2, 3, 4, 5, 6, which now covers the range [1, 6].
+    So we only need 1 patch.
+
+    Example 2:
+    nums = [1, 5, 10], n = 20
+    Return 2.
+    The two patches can be [2, 4].
+
+    Example 3:
+    nums = [1, 2, 2], n = 5
+    Return 0.
 

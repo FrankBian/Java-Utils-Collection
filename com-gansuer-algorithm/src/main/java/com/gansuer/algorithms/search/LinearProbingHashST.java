@@ -39,10 +39,10 @@ public class LinearProbingHashST<K, V> {
     }
 
     private void resize(int newCapacity) {
-        LinearProbingHashST<K,V> temp = new LinearProbingHashST<>(newCapacity);
-        for (int i= 0; i < capacity;i++){
-            if (keys[i] != null){
-                temp.put(keys[i],values[i]);
+        LinearProbingHashST<K, V> temp = new LinearProbingHashST<>(newCapacity);
+        for (int i = 0; i < capacity; i++) {
+            if (keys[i] != null) {
+                temp.put(keys[i], values[i]);
             }
         }
         keys = temp.keys;
@@ -59,7 +59,7 @@ public class LinearProbingHashST<K, V> {
         return null;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
 }
