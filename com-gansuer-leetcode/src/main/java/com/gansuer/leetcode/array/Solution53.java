@@ -27,6 +27,7 @@ public class Solution53 {
 
     /**
      * TODO : correct
+     *
      * @param nums
      * @return
      */
@@ -37,7 +38,7 @@ public class Solution53 {
             if (sum > max) {
                 max = sum;
                 i++;
-            } else{
+            } else {
 
             }
         }
