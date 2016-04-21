@@ -24,13 +24,13 @@ public class Heap extends Sort {
     /**
      * 0-based binary heap array
      * @param arr
-     * @param N array's length
+     * @param len array's length
      * @param i
      */
-    private void sink(Comparable[] arr, int N, int i) {
-        while (2 * i + 1 < N) {
+    private void sink(Comparable[] arr, int len, int i) {
+        while (2 * i + 1 < len) {
             int j = 2 * i + 1;
-            if (j + 1 < N && less(arr[j], arr[j + 1])) j++;
+            if (j + 1 < len && less(arr[j], arr[j + 1])) j++;
             if (less(arr[j], arr[i])) break;
             exchange(arr, i, j);
             i = j;
