@@ -15,8 +15,8 @@ public class HeapTest {
 
         Heap heap = new Heap();
         heap.sort(res);
-        Heap.show(res);
+        heap.show(res);
 
-        Assert.assertEquals(true, Sort.isSorted(res));
+        Assert.assertEquals(true, heap.isSorted(res));
     }
 }

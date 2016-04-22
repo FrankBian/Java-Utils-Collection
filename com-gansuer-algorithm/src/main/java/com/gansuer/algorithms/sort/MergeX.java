@@ -5,7 +5,7 @@ package com.gansuer.algorithms.sort;
  * <p>
  * Bottom to up
  */
-public class MergeX extends Sort {
+public class MergeX implements Sort {
 
     private Comparable[] tmp = null;
 

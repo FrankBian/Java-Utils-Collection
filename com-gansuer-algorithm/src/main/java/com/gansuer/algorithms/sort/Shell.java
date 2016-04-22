@@ -3,7 +3,7 @@ package com.gansuer.algorithms.sort;
 /**
  * Created by Frank on 7/26/15.
  */
-public class Shell extends Sort {
+public class Shell implements Sort {
     @Override
     public void sort(Comparable[] arr) {
         int len = arr.length;

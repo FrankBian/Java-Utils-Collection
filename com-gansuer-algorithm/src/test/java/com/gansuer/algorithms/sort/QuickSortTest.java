@@ -26,16 +26,16 @@ public class QuickSortTest {
             index++;
         }
         sort.sort(arr);
-        Sort.show(arr);
-        Assert.assertEquals(true,Sort.isSorted(arr));
+        sort.show(arr);
+        Assert.assertEquals(true,sort.isSorted(arr));
     }
 
     @Test
     public void testSort1() throws Exception {
         Integer[] arr = {5,4,3,9,10};
         sort.sort(arr);
-        Sort.show(arr);
-        Assert.assertEquals(true,Sort.isSorted(arr));
+        sort.show(arr);
+        Assert.assertEquals(true,sort.isSorted(arr));
     }
 
     @Test
@@ -49,8 +49,8 @@ public class QuickSortTest {
         }
 
         sort.sortX(arr);
-        Sort.show(arr);
-        Assert.assertEquals(true,Sort.isSorted(arr));
+        sort.show(arr);
+        Assert.assertEquals(true,sort.isSorted(arr));
 
     }
 }

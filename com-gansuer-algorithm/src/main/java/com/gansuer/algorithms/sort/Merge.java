@@ -4,7 +4,7 @@ package com.gansuer.algorithms.sort;
  * Created by Frank on 7/26/15.
  * Top to Down
  */
-public class Merge extends Sort {
+public class Merge implements Sort {
 
     @Override
     public void sort(Comparable[] arr) {

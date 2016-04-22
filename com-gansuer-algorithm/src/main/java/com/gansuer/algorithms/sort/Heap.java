@@ -3,7 +3,7 @@ package com.gansuer.algorithms.sort;
 /**
  * Created by Frank on 2/21/2016.
  */
-public class Heap extends Sort {
+public class Heap implements Sort {
 
     /**
      * Rearranges the array in ascending order, using the natural order.

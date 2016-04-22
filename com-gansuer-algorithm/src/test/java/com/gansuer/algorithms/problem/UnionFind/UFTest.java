@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.problem.UnionFind;
+package com.gansuer.algorithms.problem.unionFind;
 
 import org.junit.Before;
 import org.junit.Test;

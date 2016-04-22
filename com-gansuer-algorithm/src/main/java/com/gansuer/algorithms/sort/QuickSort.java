@@ -3,7 +3,7 @@ package com.gansuer.algorithms.sort;
 /**
  * Created by Frank on 8/2/15.
  */
-public class QuickSort extends Sort {
+public class QuickSort implements Sort {
 
     @Override
     public void sort(Comparable[] arr) {

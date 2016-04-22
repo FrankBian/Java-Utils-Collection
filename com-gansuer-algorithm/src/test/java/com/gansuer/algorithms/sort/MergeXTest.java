@@ -25,12 +25,12 @@ public class MergeXTest {
             arr[index] = s.charAt(index) + "";
             index++;
         }
-        Sort.show(arr);
+        mergeX.show(arr);
 
         mergeX.sort(arr);
 
-        Assert.assertTrue(Sort.isSorted(arr));
+        Assert.assertTrue(mergeX.isSorted(arr));
 
-        Sort.show(arr);
+        mergeX.show(arr);
     }
 }

@@ -7,9 +7,9 @@ package com.gansuer.algorithms.sort;
  * <p>
  * this can be applied to all objects that implement  Comparable interface
  */
-public abstract class Sort {
+public interface Sort {
 
-    public abstract void sort(Comparable[] arr);
+    void sort(Comparable[] arr);
 
     /**
      * change the position of this two elements
@@ -18,7 +18,7 @@ public abstract class Sort {
      * @param i
      * @param j
      */
-    protected static void exchange(Comparable[] arr, int i, int j) {
+    default void exchange(Comparable[] arr, int i, int j) {
         if (i != j) {
             Comparable tmp = arr[i];
             arr[i] = arr[j];
@@ -31,11 +31,11 @@ public abstract class Sort {
      * @param b
      * @return true if a < b , otherwise false returned
      */
-    protected static boolean less(Comparable a, Comparable b) {
+    default boolean less(Comparable a, Comparable b) {
         return a.compareTo(b) < 0;
     }
 
-    public static boolean isSorted(Comparable[] arr) {
+    default boolean isSorted(Comparable[] arr) {
         for (int i = 1; i < arr.length; i++) {
             if (less(arr[i], arr[i - 1])) {
                 return false;
@@ -44,7 +44,7 @@ public abstract class Sort {
         return true;
     }
 
-    public static void show(Comparable[] arr) {
+    default void show(Comparable[] arr) {
         System.out.println("______________________________");
         for (Comparable item : arr) {
             System.out.print(item + "   ");

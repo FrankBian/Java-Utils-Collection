@@ -1,6 +1,5 @@
 package com.gansuer.algorithms.sort.queue;
 
-import com.gansuer.algorithms.sort.Helper;
 
 /**
  * TODO：need to test
@@ -35,7 +34,7 @@ public class BinaryMaxPQ<V extends Comparable<V>> implements MaxPQ {
     public Comparable delMax() {
         if (isEmpty()) return null;
         V val = vals[1];
-        Helper.swap(vals, 1, size);
+        swap(vals, 1, size);
         vals[size--] = null;
         sink(1);
         return val;
@@ -46,7 +45,7 @@ public class BinaryMaxPQ<V extends Comparable<V>> implements MaxPQ {
         if (size < capacity - 1) {
             vals[++size] = (V) key;
             swim(size);
-        } else if (Helper.less(vals[size], key)) { // this array is full
+        } else if (less(vals[size], key)) { // this array is full
             vals[size] = (V) key;
             swim(size);
         }
@@ -61,13 +60,13 @@ public class BinaryMaxPQ<V extends Comparable<V>> implements MaxPQ {
     private void sink(int index) {
         while (2 * index <= size) {
             int k = 2 * index;
-            if (k < size && Helper.less(vals[k], vals[k + 1])) {
+            if (k < size && less(vals[k], vals[k + 1])) {
                 k = k + 1;
             }
-            if (Helper.less(vals[k], vals[index])) {
+            if (less(vals[k], vals[index])) {
                 break;
             }
-            Helper.swap(vals, index, k);
+            swap(vals, index, k);
             index = k;
         }
     }
@@ -78,8 +77,8 @@ public class BinaryMaxPQ<V extends Comparable<V>> implements MaxPQ {
      * @param index
      */
     private void swim(int index) {
-        while (index > 1 && Helper.less(vals[index / 2], vals[index])) {
-            Helper.swap(vals, index, index / 2);
+        while (index > 1 && less(vals[index / 2], vals[index])) {
+            swap(vals, index, index / 2);
             index /= 2;
         }
     }
