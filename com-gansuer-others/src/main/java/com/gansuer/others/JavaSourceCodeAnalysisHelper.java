@@ -114,21 +114,28 @@ public class JavaSourceCodeAnalysisHelper {
         int index_interface = classNameLine.indexOf("interface");
 
         if (index_extends > 0) {
-            className = classNameLine.substring(index_class > index_interface ? index_class + 5 : index_interface + 9, index_extends).trim();
+            className = classNameLine.substring(index_class > index_interface ? index_class + 5
+                    : index_interface + 9, index_extends).trim();
         } else if (index_implements > 0) {
-            className = classNameLine.substring(index_class > index_interface ? index_class + 5 : index_interface + 9, index_implements).trim();
+            className = classNameLine.substring(index_class > index_interface ? index_class + 5
+                    : index_interface + 9, index_implements).trim();
         } else if (index_block > 0) {
-            className = classNameLine.substring(index_class > index_interface ? index_class + 5 : index_interface + 9, index_block).trim();
+            className = classNameLine.substring(index_class > index_interface ? index_class + 5
+                    : index_interface + 9, index_block).trim();
         }
 
         if (StringUtils.isEmpty(className)) {
             throw new Exception("Can't get className (className is EMPTY)");
         }
 
-        classTypeMap.put(className, index_class > index_interface ? (classNameLine.contains(ABSTRACT) ? ABSTRACT : CLASS) : INTERFACE);
+        classTypeMap.put(className, index_class > index_interface ?
+                (classNameLine.contains(ABSTRACT) ? ABSTRACT : CLASS) : INTERFACE);
 
-        extend = index_extends > 0 ? classNameLine.substring(index_extends + 7, index_implements > 0 ? index_implements : index_block).trim() : null;
-        imple = index_implements > 0 ? classNameLine.substring(index_implements + 10, index_block).trim() : null;
+        extend = index_extends > 0 ?
+                classNameLine.substring(index_extends + 7, index_implements > 0 ?
+                        index_implements : index_block).trim() : null;
+        imple = index_implements > 0 ?
+                classNameLine.substring(index_implements + 10, index_block).trim() : null;
 
         Map<String, Set<String>> values = null;
         if (StringUtils.isNotEmpty(extend)) {
