@@ -1,7 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.TreeNode;
-
 /**
  * Created by Frank on 11/17/15.
  */

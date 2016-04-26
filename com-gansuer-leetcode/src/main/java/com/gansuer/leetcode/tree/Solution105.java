@@ -1,7 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.TreeNode;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;

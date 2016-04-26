@@ -8,7 +8,7 @@ import java.util.Queue;
 /**
  * Created by Frank on 11/17/15.
  */
-public class BinaryTreeHelper {
+public abstract class BinaryTreeHelper {
 
 
     public static TreeNode buildBinaryTree(Integer[] input) {

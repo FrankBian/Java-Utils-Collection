@@ -1,7 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.TreeNode;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;

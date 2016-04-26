@@ -1,8 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.BinaryTreeHelper;
-import com.gansuer.leetcode.tree.TreeNode;
-
 import java.util.*;
 
 /**

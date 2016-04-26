@@ -1,6 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.TreeNode;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 
 /**

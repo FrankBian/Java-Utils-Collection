@@ -82,9 +82,6 @@ public class Solution3 {
                 if (sub.indexOf(s.charAt(j - 1)) == sub.length() - 1) {
                     // enhancement by me
                     max = j - i > max ? j - i : max;
-//                    if (max < j-i){
-//                        max = j-i;
-//                    }
                 } else {
                     break;
                 }

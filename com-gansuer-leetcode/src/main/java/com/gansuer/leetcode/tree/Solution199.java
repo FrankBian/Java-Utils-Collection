@@ -1,8 +1,9 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.TreeNode;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by Frank on 11/22/15.
