@@ -23,28 +23,7 @@ function HashMap() {
         return this.keys;
     };
 
-    /**
-     * 这个方法和常用map的put不一致
-     * 尽量改用set方法
-     * @param key
-     * @param value
-     */
     HashMap.prototype.put = function (key, value) {
-        // 判断元素是否已添加
-        var i = 0;
-        for (; i < this.length; i++) {
-            if (this.keys[i] == key) {
-                break;
-            }
-        }
-        if (i == this.length) {
-            this.keys.push(key);
-            this.values.push(value);
-            this.length++;
-        }
-    };
-
-    HashMap.prototype.set = function (key, value) {
         var i = 0;
         if (typeof(key) == "undefined") {
             return;
@@ -61,7 +40,7 @@ function HashMap() {
         } else {
             this.values[i] = value;
         }
-    }
+    };
 
     HashMap.prototype.get = function (key) {
         var i = 0;
