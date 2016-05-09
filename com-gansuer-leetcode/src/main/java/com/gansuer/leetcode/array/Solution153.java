@@ -34,9 +34,9 @@ public class Solution153 {
      * @return
      */
     public int findMinX(int[] nums) {
-        int min = Integer.MAX_VALUE, low = 0, high = nums.length - 1;
+        int low = 0, high = nums.length - 1,mid;
         while (low < high) {
-            int mid = (low + high) / 2;
+            mid = (low + high) / 2;
             if (mid - 1 >= 0 && nums[mid] < nums[mid - 1]) return nums[mid];
             if (nums[mid] >= nums[low] && nums[mid] >= nums[high]) {
                 low = mid + 1;

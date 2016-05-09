@@ -34,4 +34,17 @@ public class Solution153Test {
 
         Assert.assertEquals(1,solution153.findMinX(test1));
     }
+    //
+    //@Test
+    //public void findMinXX() throws Exception {
+    //    int[] test0 = {4,5,6,7,1,2,3};
+    //
+    //    Assert.assertEquals(1,solution153.findMinXX(test0));
+    //
+    //    int[] test1 = {100,1,2,3,4,5,6,7,8,90,99};
+    //
+    //    Assert.assertEquals(1,solution153.findMinXX(test1));
+    //
+    //    Assert.assertEquals(1,solution153.findMinXX(new int[]{3,1,2}));
+    //}
 }
