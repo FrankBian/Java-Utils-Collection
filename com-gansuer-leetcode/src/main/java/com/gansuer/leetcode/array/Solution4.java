@@ -8,7 +8,7 @@ public class Solution4 {
     /**
      * Merge this two array, and return the median
      * <p>
-     * Accepted
+     * AC
      *
      * @param nums1
      * @param nums2
@@ -46,7 +46,7 @@ public class Solution4 {
 
     /**
      * O(log(m + n))
-     * Accepted
+     * AC
      * 40.63%
      *
      * @param nums1

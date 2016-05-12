@@ -10,7 +10,7 @@ import java.util.Stack;
 public class Solution94 {
 
     /**
-     * Accepted
+     * AC
      * 1ms
      * better than 64.96%
      *
@@ -33,7 +33,7 @@ public class Solution94 {
 
     /**
      * 2ms
-     * Accepted
+     * AC
      * better than 6.70%
      *
      * @param root
@@ -41,20 +41,44 @@ public class Solution94 {
      */
     public List<Integer> inorderTraversalWithIterate(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        if (root != null) {
-            Stack<TreeNode> stack = new Stack<>();
-            TreeNode cur = root;
-            while (cur != null || !stack.isEmpty()) {
-                if (cur != null) {
-                    stack.push(cur);
-                    cur = cur.left;
-                } else {
-                    cur = stack.pop();
-                    result.add(cur.val);
-                    cur = cur.right;
-                }
+        if (root == null) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                result.add(cur.val);
+                cur = cur.right;
             }
         }
         return result;
+    }
+
+    /**
+     * AC
+     * 2ms
+     * 3.35%
+     *
+     * @param root
+     * @return
+     */
+    public List<Integer> inorderX(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) return res;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+            res.add(cur.val);
+            cur = cur.right;
+        }
+        return res;
     }
 }

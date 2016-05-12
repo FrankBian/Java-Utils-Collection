@@ -11,7 +11,7 @@ public class Solution144 {
 
     /**
      * 1ms
-     * Accepted
+     * AC
      * better than 61.95%
      *
      * @param root
@@ -33,6 +33,7 @@ public class Solution144 {
 
 
     /**
+     * AC
      * 2ms
      * better than 4.32%
      *
@@ -41,15 +42,14 @@ public class Solution144 {
      */
     public List<Integer> preorderTraversalWithIterate(TreeNode root) {
         List<Integer> result = new ArrayList<>();
-        if (root != null) {
-            Stack<TreeNode> stack = new Stack<>();
-            stack.push(root);
-            while (!stack.isEmpty()) {
-                TreeNode cur = stack.pop();
-                result.add(cur.val);
-                if (cur.right != null) stack.push(cur.right);
-                if (cur.left != null) stack.push(cur.left);
-            }
+        if (root == null) return result;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            result.add(cur.val);
+            if (cur.right != null) stack.push(cur.right);
+            if (cur.left != null) stack.push(cur.left);
         }
         return result;
     }

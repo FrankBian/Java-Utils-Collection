@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Solution88 {
 
     /**
-     * Accepted
+     * AC
      * 5.86%
      *
      * @param nums1
@@ -25,7 +25,7 @@ public class Solution88 {
     }
 
     /**
-     * Accepted
+     * AC
      * 5.86%
      *
      * @param nums1

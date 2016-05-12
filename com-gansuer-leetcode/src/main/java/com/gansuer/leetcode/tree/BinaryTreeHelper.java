@@ -54,6 +54,7 @@ public abstract class BinaryTreeHelper {
                 queue.add(point.right);
             }
         }
+        System.out.println();
         queue.clear();
     }
 

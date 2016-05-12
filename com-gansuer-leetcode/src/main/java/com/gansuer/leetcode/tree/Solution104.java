@@ -6,7 +6,7 @@ package com.gansuer.leetcode.tree;
 public class Solution104 {
 
     /**
-     * Accepted
+     * AC
      *
      * @param root
      * @return

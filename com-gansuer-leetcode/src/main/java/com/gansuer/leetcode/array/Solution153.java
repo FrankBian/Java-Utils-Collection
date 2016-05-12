@@ -6,7 +6,7 @@ package com.gansuer.leetcode.array;
 public class Solution153 {
 
     /**
-     * Accepted
+     * AC
      * 2.14%
      *
      * @param nums

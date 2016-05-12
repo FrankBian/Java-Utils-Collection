@@ -1,8 +1,5 @@
 package com.gansuer.leetcode.tree;
 
-import com.gansuer.leetcode.tree.BinaryTreeHelper;
-import com.gansuer.leetcode.tree.Solution94;
-import com.gansuer.leetcode.tree.TreeNode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +32,13 @@ public class Solution94Test {
         Assert.assertEquals(2, res.get(2).intValue());
 
         res = solution94.inorderTraversalWithIterate(root);
+        Assert.assertNotNull(res);
+        Assert.assertEquals(3, res.size());
+        Assert.assertEquals(1, res.get(0).intValue());
+        Assert.assertEquals(3, res.get(1).intValue());
+        Assert.assertEquals(2, res.get(2).intValue());
+
+        res = solution94.inorderX(root);
         Assert.assertNotNull(res);
         Assert.assertEquals(3, res.size());
         Assert.assertEquals(1, res.get(0).intValue());

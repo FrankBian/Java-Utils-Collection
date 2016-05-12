@@ -10,7 +10,7 @@ public class Solution257 {
 
 
     /**
-     * Accepted
+     * AC
      * 5ms
      * better than 7.50%
      *
@@ -43,7 +43,7 @@ public class Solution257 {
     }
 
     /**
-     * Accepted
+     * AC
      * 3ms
      * better than 42.59%
      *

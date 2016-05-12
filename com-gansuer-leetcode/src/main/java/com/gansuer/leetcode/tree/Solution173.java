@@ -10,7 +10,7 @@ import java.util.Stack;
 public class Solution173 {
 
     /**
-     * Accepted
+     * AC
      * 62ms
      * better than 0.69% solutions
      */

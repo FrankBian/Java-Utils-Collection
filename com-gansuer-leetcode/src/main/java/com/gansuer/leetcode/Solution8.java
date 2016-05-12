@@ -7,7 +7,7 @@ public class Solution8 {
 
 
     /**
-     * Accepted
+     * AC
      * 1045/1045 test cases passed
      * 365ms
      *

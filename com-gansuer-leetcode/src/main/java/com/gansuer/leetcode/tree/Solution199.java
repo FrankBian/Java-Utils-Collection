@@ -12,7 +12,7 @@ public class Solution199 {
 
     /**
      * level order traversal,and return the last node per level
-     * Accepted
+     * AC
      * 3ms
      * >= 18.55%
      *
@@ -41,7 +41,7 @@ public class Solution199 {
 
     /**
      * the recursive solution
-     * Accepted
+     * AC
      * 2ms
      * >= 63.43%
      *

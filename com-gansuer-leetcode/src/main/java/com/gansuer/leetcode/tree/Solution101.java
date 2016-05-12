@@ -6,7 +6,7 @@ package com.gansuer.leetcode.tree;
 public class Solution101 {
 
     /**
-     * Accepted  : 1ms
+     * AC  : 1ms
      * symmetric -- 对称的
      *
      * @param root

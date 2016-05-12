@@ -7,7 +7,7 @@ public class Solution215 {
 
     /**
      * TODO: alternative solution is heapsort
-     * Accepted
+     * AC
      * 18.65%
      *
      * @param nums

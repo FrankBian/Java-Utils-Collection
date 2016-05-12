@@ -11,7 +11,7 @@ import java.util.Set;
 public class Solution105 {
 
     /**
-     * Accepted
+     * AC
      * 24ms
      * >= 12.71%
      *
@@ -67,7 +67,7 @@ public class Solution105 {
 
     /**
      * optimized
-     * Accepted
+     * AC
      * 15ms
      * >= 71.10%
      */
@@ -84,7 +84,7 @@ public class Solution105 {
 
     /**
      * optimized by cache
-     * Accepted
+     * AC
      * 6ms
      * >= 79.24%
      */

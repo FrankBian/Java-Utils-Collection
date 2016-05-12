@@ -7,7 +7,7 @@ public class Solution33 {
 
 
     /**
-     * Accepted
+     * AC
      * 5.36%
      *
      * @param nums

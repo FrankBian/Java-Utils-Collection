@@ -9,7 +9,7 @@ import java.util.Queue;
 public class Solution111 {
 
     /**
-     * Accepted
+     * AC
      * 1ms
      *
      * @param root

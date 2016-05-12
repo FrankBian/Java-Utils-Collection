@@ -11,7 +11,7 @@ package com.gansuer.leetcode;
 public class Solution2 {
 
     /**
-     * accepted
+     * AC
      * 1555/1555 test cases passed
      * Runtime : 496ms
      *

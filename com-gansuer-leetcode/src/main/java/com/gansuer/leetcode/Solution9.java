@@ -6,7 +6,7 @@ package com.gansuer.leetcode;
 public class Solution9 {
 
     /**
-     * Accepted
+     * AC
      *
      * @param x
      * @return
@@ -28,7 +28,7 @@ public class Solution9 {
     }
 
     /**
-     * Accepted
+     * AC
      *
      * @param x
      * @return

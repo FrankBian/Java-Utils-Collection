@@ -8,7 +8,7 @@ import java.util.*;
 public class Solution107 {
 
     /**
-     * Accepted
+     * AC
      * without queue solution
      *
      * @param root
@@ -36,7 +36,7 @@ public class Solution107 {
 
 
     /**
-     * Accepted
+     * AC
      * with queue solution
      *
      * @param root

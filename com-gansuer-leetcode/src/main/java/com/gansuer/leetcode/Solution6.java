@@ -12,7 +12,7 @@ public class Solution6 {
      * 索引index以1开头 : [1 ... 2n-2]
      * 每个字母该在的行的索引 = index<= n ? index : n - (index -n)
      * <p>
-     * Accepted
+     * AC
      * 1158 / 1158 test cases passed
      * Runtime : 564 ms
      *

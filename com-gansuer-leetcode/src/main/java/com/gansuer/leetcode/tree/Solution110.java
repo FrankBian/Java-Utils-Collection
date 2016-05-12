@@ -35,7 +35,7 @@ public class Solution110 {
     }
 
     /**
-     * Accepted
+     * AC
      *
      * @param root
      * @return

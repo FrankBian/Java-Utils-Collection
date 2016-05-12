@@ -7,7 +7,7 @@ public class Solution108 {
 
     /**
      * 1ms
-     * Accepted
+     * AC
      * better than 10.95%
      *
      * @param nums

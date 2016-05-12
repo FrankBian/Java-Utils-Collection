@@ -50,7 +50,7 @@ public class Solution236 {
     }
 
     /**
-     * Accepted
+     * AC
      *
      * @param root
      * @param p

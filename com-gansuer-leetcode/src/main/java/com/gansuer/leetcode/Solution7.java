@@ -6,7 +6,7 @@ package com.gansuer.leetcode;
 public class Solution7 {
 
     /**
-     * accepted
+     * AC
      * 1032 / 1032 test cases passed
      * 356 ms
      *
@@ -40,7 +40,7 @@ public class Solution7 {
     }
 
     /**
-     * Accepted
+     * AC
      * 1032 / 1032 test cases passed
      * 236 ms
      *

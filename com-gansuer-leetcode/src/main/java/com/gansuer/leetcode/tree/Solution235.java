@@ -6,7 +6,7 @@ package com.gansuer.leetcode.tree;
 public class Solution235 {
 
     /**
-     * Accepted
+     * AC
      * get a better result after changed the if/else to ?:
      *
      * @param root

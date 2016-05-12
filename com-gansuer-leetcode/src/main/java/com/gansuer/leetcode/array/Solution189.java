@@ -14,7 +14,7 @@ public class Solution189 {
     }
 
     /**
-     * Accepted
+     * AC
      * 11.70%
      * @param nums
      * @param from
@@ -71,7 +71,7 @@ public class Solution189 {
     }
 
     /**
-     * Accepted
+     * AC
      * 11.70%
      *
      * @param nums

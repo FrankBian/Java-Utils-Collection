@@ -7,7 +7,7 @@ package com.gansuer.leetcode.tree;
 public class Solution100 {
 
     /**
-     * Accepted
+     * AC
      *
      * @param p
      * @param q

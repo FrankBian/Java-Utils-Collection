@@ -12,7 +12,7 @@ public class Solution102 {
 
 
     /**
-     * Accepted
+     * AC
      * 3ms
      *
      * @param root
@@ -39,7 +39,7 @@ public class Solution102 {
 
     /**
      * 2ms
-     * Accepted
+     * AC
      * better than 71.93% java solutions
      *
      * @param root

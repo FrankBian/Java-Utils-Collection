@@ -6,7 +6,7 @@ package com.gansuer.leetcode.string;
 public class Solution151 {
 
     /**
-     * Accepted
+     * AC
      * 3ms
      * 86.47%
      *

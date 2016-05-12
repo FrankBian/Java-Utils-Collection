@@ -10,7 +10,7 @@ import java.util.Stack;
 public class Solution114 {
 
     /**
-     * Accepted
+     * AC
      * 2ms
      * >= 23.89%
      *
@@ -41,7 +41,7 @@ public class Solution114 {
     }
 
     /**
-     * Accepted
+     * AC
      * 3ms
      * >= 8.18%
      *
@@ -76,7 +76,7 @@ public class Solution114 {
 
     /**
      * 1ms
-     * Accepted
+     * AC
      * >= 33.57%
      *
      * @param root

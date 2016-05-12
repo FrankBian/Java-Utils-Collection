@@ -9,7 +9,7 @@ public class Solution103 {
 
     /**
      * 3ms
-     * Accepted
+     * AC
      * >= 14.53%
      *
      * @param root

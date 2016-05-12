@@ -64,7 +64,7 @@ public class Solution3 {
     }
 
     /**
-     * accepted
+     * AC
      * 981/981 test cases passed
      * 444ms
      * <p>
@@ -91,7 +91,7 @@ public class Solution3 {
     }
 
     /**
-     * accepted
+     * AC
      * 981/981 test cases passed
      * 436ms
      *

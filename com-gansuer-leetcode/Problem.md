@@ -335,6 +335,21 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     Note: Recursive solution is trivial, could you do it iteratively?
 
+## 145. Binary Tree Postorder Traversal
+
+    Given a binary tree, return the postorder traversal of its nodes' values.
+
+    For example:
+    Given binary tree {1,#,2,3},
+       1
+        \
+         2
+        /
+       3
+    return [3,2,1].
+
+    Note: Recursive solution is trivial, could you do it iteratively?
+
 ## 151. Reverse Words in a String
 
     Given an input string, reverse the string word by word.

@@ -6,7 +6,7 @@ package com.gansuer.leetcode.array;
 public class Solution154 {
 
     /**
-     * Accepted
+     * AC
      * 1ms
      * 5.33%
      *
@@ -34,7 +34,7 @@ public class Solution154 {
     }
 
     /**
-     * Accepted
+     * AC
      * 1ms
      * 5.33%
      *

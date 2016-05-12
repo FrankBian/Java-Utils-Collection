@@ -14,7 +14,7 @@ import java.util.Stack;
 public class Solution226 {
 
     /**
-     * Accepted
+     * AC
      * 68/68 test cases passeed
      * 348 ms
      *
@@ -32,7 +32,7 @@ public class Solution226 {
     }
 
     /**
-     * Accepted
+     * AC
      * 68/68 test cased passed
      * 348 ms
      *
