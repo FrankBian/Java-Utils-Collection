@@ -31,12 +31,6 @@ public class Solution236 {
         if (root == node) {
             return true;
         }
-
-//        boolean found = findNode(root.left, node);
-//        if (!found) {
-//            found = findNode(root.right, node);
-//        }
-//        return found;
         return findNode(root.left, node) || findNode(root.right, node);
     }
 

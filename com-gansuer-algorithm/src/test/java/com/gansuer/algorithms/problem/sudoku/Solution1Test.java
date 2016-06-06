@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 /**
  * Created by Frank on 7/22/15.
  */
@@ -33,14 +35,16 @@ public class Solution1Test {
                         {0, 1, 0, 3, 0, 0, 2, 0, 0},
                         {0, 0, 7, 0, 4, 6, 0, 0, 5},
                         {0, 0, 6, 1, 0, 0, 0, 4, 9}};
-
+        Date begin = new Date();
 
         solition1.sudoku(soduku);
-
         int[][] res = solition1.result();
 
+        Date end = new Date();
         solition1.show();
         Assert.assertNotNull(res);
+
+        System.out.println(end.getTime() - begin.getTime());
 
     }
 

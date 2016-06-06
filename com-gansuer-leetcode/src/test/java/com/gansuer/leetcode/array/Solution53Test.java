@@ -17,4 +17,11 @@ public class Solution53Test {
         int res = solution53.maxSubArray(src);
         Assert.assertEquals(6,res);
     }
+
+    @Test
+    public void testMaxSubArrayX() throws Exception {
+        int[] src = {-2,1,-3,4,-1,2,1,-5,4};
+        int res = solution53.maxSubArrayX(src);
+        Assert.assertEquals(6,res);
+    }
 }

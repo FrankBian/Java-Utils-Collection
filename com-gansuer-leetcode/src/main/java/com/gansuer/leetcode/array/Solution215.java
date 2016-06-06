@@ -6,7 +6,6 @@ package com.gansuer.leetcode.array;
 public class Solution215 {
 
     /**
-     * TODO: alternative solution is heapsort
      * AC
      * 18.65%
      *

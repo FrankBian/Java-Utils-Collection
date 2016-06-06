@@ -9,16 +9,12 @@ import java.util.Arrays;
  */
 public class Solution1 {
 
-    private final String illegalArguments = "Input array must be a 9*9 array!";
-
+    private boolean isRunning = true;
+    private boolean result = false;
     private int[][] src = new int[9][9];
 
     public int[][] getSrc() {
         return src;
-    }
-
-    public void setSrc(int[][] src) {
-        this.src = src;
     }
 
     private boolean isValid(int i, int j) {
@@ -45,10 +41,13 @@ public class Solution1 {
     }
 
     public void show() {
-        int n = 0;
+        int[][] res = result();
+        if (res == null) {
+            System.out.println("HAS NOT RESOLVED!");
+        }
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                System.out.print(src[i][j] + "   ");
+                System.out.print(res[i][j] + "   ");
             }
             System.out.println();
         }
@@ -61,7 +60,6 @@ public class Solution1 {
         }
 
         int i = n / 9, j = n % 9;
-
         if (src[i][j] != 0) { // if this cell is DONE , the next one
             return run(n + 1);
         }
@@ -78,11 +76,11 @@ public class Solution1 {
 
     public void sudoku(int array[][]) {
         if (array.length != 9) {
-            throw new IllegalArgumentException(illegalArguments);
+            throw new IllegalArgumentException("Input array must be a 9*9 array!");
         }
         for (int i = 0; i < 9; i++) {
             if (array[i].length != 9) {
-                throw new IllegalArgumentException(illegalArguments);
+                throw new IllegalArgumentException("Input array must be a 9*9 array!");
             }
             src[i] = Arrays.copyOf(array[i], 9);
         }
@@ -90,16 +88,19 @@ public class Solution1 {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (src[i][j] != 0 && !isValid(i, j)) {
-                    throw new IllegalArgumentException(illegalArguments);
+                    throw new IllegalArgumentException("Input array must be a 9*9 array!");
                 }
             }
         }
         // input array validation done
-
-        run(0);
+        result = run(0);
+        isRunning = false;
     }
 
     public int[][] result() {
-        return getSrc();
+        if (isRunning) {
+            throw new IllegalStateException("program is running now, please wait !");
+        }
+        return result ? getSrc() : null;
     }
 }
