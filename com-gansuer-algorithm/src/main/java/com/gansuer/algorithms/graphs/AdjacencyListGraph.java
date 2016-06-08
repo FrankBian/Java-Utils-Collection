@@ -6,13 +6,13 @@ import java.util.Set;
 /**
  * Created by Frank on 4/19/16.
  */
-public class GraphImpl implements Graph {
+public class AdjacencyListGraph implements Graph {
 
     private final int V;
     private int E;
     private Set<Integer>[] adj;  // adjacency-list representation
 
-    public GraphImpl(final int V) {
+    public AdjacencyListGraph(final int V) {
         if (V < 0) throw new IllegalArgumentException("Number of Vertices must be non-negative");
         this.V = V;
         this.E = 0;

@@ -8,10 +8,9 @@ import org.junit.Test;
 import java.util.List;
 
 /**
- * Created by Frank on 4/19/16.
+ * Created by Frank on 6/8/16.
  */
-public class GraphImplTest {
-
+public class AdjacencyMatrixGraphTest {
 
     private Graph graph;
     private final String fileName = "graph/tinyG.txt";
@@ -25,7 +24,7 @@ public class GraphImplTest {
         v = Integer.parseInt(lines.get(0));
         e = Integer.parseInt(lines.get(1));
 
-        graph = new GraphImpl(v);
+        graph = new AdjacencyMatrixGraph(v);
         for (int i = 2; i < lines.size(); i++) {
             String[] token = lines.get(i).split(" ");
             graph.addEdge(Integer.parseInt(token[0]),Integer.parseInt(token[1]));
@@ -69,4 +68,5 @@ public class GraphImplTest {
     public void testToString() throws Exception {
         System.out.println(graph.toString());
     }
+
 }

@@ -72,7 +72,7 @@ public class Solution152 {
      * @return
      */
     public int maxProductXB(int[] nums) {
-        if (nums == null || nums.length == 0) return 0;
+        if (nums == null || nums.length == 0) return Integer.MAX_VALUE;
         int max = nums[0], min = nums[0], totalMax = nums[0];
         for (int i = 1; i < nums.length; i++) {
             int tempMax = nums[i] * max;
