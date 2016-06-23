@@ -21,5 +21,13 @@ public class Solution151Test {
         String src = "the sky is blue     ";
         String res = solution151.reverseWords(src);
         Assert.assertEquals("blue is sky the",res);
+
+        Assert.assertEquals("blue is sky the",solution151.reverse(src));
+
+        Assert.assertEquals("b a",solution151.reverse("a    b"));
+
+        res = "a      b".replaceAll("([\\s\\t\\r]+)"," ");
+        Assert.assertEquals("a b",res);
+
     }
 }

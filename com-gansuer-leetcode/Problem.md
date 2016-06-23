@@ -441,6 +441,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     Note:
     You may assume that all inputs are consist of lowercase letters a-z.
 
+## 209. Minimum Size Subarray Sum
+
+
+    Given an array of n positive integers and a positive integer s, find the minimal length of a subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+
+    For example, given the array [2,3,1,2,4,3] and s = 7,
+    the subarray [4,3] has the minimal length under the problem constraint.
+    More practice:
+    If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n).
+
 ## 215. Kth Largest Element in an Array
 
     Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
@@ -572,3 +582,28 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     nums = [1, 2, 2], n = 5
     Return 0.
 
+## 349. Intersection of Two Arrays
+
+    Given two arrays, write a function to compute their intersection.
+
+    Example:
+    Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+    Note:
+    Each element in the result must be unique.
+    The result can be in any order.
+
+## 350. Intersection of Two Arrays II
+
+    Given two arrays, write a function to compute their intersection.
+
+    Example:
+    Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
+
+    Note:
+    Each element in the result should appear as many times as it shows in both arrays.
+    The result can be in any order.
+    Follow up:
+    What if the given array is already sorted? How would you optimize your algorithm?
+    What if nums1's size is small compared to nums2's size? Which algorithm is better?
+    What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?

@@ -38,4 +38,15 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         }
         return orignal;
     }
+
+    /**
+     * 替换所有的空白字符
+     *
+     * @param str
+     * @param replaceMent
+     * @return
+     */
+    public static String replaceAllEmptyCharWith(String str, String replaceMent) {
+        return str == null ? null : str.replaceAll("([\\s\\t\\r]+)", replaceMent);
+    }
 }

@@ -79,7 +79,8 @@ public class JavaSourceCodeAnalysisHelper {
      * @param result
      * @param classTypeMap
      */
-    protected void handleJavaSource(File item, Map<String, Map<String, Set<String>>> result, Map<String, String> classTypeMap) throws Exception {
+    public void handleJavaSource(File item, Map<String, Map<String, Set<String>>> result, Map<String,
+            String> classTypeMap) throws Exception {
 
         if (item.isDirectory()) {
             throw new Exception(item.getName() + " is directory !");
