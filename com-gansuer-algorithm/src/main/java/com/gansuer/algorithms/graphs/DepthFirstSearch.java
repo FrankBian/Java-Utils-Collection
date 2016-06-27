@@ -3,7 +3,7 @@ package com.gansuer.algorithms.graphs;
 /**
  * Created by Frank on 6/8/16.
  */
-public class DepthFirstSearch {
+public class DepthFirstSearch implements Search{
 
     private boolean[] marks;
     private int count;
@@ -11,10 +11,10 @@ public class DepthFirstSearch {
     public DepthFirstSearch(Graph graph, int root) {
         if (graph == null) throw new NullPointerException("graph is NULL");
         int vertices = graph.V();
-        if (root < 0 || root >= vertices) throw new IllegalArgumentException("root is out of " +
-                "bounds, max is : " + vertices);
+        if (root < 0 || root >= vertices)
+            throw new IllegalArgumentException("root is out of bounds, max is : " + vertices);
         this.marks = new boolean[vertices];
-        depthFirstSearch(graph,root);
+        depthFirstSearch(graph, root);
     }
 
     public boolean isConnected(int target) {
