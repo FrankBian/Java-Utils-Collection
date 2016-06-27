@@ -669,15 +669,8 @@ public class DateUtils {
      * @param dateStr
      * @return
      */
-    public static Date convertStrToDate(String dateStr, String formatStr) {
-
-        try {
-            return new SimpleDateFormat(formatStr).parse(dateStr);
-        } catch (ParseException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return new Date();
+    public static Date convertStrToDate(String dateStr, String formatStr) throws ParseException {
+        return new SimpleDateFormat(formatStr).parse(dateStr);
     }
 
     public static String DateToKey(Date t) {
