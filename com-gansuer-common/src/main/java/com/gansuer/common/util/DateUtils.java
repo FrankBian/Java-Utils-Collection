@@ -27,6 +27,12 @@ public class DateUtils {
         return (DateFormat) threadLocal.get();
     }
 
+    /**
+     * 单位是 秒
+     *
+     * @param date
+     * @return
+     */
     public static long getLongDate(Date date) {
         return date.getTime() / 1000;
     }
@@ -41,7 +47,7 @@ public class DateUtils {
      * @param date
      * @return
      */
-    public static Date getWeekendFromDate(Date date) {
+    public static Date getWeekendFromDate(Date date) throws Exception {
 
         Calendar datetest = Calendar.getInstance();
         datetest.setTime(date);
@@ -60,11 +66,7 @@ public class DateUtils {
          */
         int week = (day + 1 + 2 * month + 3 * (month + 1) / 5 + year + (year / 4) - year / 100 + year / 400) % 7;
 
-        try {
-            return DateUtils.getAddDays(date, 7 - week);
-        } catch (Exception e) {
-            return DateUtils.defaultTime();
-        }
+        return DateUtils.getAddDays(date, 7 - week);
     }
 
     /**

@@ -1,37 +1,21 @@
 package com.gansuer.algorithms.graphs;
 
-import com.gansuer.common.util.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
 /**
  * Created by Frank on 6/27/16.
  */
-public class BreadthFirstPathsTest {
+public class BreadthFirstPathsTest extends GraphTestBase{
 
     private BreadthFirstPaths breadthFirstPaths;
 
-    private Graph graph;
     private final String fileName = "graph/tinyCG.txt";
-    private List<String> lines;
-    private int vertices = 0, edge = 0;
 
     @Before
     public void setUp() throws Exception {
-        String path = getClass().getClassLoader().getResource(fileName).getFile();
-        lines = FileUtils.readFile(path);
-        vertices = Integer.parseInt(lines.get(0));
-        edge = Integer.parseInt(lines.get(1));
-
-        graph = new AdjacencyListGraph(vertices);
-        for (int i = 2; i < lines.size(); i++) {
-            String[] token = lines.get(i).split(" ");
-            graph.addEdge(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
-        }
-        System.out.println(graph.toString());
+        init(fileName);
     }
 
     @Test

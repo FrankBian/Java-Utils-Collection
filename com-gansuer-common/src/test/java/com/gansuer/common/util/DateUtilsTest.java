@@ -1,6 +1,11 @@
 package com.gansuer.common.util;
 
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Frank on 3/11/16.
@@ -9,6 +14,8 @@ public class DateUtilsTest {
 
     @Test
     public void testGetDateFormat() throws Exception {
+        DateFormat dateFormat = DateUtils.getDateFormat();
+        Assert.assertNotNull(dateFormat);
     }
 
     @Test
@@ -23,7 +30,18 @@ public class DateUtilsTest {
 
     @Test
     public void testGetWeekendFromDate() throws Exception {
-
+        Date date = new Date();
+        date = DateUtils.getWeekendFromDate(date);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        Assert.assertEquals(7,calendar.get(Calendar.MONTH) +1); // 2016.7.3
+        Assert.assertEquals(3,calendar.get(Calendar.DAY_OF_MONTH));
+        Assert.assertEquals(2016,calendar.get(Calendar.YEAR));
+        //LocalDate localDate = LocalDate.now();
+        //int len = DayOfWeek.SUNDAY.getValue() - localDate.getDayOfWeek().getValue();
+        //System.out.println(len);
+        //localDate = localDate.plusDays(len);
+        //System.out.println(localDate);
     }
 
     @Test

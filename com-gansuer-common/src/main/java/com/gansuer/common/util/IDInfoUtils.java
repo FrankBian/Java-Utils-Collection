@@ -15,7 +15,6 @@ public class IDInfoUtils {
     private static final int[] WEIGHT = {7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2};
 
     /**
-     *
      * @param ID
      * @param areaCode, 6 位地區碼
      * @return
@@ -38,7 +37,7 @@ public class IDInfoUtils {
      * @return
      */
     public static Date getBirthDay(String ID) throws ParseException {
-        validateEmptyString(ID,"ID");
+        validateEmptyString(ID, "ID");
         if (ID.length() == 15) {
             if (is15(ID)) return validateBirthday("19" + ID.substring(6, 12));
         } else if (ID.length() == 18) {
@@ -54,7 +53,14 @@ public class IDInfoUtils {
 
     private static boolean is15(String ID) {
         Pattern pattern = Pattern.compile("^[0-9]{15}$");
-        return pattern.matcher(ID).matches();
+        if (pattern.matcher(ID).matches()) {
+            try {
+                return validateBirthday(ID.substring(6, 12)) != null;
+            } catch (ParseException e) {
+                return false;
+            }
+        }
+        return false;
     }
 
     private static boolean is18(String ID) {
@@ -64,7 +70,13 @@ public class IDInfoUtils {
             for (int i = 0; i < 17; i++) {
                 sum += Integer.parseInt(String.valueOf(ID.charAt(i))) * WEIGHT[i];
             }
-            return CODE[sum % CODE.length].equals(String.valueOf(ID.charAt(17)));
+            if (CODE[sum % CODE.length].equals(String.valueOf(ID.charAt(17)))) {
+                try {
+                    return validateBirthday(ID.substring(6, 14)) != null;
+                } catch (ParseException e) {
+                    return false;
+                }
+            }
         }
         return false;
     }
