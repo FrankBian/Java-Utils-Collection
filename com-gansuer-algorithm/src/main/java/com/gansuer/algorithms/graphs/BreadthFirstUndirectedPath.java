@@ -6,11 +6,11 @@ import java.util.Queue;
 /**
  * Created by Frank on 6/24/16.
  */
-public class BreadthFirstPaths extends Paths {
+public class BreadthFirstUndirectedPath extends UndirectedPath {
 
     private int[] distanceTo;
 
-    public BreadthFirstPaths(Graph graph, int source) {
+    public BreadthFirstUndirectedPath(Graph graph, int source) {
         if (graph == null) throw new NullPointerException("graph is null");
         this.vertices = graph.V();
         verifyVertex(source);

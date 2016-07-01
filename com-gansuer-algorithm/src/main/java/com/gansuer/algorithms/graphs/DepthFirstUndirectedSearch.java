@@ -3,10 +3,10 @@ package com.gansuer.algorithms.graphs;
 /**
  * Created by Frank on 6/8/16.
  */
-public class DepthFirstSearch extends Search {
+public class DepthFirstUndirectedSearch extends UndirectedSearch {
 
 
-    public DepthFirstSearch(Graph graph, int root) {
+    public DepthFirstUndirectedSearch(Graph graph, int root) {
         if (graph == null) throw new NullPointerException("graph is NULL");
         this.vertices = graph.V();
         if (root < 0 || root >= vertices)

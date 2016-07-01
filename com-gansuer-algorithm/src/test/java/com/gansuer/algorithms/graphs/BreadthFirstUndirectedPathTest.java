@@ -7,9 +7,9 @@ import org.junit.Test;
 /**
  * Created by Frank on 6/27/16.
  */
-public class BreadthFirstPathsTest extends GraphTestBase{
+public class BreadthFirstUndirectedPathTest extends GraphTestBase{
 
-    private BreadthFirstPaths breadthFirstPaths;
+    private BreadthFirstUndirectedPath breadthFirstPaths;
 
     private final String fileName = "graph/tinyCG.txt";
 
@@ -20,7 +20,7 @@ public class BreadthFirstPathsTest extends GraphTestBase{
 
     @Test
     public void distanceTo() throws Exception {
-        breadthFirstPaths = new BreadthFirstPaths(graph, 0);
+        breadthFirstPaths = new BreadthFirstUndirectedPath(graph, 0);
         Assert.assertEquals(0, breadthFirstPaths.distanceTo(0));
         Assert.assertEquals(1, breadthFirstPaths.distanceTo(5));
         Assert.assertEquals(1, breadthFirstPaths.distanceTo(1));
@@ -32,7 +32,7 @@ public class BreadthFirstPathsTest extends GraphTestBase{
 
     @Test
     public void pathTo() throws Exception {
-        breadthFirstPaths = new BreadthFirstPaths(graph, 0);
+        breadthFirstPaths = new BreadthFirstUndirectedPath(graph, 0);
         for (int v = 0; v < vertices; v++) {
             if (breadthFirstPaths.hasPathTo(v)) {
                 System.out.printf("0 to %d (%d):  ", v, breadthFirstPaths.distanceTo(v));

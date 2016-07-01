@@ -53,7 +53,7 @@ public class BinarySearchST<K extends Comparable<K>, V> implements SequenceST<K,
     }
 
     /**
-     * this algorithm is Binary-Search-Based
+     * this algorithm is Binary-UndirectedSearch-Based
      *
      * @param key
      * @return

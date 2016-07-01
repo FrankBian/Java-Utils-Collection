@@ -3,9 +3,9 @@ package com.gansuer.algorithms.graphs;
 /**
  * Created by Frank on 6/8/16.
  */
-public class DepthFirstPaths extends Paths {
+public class DepthFirstUndirectedPath extends UndirectedPath {
 
-    public DepthFirstPaths(Graph graph, int root) {
+    public DepthFirstUndirectedPath(Graph graph, int root) {
         if (graph == null) throw new NullPointerException("graph is NULL");
         this.vertices = graph.V();
         verifyVertex(root);

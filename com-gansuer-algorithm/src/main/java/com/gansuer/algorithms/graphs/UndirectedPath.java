@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Frank on 6/8/16.
  */
-public abstract class Paths {
+public abstract class UndirectedPath {
 
     // marked[v] = is there an s-v path
     protected boolean[] marked;

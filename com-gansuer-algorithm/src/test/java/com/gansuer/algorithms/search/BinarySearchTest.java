@@ -101,14 +101,14 @@ public class BinarySearchTest {
 
             int ret = BinarySearch.binarySearch(src, key);
             Date time5 = new Date();
-            date.add("Binary Search [finished] : " + (time5.getTime() - time4.getTime()));
+            date.add("Binary UndirectedSearch [finished] : " + (time5.getTime() - time4.getTime()));
 
             int ret2 = forceSearch(src, key);
             Date time6 = new Date();
-            date.add("Force Search [finished] : " + (time6.getTime() - time5.getTime()));
+            date.add("Force UndirectedSearch [finished] : " + (time6.getTime() - time5.getTime()));
 
-            date.add("Binary Search Result = " + ret);
-            date.add("Force Search Result = " + ret2);
+            date.add("Binary UndirectedSearch Result = " + ret);
+            date.add("Force UndirectedSearch Result = " + ret2);
             date.add("Array[index] = " + src[ret]);
 
             Debug.println(date);

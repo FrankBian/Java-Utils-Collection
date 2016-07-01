@@ -7,14 +7,14 @@ import org.junit.Test;
 /**
  * Created by Frank on 6/8/16.
  */
-public class DepthFirstPathsTest extends GraphTestBase{
+public class DepthFirstUndirectedPathTest extends GraphTestBase{
 
-    private DepthFirstPaths depthFirstPaths;
+    private DepthFirstUndirectedPath depthFirstPaths;
     private int root = 5;
     @Before
     public void setUp() throws Exception {
         init(null);
-        depthFirstPaths = new DepthFirstPaths(graph,root);
+        depthFirstPaths = new DepthFirstUndirectedPath(graph,root);
     }
 
     @Test

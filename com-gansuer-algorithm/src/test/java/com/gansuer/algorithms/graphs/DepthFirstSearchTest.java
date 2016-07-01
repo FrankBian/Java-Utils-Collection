@@ -9,17 +9,17 @@ import org.junit.Test;
  */
 public class DepthFirstSearchTest extends GraphTestBase {
 
-    private DepthFirstSearch depthFirstSearch;
+    private DepthFirstUndirectedSearch depthFirstSearch;
     private int root = 5;
     @Before
     public void setUp() throws Exception {
         init(null);
-        depthFirstSearch = new DepthFirstSearch(graph,root);
+        depthFirstSearch = new DepthFirstUndirectedSearch(graph,root);
     }
 
     @Test
     public void isConnected() throws Exception {
-        Assert.assertEquals(true,depthFirstSearch.isConnected(0));
+        Assert.assertEquals(true,depthFirstSearch.isReachable(0));
     }
 
     @Test

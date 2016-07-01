@@ -1,40 +1,20 @@
 package com.gansuer.algorithms.graphs;
 
 /**
- * Created by Frank on 6/24/16.
+ * Created by Frank on 7/1/16.
  */
-public abstract class Search {
+public interface Search {
 
-    protected boolean[] marked;
-    protected int count;
-    protected int vertices;
     /**
-     * is v connected to s
+     * the reachability between s and v
      *
      * @param v
      * @return
      */
-    boolean isConnected(int v){
-        verifyVertex(v);
-        return marked[v];
-    }
+    boolean isReachable(int v);
 
     /**
-     * how many vertices are connected to s
-     *
-     * @return
+     * how many vertices can be reached from s
      */
-    int count(){
-        return count;
-    }
-
-    /**
-     * DFS or BFS
-     */
-    protected abstract void search(Graph graph, int v);
-
-    protected void verifyVertex(int v) {
-        if (v >= 0 && v < vertices) return;
-        throw new IllegalArgumentException("source is out of bound, the number of vertices is" + " :" + vertices);
-    }
+    int count();
 }

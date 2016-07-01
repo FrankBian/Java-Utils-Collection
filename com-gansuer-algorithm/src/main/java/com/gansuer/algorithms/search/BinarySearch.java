@@ -1,7 +1,7 @@
 package com.gansuer.algorithms.search;
 
 /**
- * Binary Search implementation
+ * Binary UndirectedSearch implementation
  * more details offered in Array.java
  * Created by Frank on 4/17/15.
  */
