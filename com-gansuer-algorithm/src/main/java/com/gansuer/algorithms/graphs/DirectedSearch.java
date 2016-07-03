@@ -5,10 +5,10 @@ package com.gansuer.algorithms.graphs;
  */
 public abstract class DirectedSearch implements Search {
 
-    private int source;
-    private boolean[] marked;
-    private int count;
-    private Digraph digraph;
+    protected int source;
+    protected boolean[] marked;
+    protected int count;
+    protected Digraph digraph;
     /**
      * the reachability between s and v
      *
@@ -29,6 +29,6 @@ public abstract class DirectedSearch implements Search {
         return count;
     }
 
-    abstract void init(Graph graph);
+    protected abstract void init(Digraph digraph);
 
 }
