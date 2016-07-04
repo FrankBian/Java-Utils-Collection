@@ -4,7 +4,7 @@ package com.gansuer.algorithms.search;
  * Created by Frank on 3/24/2016.
  */
 public class SeparateChainingHashST<K extends Comparable<K>, V> {
-    private int size; // the count of K-V pairs
+    private int size; // the count of K-getVertices pairs
     private int capacity;
     private BinarySearchST<K, V>[] container;
 

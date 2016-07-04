@@ -366,7 +366,7 @@ public final class StdRandom {
             StdOut.println();
         }
 
-        String[] a = "A B C D E F G".split(" ");
+        String[] a = "A B C D getEdges F G".split(" ");
         for (String s : a)
             StdOut.print(s + " ");
         StdOut.println();

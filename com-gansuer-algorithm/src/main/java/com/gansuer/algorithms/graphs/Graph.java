@@ -12,14 +12,14 @@ public interface Graph {
      *
      * @return
      */
-    int V();
+    int getVertices();
 
     /**
      * number of edges
      *
      * @return
      */
-    int E();
+    int getEdges();
 
     /**
      * add edge v-w to this graph
@@ -27,7 +27,7 @@ public interface Graph {
      * @param v
      * @param w
      */
-    void addEdge(int v, int w);
+    boolean addEdge(int v, int w);
 
     /**
      * vertices adjacent to v
@@ -37,12 +37,6 @@ public interface Graph {
      */
     Iterable<Integer> adj(int v);
 
-    /**
-     * string representation
-     *
-     * @return
-     */
-    String toString();
 
     /**
      * the degree of the vertices v
@@ -59,7 +53,7 @@ public interface Graph {
     // maximum degree
     default int maxDegree() {
         int max = Integer.MIN_VALUE, degree = 0;
-        for (int v = 0; v < V(); v++) {
+        for (int v = 0; v < getVertices(); v++) {
             degree = degree(v);
             if (degree > max) {
                 max = degree;
@@ -70,18 +64,23 @@ public interface Graph {
 
     //average degree
     default int avgDegree() {
-        return 2 * E() / V();
+        return 2 * getEdges() / getVertices();
     }
 
 
     //number of self-loops
     default int numberOfSelfLoops() {
         int count = 0;
-        for (int v = 0; v < V(); v++) {
+        for (int v = 0; v < getVertices(); v++) {
             for (int w : adj(v)) {
                 if (v == w) count++;
             }
         }
         return count / 2;
+    }
+
+    default void validateVertices(int v) {
+        if (v < 0 || v >= getVertices())
+            throw new IllegalArgumentException("vertex " + v + " is OutOfBound ,the getVertices is " + getVertices());
     }
 }

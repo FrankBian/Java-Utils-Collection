@@ -46,6 +46,16 @@ public class AdjacencyMatrixDigraph extends Digraph {
         return res;
     }
 
+    @Override
+    public int degree(int v) {
+        verifyVertex(v);
+        int res = 0;
+        for (boolean item : matrix[v]){
+            if (item) res++;
+        }
+        return res;
+    }
+
     /**
      * reverse of this digraph
      */

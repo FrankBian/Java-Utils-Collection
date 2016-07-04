@@ -11,7 +11,7 @@ public class ConnectedComponent {
     private int[] size;
 
     public ConnectedComponent(Graph graph) {
-        int vertices = graph.V();
+        int vertices = graph.getVertices();
         marked = new boolean[vertices];
         ccs = new int[vertices];
         size = new int[vertices];

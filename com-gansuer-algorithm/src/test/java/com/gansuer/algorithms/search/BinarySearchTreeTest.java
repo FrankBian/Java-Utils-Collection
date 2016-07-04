@@ -13,7 +13,7 @@ public class BinarySearchTreeTest {
 
     private BinarySearchTree<String, Integer> bst;
 
-    private String[] strings = "S E A R C H E X A M P L E".split(" ");
+    private String[] strings = "S getEdges A R C H getEdges X A M P L getEdges".split(" ");
 
     @Before
     public void setUp() throws Exception {

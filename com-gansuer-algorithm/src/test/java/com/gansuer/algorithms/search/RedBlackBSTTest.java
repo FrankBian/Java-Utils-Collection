@@ -12,7 +12,7 @@ import java.util.*;
 public class RedBlackBSTTest {
 
     private RedBlackBST<String, Integer> rbt;
-    private String[] strs = "S E A R C H E X A M P L E".split(" ");
+    private String[] strs = "S getEdges A R C H getEdges X A M P L getEdges".split(" ");
 
     @Before
     public void setUp() throws Exception {

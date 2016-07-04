@@ -12,7 +12,7 @@ public class BreadthFirstUndirectedPath extends UndirectedPath {
 
     public BreadthFirstUndirectedPath(Graph graph, int source) {
         if (graph == null) throw new NullPointerException("graph is null");
-        this.vertices = graph.V();
+        this.vertices = graph.getVertices();
         verifyVertex(source);
         this.s = source;
         this.edgeTo = new int[vertices];

@@ -8,7 +8,7 @@ public class DepthFirstUndirectedSearch extends UndirectedSearch {
 
     public DepthFirstUndirectedSearch(Graph graph, int root) {
         if (graph == null) throw new NullPointerException("graph is NULL");
-        this.vertices = graph.V();
+        this.vertices = graph.getVertices();
         if (root < 0 || root >= vertices)
             throw new IllegalArgumentException("root is out of bounds, max is : " + vertices);
         this.marked = new boolean[vertices];

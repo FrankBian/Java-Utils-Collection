@@ -28,7 +28,7 @@ public class MaxPQTest {
 
     @Test
     public void testDelMax() throws Exception {
-        //P R I O * R * * I * T * Y * * * Q U E * * * U * E
+        //P R I O * R * * I * T * Y * * * Q U getEdges * * * U * getEdges
         maxPQ.insert("p");
         maxPQ.insert("r");
         maxPQ.insert("i");

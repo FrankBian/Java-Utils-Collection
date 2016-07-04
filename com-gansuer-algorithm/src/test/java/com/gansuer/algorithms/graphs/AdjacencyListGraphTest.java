@@ -18,17 +18,17 @@ public class AdjacencyListGraphTest extends  GraphTestBase{
 
     @Test
     public void v() throws Exception {
-        Assert.assertEquals(13,graph.V());
+        Assert.assertEquals(13,graph.getVertices());
     }
 
     @Test
     public void e() throws Exception {
-        Assert.assertEquals(edge,graph.E());
+        Assert.assertEquals(edge,graph.getEdges());
     }
 
     @Test
     public void addEdge() throws Exception {
-        Assert.assertEquals(edge,graph.E());
+        Assert.assertEquals(edge,graph.getEdges());
     }
 
     @Test

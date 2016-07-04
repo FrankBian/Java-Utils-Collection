@@ -6,42 +6,20 @@ import java.util.Set;
 /**
  * Created by Frank on 4/19/16.
  */
-public class AdjacencyListGraph implements Graph {
+public class AdjacencyListGraph extends UndirectedGraph {
 
-    private final int V;
-    private int E;
+    private int edges;
     private Set<Integer>[] adj;  // adjacency-list representation
 
-    public AdjacencyListGraph(final int V) {
-        if (V < 0) throw new IllegalArgumentException("Number of Vertices must be non-negative");
-        this.V = V;
-        this.E = 0;
-        this.adj = (Set<Integer>[]) new Set[V];
-        for (int i = 0; i < V; i++) {
+    public AdjacencyListGraph(final int vertices) {
+        if (vertices < 0) throw new IllegalArgumentException("Number of Vertices must be non-negative");
+        this.vertices = vertices;
+        this.edges = 0;
+        this.adj = (Set<Integer>[]) new Set[vertices];
+        for (int i = 0; i < vertices; i++) {
             adj[i] = new HashSet<>();
         }
     }
-
-    /**
-     * number of vertices
-     *
-     * @return
-     */
-    @Override
-    public int V() {
-        return V;
-    }
-
-    /**
-     * number of edges
-     *
-     * @return
-     */
-    @Override
-    public int E() {
-        return E;
-    }
-
     /**
      * add edge v-w to this graph
      *
@@ -49,12 +27,13 @@ public class AdjacencyListGraph implements Graph {
      * @param w
      */
     @Override
-    public void addEdge(int v, int w) {
+    public boolean addEdge(int v, int w) {
         validateVertices(v);
         validateVertices(w);
-        E++;
+        edges++;
         adj[v].add(w);
         adj[w].add(v);
+        return true;
     }
 
     /**
@@ -83,7 +62,7 @@ public class AdjacencyListGraph implements Graph {
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("vertices :" + V +", edges : " + E +"\n");
+        stringBuilder.append("vertices :" + vertices +", edges : " + edges +"\n");
         int index = 0;
         for (Set<Integer> item : adj){
             stringBuilder.append(index +" : ");
@@ -96,8 +75,4 @@ public class AdjacencyListGraph implements Graph {
         return stringBuilder.toString();
     }
 
-    private void validateVertices(int v) {
-        if (v < 0 || v >= V)
-            throw new IllegalArgumentException("vertex " + v + " is OutOfBound ,the V is " + V);
-    }
 }

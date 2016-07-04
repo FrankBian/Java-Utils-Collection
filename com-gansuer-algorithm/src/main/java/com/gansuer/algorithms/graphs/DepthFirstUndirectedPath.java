@@ -7,7 +7,7 @@ public class DepthFirstUndirectedPath extends UndirectedPath {
 
     public DepthFirstUndirectedPath(Graph graph, int root) {
         if (graph == null) throw new NullPointerException("graph is NULL");
-        this.vertices = graph.V();
+        this.vertices = graph.getVertices();
         verifyVertex(root);
         this.marked = new boolean[this.vertices];
         this.edgeTo = new int[this.vertices];

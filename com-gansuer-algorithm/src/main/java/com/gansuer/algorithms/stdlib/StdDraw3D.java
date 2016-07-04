@@ -1212,7 +1212,7 @@
 //     * A/Left      - Left <br>
 //     * D/Right     - Right <br>
 //     * Q/Page Up   - Up <br>
-//     * E/Page Down - Down <br>
+//     * getEdges/Page Down - Down <br>
 //     * Mouse       - Look <br>
 //     * -------------------------------------- <br>
 //     * StdDraw3D.AIRPLANE_MODE: <br>
@@ -1224,7 +1224,7 @@
 //     * A/Left      - Left <br>
 //     * D/Right     - Right <br>
 //     * Q/Page Up   - Rotate CCW <br>
-//     * E/Page Down - Rotate CW <br>
+//     * getEdges/Page Down - Rotate CW <br>
 //     * Mouse       - Look <br>
 //     * -------------------------------------- <br>
 //     * StdDraw3D.LOOK_MODE: <br>
@@ -1635,7 +1635,7 @@
 //            if (isKeyPressed('A') || isKeyPressed(KeyEvent.VK_LEFT))      camera.moveRelative(-move, 0, 0);
 //            if (isKeyPressed('D') || isKeyPressed(KeyEvent.VK_RIGHT))     camera.moveRelative( move, 0, 0);
 //            if (isKeyPressed('Q') || isKeyPressed(KeyEvent.VK_PAGE_UP))   camera.moveRelative(0,     move, 0);
-//            if (isKeyPressed('E') || isKeyPressed(KeyEvent.VK_PAGE_DOWN)) camera.moveRelative(0,    -move, 0);
+//            if (isKeyPressed('getEdges') || isKeyPressed(KeyEvent.VK_PAGE_DOWN)) camera.moveRelative(0,    -move, 0);
 //        }
 //        if (cameraMode == AIRPLANE_MODE) {
 //            double move = 0.00015 * time * (zoom);
@@ -1644,7 +1644,7 @@
 //            if (isKeyPressed('A') || isKeyPressed(KeyEvent.VK_LEFT))      camera.moveRelative(-move, 0, 0);
 //            if (isKeyPressed('D') || isKeyPressed(KeyEvent.VK_RIGHT))     camera.moveRelative( move, 0, 0);
 //            if (isKeyPressed('Q') || isKeyPressed(KeyEvent.VK_PAGE_UP))   camera.rotateRelative(0, 0,  move * 250 / zoom);
-//            if (isKeyPressed('E') || isKeyPressed(KeyEvent.VK_PAGE_DOWN)) camera.rotateRelative(0, 0, -move * 250 / zoom);
+//            if (isKeyPressed('getEdges') || isKeyPressed(KeyEvent.VK_PAGE_DOWN)) camera.rotateRelative(0, 0, -move * 250 / zoom);
 //        }
 //    }
 //

@@ -48,6 +48,12 @@ public class AdjacencyListDigraph extends Digraph {
         return adjList[v];
     }
 
+    @Override
+    public int degree(int v) {
+        verifyVertex(v);
+        return adjList[v].size();
+    }
+
     /**
      * reverse of this digraph
      */
