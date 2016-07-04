@@ -36,7 +36,6 @@ public abstract class UndirectedPath implements Paths{
      * @return
      */
     public Iterable<Integer> pathTo(int target) {
-        verifyVertex(target);
         if (!hasPathTo(target)) return null;
         List<Integer> paths = new ArrayList<>();
         if (target != s) {
