@@ -6,12 +6,12 @@ import java.util.Set;
 /**
  * Created by Frank on 4/19/16.
  */
-public class AdjacencyListGraph extends UndirectedGraph {
+public class AdjacencyListUndigraph extends UndirectedGraph {
 
     private int edges;
     private Set<Integer>[] adj;  // adjacency-list representation
 
-    public AdjacencyListGraph(final int vertices) {
+    public AdjacencyListUndigraph(final int vertices) {
         if (vertices < 0) throw new IllegalArgumentException("Number of Vertices must be non-negative");
         this.vertices = vertices;
         this.edges = 0;

@@ -6,11 +6,11 @@ import java.util.List;
 /**
  * Created by Frank on 6/8/16.
  */
-public class AdjacencyMatrixGraph extends UndirectedGraph {
+public class AdjacencyMatrixUndigraph extends UndirectedGraph {
 
     private boolean[][] adjMatrix;
 
-    public AdjacencyMatrixGraph(final int vertices) {
+    public AdjacencyMatrixUndigraph(final int vertices) {
         if (vertices < 0)
             throw new IllegalArgumentException("vertices number is MUST NOT negative");
         this.vertices = vertices;

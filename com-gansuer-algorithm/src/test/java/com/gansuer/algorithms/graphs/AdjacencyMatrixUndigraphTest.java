@@ -1,19 +1,34 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.common.util.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
- * Created by Frank on 4/19/16.
+ * Created by Frank on 6/8/16.
  */
-public class AdjacencyListGraphTest extends  GraphTestBase{
+public class AdjacencyMatrixUndigraphTest extends GraphTestBase{
 
 
+    private AdjacencyMatrixUndigraph graph;
 
     @Before
     public void setUp() throws Exception {
-        init(null);
+        String path = getClass().getClassLoader().getResource("graph/tinyG.txt").getFile();
+        List<String> lines = FileUtils.readFile(path);
+        vertices = Integer.parseInt(lines.get(0));
+        edge = Integer.parseInt(lines.get(1));
+
+        graph = new AdjacencyMatrixUndigraph(vertices);
+        for (int i = 2; i < lines.size(); i++) {
+            String[] token = lines.get(i).split(" ");
+            graph.addEdge(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
+        }
+        System.out.println(graph.toString());
+        System.out.println("------------- graph end -------------");
     }
 
     @Test
@@ -53,4 +68,5 @@ public class AdjacencyListGraphTest extends  GraphTestBase{
     public void testToString() throws Exception {
         System.out.println(graph.toString());
     }
+
 }

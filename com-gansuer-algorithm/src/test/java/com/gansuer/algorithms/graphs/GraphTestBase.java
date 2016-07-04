@@ -21,7 +21,7 @@ public class GraphTestBase {
         vertices = Integer.parseInt(lines.get(0));
         edge = Integer.parseInt(lines.get(1));
 
-        graph = new AdjacencyListGraph(vertices);
+        graph = new AdjacencyListUndigraph(vertices);
         for (int i = 2; i < lines.size(); i++) {
             String[] token = lines.get(i).split(" ");
             graph.addEdge(Integer.parseInt(token[0]), Integer.parseInt(token[1]));

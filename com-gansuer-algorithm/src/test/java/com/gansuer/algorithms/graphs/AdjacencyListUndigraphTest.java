@@ -5,9 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by Frank on 6/8/16.
+ * Created by Frank on 4/19/16.
  */
-public class AdjacencyMatrixGraphTest extends GraphTestBase{
+public class AdjacencyListUndigraphTest extends  GraphTestBase{
+
 
 
     @Before
@@ -52,5 +53,4 @@ public class AdjacencyMatrixGraphTest extends GraphTestBase{
     public void testToString() throws Exception {
         System.out.println(graph.toString());
     }
-
 }
