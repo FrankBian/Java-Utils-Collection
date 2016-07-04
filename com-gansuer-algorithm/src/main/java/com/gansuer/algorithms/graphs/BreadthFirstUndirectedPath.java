@@ -19,22 +19,16 @@ public class BreadthFirstUndirectedPath extends UndirectedPath {
         this.marked = new boolean[vertices];
         this.distanceTo = new int[vertices];
         init(graph);
-
     }
 
     /**
      * BFS
      *
      * @param graph
-     * @param s
      */
-    private void bfs(Graph graph, int s) {
+    private void bfs(Graph graph) {
         Queue<Integer> queue = new LinkedList<>();
-        queue.offer(s);
-        for (int i = 0; i < distanceTo.length; i++) {
-            distanceTo[i] = Integer.MAX_VALUE;
-        }
-        distanceTo[s] = 0;
+        queue.offer(this.s);
         while (!queue.isEmpty()) {
             int cur = queue.poll();
             marked[cur] = true;
@@ -56,7 +50,8 @@ public class BreadthFirstUndirectedPath extends UndirectedPath {
      */
     @Override
     protected void init(Graph graph) {
-        bfs(graph, s);
+        edgeTo[s] = s;
+        bfs(graph);
     }
 
     /**
@@ -66,7 +61,7 @@ public class BreadthFirstUndirectedPath extends UndirectedPath {
      * @return
      */
     public int distanceTo(int target) {
-        verifyVertex(target);
+        if (!hasPathTo(target)) return -1;
         return distanceTo[target];
     }
 }
