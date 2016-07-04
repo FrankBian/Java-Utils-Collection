@@ -13,7 +13,7 @@ public class DirectedSearchTest extends DigraphTestBase{
     private int source;
     @Before
     public void setUp() throws Exception {
-        init();
+        init(false);
         source = 6;
         directedSearch = new DepthFirstDirectedSearch(digraph,6);
     }

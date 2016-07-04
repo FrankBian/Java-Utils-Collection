@@ -13,7 +13,7 @@ public class BreadthFirstDirectedPathsTest extends DigraphTestBase {
 
     @Before
     public void setUp() throws Exception {
-        init();
+        init(false);
         breadthFirstDirectedPaths = new BreadthFirstDirectedPaths(digraph,3);
     }
 

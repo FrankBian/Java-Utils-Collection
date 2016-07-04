@@ -11,7 +11,7 @@ public class AdjacencyMatrixDigraphTest extends DigraphTestBase {
 
     @Before
     public void setUp() throws Exception {
-        init();
+        init(false);
     }
 
     @Test

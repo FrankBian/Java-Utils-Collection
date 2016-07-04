@@ -12,21 +12,24 @@ public class DigraphTestBase {
 
 
     protected Digraph digraph;
-    private final String defaultFileName = "graph/tinyDG.txt";
+    private final String directedGraph = "graph/tinyDG.txt";
+    private final String directedAcyclicGraph = "graph/tinyDAG.txt";
     private List<String> lines;
     protected int vertices = 0, edge = 0;
 
-    public void init() throws Exception {
+    public void init(boolean isDAG) throws Exception {
         String path = getClass().getClassLoader()
-                .getResource(defaultFileName).getFile();
+                .getResource(!isDAG?directedGraph : directedAcyclicGraph).getFile();
         lines = FileUtils.readFile(path);
         vertices = Integer.parseInt(lines.get(0));
         edge = Integer.parseInt(lines.get(1));
 
         digraph = new AdjacencyListDigraph(vertices);
+        String[] token;
         for (int i = 2; i < lines.size(); i++) {
-            String[] token = StringUtils.replaceAllEmptyCharWith(lines.get(i).trim(), " ")
-                    .split(" ");
+            String temp  =StringUtils.replaceAllEmptyCharWith(lines.get(i).trim(), " ");
+            if (temp.equals("")) continue;
+            token = temp.split(" ");
             digraph.addEdge(Integer.parseInt(token[0]), Integer.parseInt(token[1]));
         }
         System.out.println(digraph.toString());
