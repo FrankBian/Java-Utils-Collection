@@ -49,9 +49,19 @@ public class AdjacencyListDigraph extends Digraph {
     }
 
     @Override
-    public int degree(int v) {
+    public int outDegree(int v) {
         verifyVertex(v);
         return adjList[v].size();
+    }
+
+    @Override
+    public int inDegree(int v) {
+        verifyVertex(v);
+        int count = 0;
+        for (Set<Integer> item : adjList){
+            if (item.contains(v)) count++;
+        }
+        return count;
     }
 
     /**

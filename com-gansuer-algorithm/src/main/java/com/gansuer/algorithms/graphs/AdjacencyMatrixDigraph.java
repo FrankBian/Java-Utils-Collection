@@ -47,13 +47,23 @@ public class AdjacencyMatrixDigraph extends Digraph {
     }
 
     @Override
-    public int degree(int v) {
+    public int outDegree(int v) {
         verifyVertex(v);
         int res = 0;
-        for (boolean item : matrix[v]){
+        for (boolean item : matrix[v]) {
             if (item) res++;
         }
         return res;
+    }
+
+    @Override
+    public int inDegree(int v) {
+        verifyVertex(v);
+        int count = 0;
+        for (boolean[] item : matrix) {
+            if (item[v]) count++;
+        }
+        return count;
     }
 
     /**

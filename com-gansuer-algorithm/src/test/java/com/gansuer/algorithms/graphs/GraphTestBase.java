@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class GraphTestBase {
 
-    protected Graph graph;
+    protected AdjacencyListUndigraph graph;
     private final String defaultFileName = "graph/tinyG.txt";
     private List<String> lines;
     protected int vertices = 0 , edge = 0;

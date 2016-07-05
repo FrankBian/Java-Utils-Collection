@@ -30,6 +30,8 @@ public abstract class Digraph implements Graph{
 
     public abstract Digraph reverse();
 
+    public abstract int inDegree(int v);
+    public abstract int outDegree(int v);
     protected void verifyVertex(int v) {
         if (v < 0 || v >= vertices)
             throw new IllegalArgumentException("v should be [0," + vertices + "), but actual is :"

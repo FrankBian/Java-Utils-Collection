@@ -38,35 +38,6 @@ public interface Graph {
     Iterable<Integer> adj(int v);
 
 
-    /**
-     * the degree of the vertices v
-     *
-     * @param v
-     * @return
-     */
-    int degree(int v);
-
-
-    /************************************
-     * helper function
-     ************************************/
-    // maximum degree
-    default int maxDegree() {
-        int max = Integer.MIN_VALUE, degree = 0;
-        for (int v = 0; v < getVertices(); v++) {
-            degree = degree(v);
-            if (degree > max) {
-                max = degree;
-            }
-        }
-        return max;
-    }
-
-    //average degree
-    default int avgDegree() {
-        return 2 * getEdges() / getVertices();
-    }
-
 
     //number of self-loops
     default int numberOfSelfLoops() {

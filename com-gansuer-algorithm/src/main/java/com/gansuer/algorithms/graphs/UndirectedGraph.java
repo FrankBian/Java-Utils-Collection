@@ -18,4 +18,32 @@ public abstract class UndirectedGraph implements Graph{
         return edges;
     }
 
+
+    /**
+     * the degree of the vertices v
+     *
+     * @param v
+     * @return
+     */
+    public abstract int degree(int v);
+
+    /************************************
+     * helper function
+     ************************************/
+    // maximum degree
+    public int maxDegree() {
+        int max = Integer.MIN_VALUE, degree = 0;
+        for (int v = 0; v < getVertices(); v++) {
+            degree = degree(v);
+            if (degree > max) {
+                max = degree;
+            }
+        }
+        return max;
+    }
+
+    //average degree
+    public int avgDegree() {
+        return 2 * getEdges() / getVertices();
+    }
 }
