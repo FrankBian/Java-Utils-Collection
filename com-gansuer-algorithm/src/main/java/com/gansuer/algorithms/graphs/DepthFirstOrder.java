@@ -1,8 +1,6 @@
 package com.gansuer.algorithms.graphs;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Compute pre-order or post-order for a digraph or edge-weighted digraph
@@ -86,6 +84,10 @@ public class DepthFirstOrder {
     public Iterable<Integer> reversePost() {
         Stack<Integer> stack = new Stack<>();
         postOrder.forEach(item -> stack.push(item));
-        return stack;
+        List<Integer> res = new ArrayList<>();
+        while(!stack.isEmpty()){
+            res.add(stack.pop());
+        }
+        return res;
     }
 }

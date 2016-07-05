@@ -23,7 +23,7 @@ public class DepthFirstOrderTest extends DigraphTestBase {
         int index = 0;
         for (int item : depthFirstOrder.preOrder()) {
             Assert.assertEquals(case1[index++], item);
-            //System.out.print(item +" " );
+            System.out.print(item +" " );
         }
     }
 
