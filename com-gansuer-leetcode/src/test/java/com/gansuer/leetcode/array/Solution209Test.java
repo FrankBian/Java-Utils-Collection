@@ -19,7 +19,10 @@ public class Solution209Test {
     @Test
     public void minSubArrayLen() throws Exception {
         int res = solution.minSubArrayLen(7,new int[]{2,3,1,2,4,3});
-        Assert.assertEquals(7,res);
+        Assert.assertEquals(2,res);
+
+        res = solution.minSubArrayLen(11,new int[]{1,2,3,4,5});
+        Assert.assertEquals(3,res);
     }
 
 }
