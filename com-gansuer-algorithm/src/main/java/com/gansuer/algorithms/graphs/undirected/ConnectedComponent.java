@@ -1,4 +1,6 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.undirected;
+
+import com.gansuer.algorithms.graphs.Graph;
 
 /**
  * Created by Frank on 6/28/16.

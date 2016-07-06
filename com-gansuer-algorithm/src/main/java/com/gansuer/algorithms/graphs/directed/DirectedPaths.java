@@ -1,4 +1,7 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
+
+import com.gansuer.algorithms.graphs.Paths;
+import com.gansuer.algorithms.graphs.directed.Digraph;
 
 import java.util.ArrayList;
 import java.util.Collections;

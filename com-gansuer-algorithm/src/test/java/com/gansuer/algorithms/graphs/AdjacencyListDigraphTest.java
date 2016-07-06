@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.directed.Digraph;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

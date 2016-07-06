@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.undirected.SymbolUndirectedGraph;
 import com.gansuer.common.util.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;

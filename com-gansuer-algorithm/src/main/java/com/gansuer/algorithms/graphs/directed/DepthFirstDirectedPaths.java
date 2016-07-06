@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
 
 /**
  * Created by Frank on 7/3/2016.

@@ -1,4 +1,7 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
+
+import com.gansuer.algorithms.graphs.directed.AdjacencyListDigraph;
+import com.gansuer.algorithms.graphs.directed.Digraph;
 
 import java.util.HashMap;
 import java.util.List;

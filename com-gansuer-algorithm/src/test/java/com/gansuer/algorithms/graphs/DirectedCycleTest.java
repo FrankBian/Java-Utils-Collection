@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.directed.DirectedCycle;
 import org.junit.Assert;
 import org.junit.Test;
 

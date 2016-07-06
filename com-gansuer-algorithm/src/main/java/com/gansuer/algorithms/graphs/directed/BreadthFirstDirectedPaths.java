@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
 
 import java.util.LinkedList;
 import java.util.Queue;

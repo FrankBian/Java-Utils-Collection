@@ -1,4 +1,4 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
 
 /**
  * compute topological ordering of a DAG or EdgeWeighted DAG

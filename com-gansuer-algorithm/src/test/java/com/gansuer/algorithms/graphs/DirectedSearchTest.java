@@ -1,5 +1,7 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.directed.DepthFirstDirectedSearch;
+import com.gansuer.algorithms.graphs.directed.DirectedSearch;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

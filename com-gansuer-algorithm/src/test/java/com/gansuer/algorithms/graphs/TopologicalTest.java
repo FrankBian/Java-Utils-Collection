@@ -1,5 +1,7 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.directed.SymbolDirectedGraph;
+import com.gansuer.algorithms.graphs.directed.Topological;
 import com.gansuer.common.util.FileUtils;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,5 +1,6 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.undirected.AdjacencyListUndigraph;
 import com.gansuer.common.util.FileUtils;
 
 import java.util.List;

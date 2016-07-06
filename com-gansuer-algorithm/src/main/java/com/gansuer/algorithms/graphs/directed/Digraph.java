@@ -1,9 +1,11 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
+
+import com.gansuer.algorithms.graphs.Graph;
 
 /**
  * Created by Frank on 7/1/16.
  */
-public abstract class Digraph implements Graph{
+public abstract class Digraph implements Graph {
 
     protected int vertices;
     protected int edges;

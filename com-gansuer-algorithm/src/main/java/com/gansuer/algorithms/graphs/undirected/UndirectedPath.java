@@ -1,4 +1,7 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.undirected;
+
+import com.gansuer.algorithms.graphs.Graph;
+import com.gansuer.algorithms.graphs.Paths;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -7,7 +10,7 @@ import java.util.List;
 /**
  * Created by Frank on 6/8/16.
  */
-public abstract class UndirectedPath implements Paths{
+public abstract class UndirectedPath implements Paths {
 
     // marked[v] = is there an s-v path
     protected boolean[] marked;

@@ -1,9 +1,12 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.undirected;
+
+import com.gansuer.algorithms.graphs.Graph;
+import com.gansuer.algorithms.graphs.Search;
 
 /**
  * Created by Frank on 6/24/16.
  */
-public abstract class UndirectedSearch implements Search{
+public abstract class UndirectedSearch implements Search {
 
     protected boolean[] marked;
     protected int count;

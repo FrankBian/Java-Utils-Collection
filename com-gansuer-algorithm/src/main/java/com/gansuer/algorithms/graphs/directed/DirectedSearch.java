@@ -1,4 +1,7 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.directed;
+
+import com.gansuer.algorithms.graphs.Search;
+import com.gansuer.algorithms.graphs.directed.Digraph;
 
 /**
  * Created by Frank on 7/1/16.

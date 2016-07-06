@@ -1,9 +1,11 @@
-package com.gansuer.algorithms.graphs;
+package com.gansuer.algorithms.graphs.undirected;
+
+import com.gansuer.algorithms.graphs.Graph;
 
 /**
  * Created by Frank on 7/4/2016.
  */
-public abstract class UndirectedGraph implements Graph{
+public abstract class UndirectedGraph implements Graph {
 
     protected int vertices;
     protected int edges;

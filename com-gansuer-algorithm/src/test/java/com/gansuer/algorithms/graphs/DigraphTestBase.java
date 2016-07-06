@@ -1,5 +1,7 @@
 package com.gansuer.algorithms.graphs;
 
+import com.gansuer.algorithms.graphs.directed.AdjacencyListDigraph;
+import com.gansuer.algorithms.graphs.directed.Digraph;
 import com.gansuer.common.util.FileUtils;
 import com.gansuer.common.util.StringUtils;
 
