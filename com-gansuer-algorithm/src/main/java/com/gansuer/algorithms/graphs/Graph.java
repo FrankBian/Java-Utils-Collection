@@ -28,15 +28,13 @@ public interface Graph {
      * @param w
      */
     boolean addEdge(int v, int w);
-
     /**
      * vertices adjacent to v
      *
      * @param v
      * @return
      */
-     Iterable<Integer> adj(int v);
-
+    Iterable<Integer> adj(int v);
 
 
     //number of self-loops
