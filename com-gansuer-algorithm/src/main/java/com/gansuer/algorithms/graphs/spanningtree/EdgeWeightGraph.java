@@ -17,8 +17,8 @@ public class EdgeWeightGraph extends AbstractEdgeWeightGraph {
             throw new IllegalArgumentException("vertices must be a non-negative integer");
         this.vertices = vertices;
         this.adjs = new List[vertices];
-        for (List<Edge> item : adjs) {
-            item = new ArrayList<>();
+        for (int i = 0; i < vertices; i++) {
+            adjs[i] = new ArrayList<>();
         }
     }
 
@@ -57,5 +57,24 @@ public class EdgeWeightGraph extends AbstractEdgeWeightGraph {
     public Iterable<Edge> adj(int v) {
         validateVertices(v);
         return adjs[v];
+    }
+
+    /**
+     * @return a string representation of the object.
+     */
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        int index = 0;
+        for (List<Edge> list : adjs) {
+            stringBuilder.append(index).append(" : ");
+            for (Edge edge : list) {
+                stringBuilder.append(edge.other(index)).append(" - ")
+                        .append(edge.getWeight()).append(" , ");
+            }
+            stringBuilder.append("\n");
+            index++;
+        }
+        return stringBuilder.toString();
     }
 }
