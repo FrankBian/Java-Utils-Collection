@@ -14,7 +14,7 @@ public class MSTTest extends EWGTestBase {
 
     @Before
     public void setUp() throws Exception {
-        init();
+        init(false);
         mst = new MST(graph);
     }
 

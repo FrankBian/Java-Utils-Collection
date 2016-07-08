@@ -13,10 +13,12 @@ public class EWGTestBase {
     protected EdgeWeightGraph graph;
     protected int v;
     protected int e;
+    protected String tiny = "graph/tinyEWG.txt";
+    protected String medium = "graph/mediumEWG.txt";
 
-    public void init() throws Exception {
+    public void init(boolean isMedium) throws Exception {
         List<String> lines = FileUtils.readFile(this.getClass().getClassLoader().getResource
-                ("graph/tinyEWG.txt").getFile());
+                (!isMedium ? tiny : medium).getFile());
         v = Integer.parseInt(lines.get(0).trim());
         e = Integer.parseInt(lines.get(1).trim());
 

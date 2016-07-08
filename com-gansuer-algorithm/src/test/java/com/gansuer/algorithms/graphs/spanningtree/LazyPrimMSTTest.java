@@ -13,13 +13,15 @@ public class LazyPrimMSTTest extends EWGTestBase {
 
     @Before
     public void setUp() throws Exception {
-        init();
+        init(true);
+        //init(false);
         mst = new LazyPrimMST(graph);
     }
 
     @Test
     public void getWeight() throws Exception {
-        Assert.assertEquals(1.81, mst.getWeight(), 0.0);
+        //Assert.assertEquals(1.81, mst.getWeight(), 0.0); //tinyEWG
+        Assert.assertEquals(10.46351, mst.getWeight(), 0.00001); //mediumEWG
     }
 
     @Test
