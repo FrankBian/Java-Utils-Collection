@@ -16,6 +16,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <developers>
+        <developer>
+            <id>FrankBian</id>
+            <email>FrankBian@126.com</email>
+            <name>Frank Bian</name>
+            <url>http://tech.gansuer.com</url>
+        </developer>
+    </developers>
+
     <modules>
         <module>com-gansuer-algorithm</module>
         <module>com-gansuer-common</module>
