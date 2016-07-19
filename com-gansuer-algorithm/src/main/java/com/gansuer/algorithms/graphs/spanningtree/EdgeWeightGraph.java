@@ -1,9 +1,6 @@
 package com.gansuer.algorithms.graphs.spanningtree;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Frank on 7/6/16.
@@ -24,6 +21,19 @@ public class EdgeWeightGraph extends AbstractEdgeWeightGraph {
 
     public Iterable<Edge> getEdgeList() {
         Set<Edge> res = new HashSet<>();
+        for (List<Edge> item : adjs) {
+            res.addAll(item);
+        }
+        return res;
+    }
+
+    /**
+     * get ordered edge set
+     *
+     * @return
+     */
+    public Set<Edge> getOrderedEdgeSet() {
+        Set<Edge> res = new TreeSet<>();
         for (List<Edge> item : adjs) {
             res.addAll(item);
         }

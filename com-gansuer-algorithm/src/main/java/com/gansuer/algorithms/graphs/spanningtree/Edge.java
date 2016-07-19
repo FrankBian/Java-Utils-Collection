@@ -3,7 +3,7 @@ package com.gansuer.algorithms.graphs.spanningtree;
 /**
  * Created by Frank on 7/6/16.
  */
-public class Edge implements Comparable<Edge> {
+public final class Edge implements Comparable<Edge> {
 
     private final int v;
     private final int w;
