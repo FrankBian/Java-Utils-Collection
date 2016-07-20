@@ -7,11 +7,18 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
 
 
-    Given an array of integers, find two numbers such that they add up to a specific target number.  
-    The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.  
-    You may assume that each input would have exactly one solution.    
-    Input: numbers={2, 7, 11, 15}, target=9   
-    Output: index1=1, index2=2   
+    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+    You may assume that each input would have exactly one solution.
+
+    Example:
+    Given nums = [2, 7, 11, 15], target = 9,
+
+    Because nums[0] + nums[1] = 2 + 7 = 9,
+    return [0, 1].
+
+    UPDATE (2016/2/13):
+    The return format had been changed to zero-based indices. Please read the above updated description carefully.
 
 ## 2. Add Two Numbers
 
@@ -598,6 +605,18 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     Example 3:
     nums = [1, 2, 2], n = 5
     Return 0.
+
+## 347. Top K Frequent Elements
+
+
+    Given a non-empty array of integers, return the k most frequent elements.
+
+    For example,
+    Given [1,1,1,2,2,3] and k = 2, return [1,2].
+
+    Note:
+    You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+    Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 
 ## 349. Intersection of Two Arrays
 
