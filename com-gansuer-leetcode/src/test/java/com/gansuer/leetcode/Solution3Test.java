@@ -2,6 +2,7 @@ package com.gansuer.leetcode;
 
 import com.gansuer.common.util.FileUtils;
 import com.gansuer.common.util.StringUtils;
+import com.gansuer.leetcode.string.Solution3;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class Solution3Test {
     }
 
     @Test
-    public void testLengthOfLongestSubstring() throws Exception {
+    public void testLengthOfLongestSubstringV4() throws Exception {
         String target = "abcabcbb";
         int res = solution3.lengthOfLongestSubstringV4(target);
 
@@ -74,24 +75,25 @@ public class Solution3Test {
     }
 
     @Test
-    public void testLengthOfLongestSubstringV2() throws Exception {
+    public void testLengthOfLongestSubstring() throws Exception {
         String target = "abcabcbb";
-        int res = solution3.lengthOfLongestSubstringV2(target);
+        int res = solution3.lengthOfLongestSubstring(target);
+        Assert.assertEquals(3, res);
 
-        int res1 = solution3.lengthOfLongestSubstringV2("bbbbbb");
+        res = solution3.lengthOfLongestSubstring("bbbbbb");
+        Assert.assertEquals(1, res);
+
         Date begin = new Date();
-        int res2 = solution3.lengthOfLongestSubstringV2(cases);
+        int res2 = solution3.lengthOfLongestSubstring(cases);
         Date end = new Date();
 
-        int res3 = solution3.lengthOfLongestSubstringV2("c");
-        int res4 = solution3.lengthOfLongestSubstringV2("pwwkew");
-        int res5 = solution3.lengthOfLongestSubstringV2("au");
+        int res3 = solution3.lengthOfLongestSubstring("c");
+        int res4 = solution3.lengthOfLongestSubstring("pwwkew");
+        int res5 = solution3.lengthOfLongestSubstring("au");
 
         System.out.println("length of the target String : " + cases.length());
         System.out.println("length of longest Substring : " + res2);
         System.out.println("Times : " + (end.getTime() - begin.getTime()));
-        Assert.assertEquals(3, res);
-        Assert.assertEquals(1, res1);
         Assert.assertEquals(95, res2);
         Assert.assertEquals(1, res3);
         Assert.assertEquals(3, res4);

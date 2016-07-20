@@ -1,4 +1,4 @@
-package com.gansuer.leetcode;
+package com.gansuer.leetcode.string;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,58 +9,29 @@ import java.util.Map;
 public class Solution3 {
 
     /**
-     * O(n^2)
-     * Last executed error : Time Limit Exceeded
+     * Accepted
+     * 18ms
+     * 61.21%
      *
      * @param s
      * @return
      */
-    public int lengthOfLongestSubstringV1(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        int max = 0;
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.isEmpty()) return 0;
+        int max = Integer.MIN_VALUE;
         char[] strings = s.toCharArray();
-        for (int i = 0; i < strings.length; i++) {
-            String tmp = strings[i] + "";
-            for (int j = i + 1; j < strings.length; j++) {
-                if (tmp.indexOf(strings[j]) < 0) { // No Repeats
-                    tmp += strings[j];
-                } else {
-                    break;
-                }
-            }
-            max = tmp.length() > max ? tmp.length() : max;
-        }
-        return max;
-    }
-
-    /**
-     * Time Limit Exceeded
-     *
-     * @param s
-     * @return
-     */
-    public int lengthOfLongestSubstringV2(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-
-        int max = 0, begin = 0, end = 0;
         String temp = "";
-        char[] chars = s.toCharArray();
-        while (end < chars.length) {
-            if (temp.indexOf(chars[end]) < 0) {
-                temp += chars[end];
-                end++;
-            } else {
-                max = temp.length() > max ? temp.length() : max;
-                end = ++begin;
-                temp = "";
+        //int tempBegin = 0;
+        for (int i = 0; i < strings.length; i++) {
+            int index = temp.indexOf(strings[i]);
+            if (index >= 0) {
+                max = max < temp.length() ? temp.length() : max;
+                temp = temp.substring(index + 1);
+                //tempBegin += index+1;
             }
+            temp += strings[i];
         }
-        max = temp.length() > max ? temp.length() : max;
-        return max;
+        return max < temp.length() ? temp.length() : max;
     }
 
     /**
