@@ -118,6 +118,26 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     You may assume no duplicate exists in the array.
 
+## 36. Valid Sudoku
+
+    Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
+
+    The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+
+
+    A partially filled sudoku which is valid.
+
+    Note:
+    A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
+
+## 37 Sudoku Solver
+
+    Write a program to solve a Sudoku puzzle by filling the empty cells.
+
+    Empty cells are indicated by the character '.'.
+
+    You may assume that there will be only one unique solution.
+
 ## 53. Maximum Subarray
 
     Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
