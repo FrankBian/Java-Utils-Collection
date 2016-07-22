@@ -586,6 +586,16 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
 
     ["1->2->5", "1->3"]
 
+## 283. Move Zeroes
+
+    Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+    For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+
+    Note:
+    You must do this in-place without making a copy of the array.
+    Minimize the total number of operations.
+
 ## 297. Serialize and Deserialize Binary Tree
 
 
@@ -625,6 +635,14 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     Example 3:
     nums = [1, 2, 2], n = 5
     Return 0.
+
+## 344. Reverse String
+
+    Write a function that takes a string as input and returns the string reversed.
+
+    Example:
+    Given s = "hello", return "olleh".
+
 
 ## 347. Top K Frequent Elements
 

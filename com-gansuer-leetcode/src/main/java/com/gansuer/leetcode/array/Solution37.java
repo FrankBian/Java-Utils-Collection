@@ -15,7 +15,7 @@ public class Solution37 {
      */
     public void solveSudoku(char[][] board) {
         boolean res = solve(board, 0);
-        if (!res) throw new IllegalArgumentException("board is not validated sudoku input");
+        if (!res) throw new IllegalArgumentException("board is not validated Sudoku input");
     }
 
     private boolean solve(char[][] board, int index) {
