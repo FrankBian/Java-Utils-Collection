@@ -108,7 +108,7 @@ public class IndexMinPQ<K extends Comparable> implements IndexPQ<K>, Iterable<In
      * Decrease the key associated with index <tt>i</tt> to the specified value.
      *
      * @param i   the index of the key to decrease
-     * @param key decrease the key assocated with index <tt>i</tt> to this key
+     * @param key decrease the key associated with index <tt>i</tt> to this key
      * @throws IndexOutOfBoundsException unless 0 &le; <tt>i</tt> &lt; <tt>maxN</tt>
      * @throws IllegalArgumentException  if key &ge; key associated with index <tt>i</tt>
      * @throws NoSuchElementException    no key is associated with index <tt>i</tt>

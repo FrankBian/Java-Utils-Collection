@@ -33,6 +33,7 @@ public class EdgeWeightDigraph {
     public boolean addEdge(DirectedEdge edge) {
         if (edge == null) return false;
         adjs[edge.getFrom()].add(edge);
+        edges++;
         return true;
     }
 
