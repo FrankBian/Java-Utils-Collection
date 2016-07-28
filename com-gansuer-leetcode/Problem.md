@@ -145,6 +145,20 @@ This below problems are from [the LeetCode OJ](https://leetcode.com/problems/)
     For example, given the array [−2,1,−3,4,−1,2,1,−5,4],
     the contiguous subarray [4,−1,2,1] has the largest sum = 6.
 
+## 76. Minimum Window Substring
+
+    Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+
+    For example,
+    S = "ADOBECODEBANC"
+    T = "ABC"
+    Minimum window is "BANC".
+
+    Note:
+    If there is no such window in S that covers all characters in T, return the empty string "".
+
+    If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
+
 ## 80. Remove Duplicates from Sorted Array II
 
     Follow up for "Remove Duplicates":
