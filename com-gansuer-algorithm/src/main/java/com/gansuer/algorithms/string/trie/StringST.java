@@ -62,6 +62,7 @@ public interface StringST<V> {
 
     /**
      * return all keys that match pattern
+     *
      * @param pattern
      * @return
      */
@@ -69,12 +70,14 @@ public interface StringST<V> {
 
     /**
      * the number of K-V pairs
+     *
      * @return
      */
     int size();
 
     /**
      * All keys
+     *
      * @return
      */
     List<String> keys();
