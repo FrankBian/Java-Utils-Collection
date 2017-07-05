@@ -8,16 +8,19 @@ package com.gansuer.common.util;
  * 作区分），并且效率较高，经测试，snowflake每秒能够产生26万ID左右，完全满足需要。
  */
 public class IdGeneratorWorker {
-	private final long workerId;
 	private final static long twepoch = 1361753741828L;
 	private long sequence = 0L;
-	private final static long workerIdBits = 4L;
-	public final static long maxWorkerId = -1L ^ -1L << workerIdBits;
-	private final static long sequenceBits = 10L;
-	private final static long workerIdShift = sequenceBits;
-	private final static long timestampLeftShift = sequenceBits + workerIdBits;
-	public final static long sequenceMask = -1L ^ -1L << sequenceBits;
-	private long lastTimestamp = -1L;
+    private final static long sequenceBits = 10L;
+
+    public final static long sequenceMask = -1L ^ -1L << sequenceBits; //1023(2^10 - 1) 1111111111
+
+    private final long workerId;
+    private final static long workerIdBits = 4L;
+    public final static long maxWorkerId = -1L ^ -1L << workerIdBits; //15(2^4 -1) 1111
+    private final static long workerIdShift = sequenceBits; //10
+
+    private final static long timestampLeftShift = sequenceBits + workerIdBits; //14
+    private long lastTimestamp = -1L;
 
 	public IdGeneratorWorker(final long workerId) {
 		super();
